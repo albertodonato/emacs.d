@@ -24,14 +24,13 @@
 
 ;;; Code:
 
+(setq scroll-conservatively 5)
+(setq fill-column 79)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq-default require-final-newline t)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
-(setq scroll-conservatively 5)
-(setq-default fill-column 79)
-(setq indent-tabs-mode nil)
-(setq tab-width 4)
-(setq require-final-newline t)
-(setq next-line-add-newlines nil)
 
 ;; use UTF-8 when pasting
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
