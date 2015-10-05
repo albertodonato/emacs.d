@@ -1,4 +1,4 @@
-;;; ack-theme-el --- A emacs theme with dark background
+;;; ack-theme-el --- An Emacs theme with dark background.
 
 ;; Copyright (C) 2014  Alberto Donato
 

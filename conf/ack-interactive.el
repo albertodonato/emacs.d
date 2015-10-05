@@ -1,6 +1,6 @@
-;;; interactive.el --- Interactive commands
+;;; ack-interactive.el --- Interactive commands
 
-;; Copyright (C) 2014  Alberto Donato
+;; Copyright (C) 2015  Alberto Donato
 
 ;; Author: Alberto Donato <alberto.donato@gmail.com>
 ;; Keywords: lisp
@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(require 'cl)
+(require 'cl-lib)
 
 (defun sudo ()
   "Use TRAMP to `sudo' the current buffer."
@@ -90,4 +90,6 @@
           (goto-char start-position)
           (insert "\"" replacement "\""))))))
 
-;;; interactive.el ends here
+(provide 'ack-interactive)
+
+;;; ack-interactive.el ends here

@@ -1,4 +1,4 @@
-;;; editing.el -- Editing settings
+;;; ack-appearance.el --- Appearance settings
 
 ;; Copyright (C) 2014  Alberto Donato
 
@@ -20,27 +20,21 @@
 
 ;;; Commentary:
 
-;; General editing configuration.
+;; Appearance and themes settings
 
 ;;; Code:
 
-(setq scroll-conservatively 5)
-(setq fill-column 79)
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq-default require-final-newline t)
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
+(setq inhibit-startup-message t)
+(setq initial-frame-alist '((fullscreen . maximized)))
 
-;; use UTF-8 when pasting
-(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+;; display Emacs version and buffer name in window title
+(setq frame-title-format
+      '("Emacs " emacs-version ": "
+        (:eval (if (buffer-file-name) (abbreviate-file-name (buffer-file-name)) "%b"))))
 
-;; don't let the cursor go into minibuffer prompt
-(setq minibuffer-prompt-properties
-      (quote (read-only
-              t point-entered minibuffer-avoid-prompt
-              face minibuffer-prompt)))
+(setq custom-theme-directory "~/.emacs.d/themes")
+(setq custom-safe-themes t)
 
-(setq browse-url-browser-function 'browse-url-default-browser)
+(provide 'ack-appearance)
 
-;;; editing.el ends here
+;;; ack-appearance.el ends here

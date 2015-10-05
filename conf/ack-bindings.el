@@ -1,6 +1,6 @@
-;;; bindings.el -- Custom key bindings
+;;; ack-bindings.el -- Custom key bindings
 
-;; Copyright (C) 2014  Alberto Donato
+;; Copyright (C) 2015  Alberto Donato
 
 ;; Author: Alberto Donato <alberto.donato@gmail.com>
 ;; Keywords: lisp
@@ -50,4 +50,6 @@
 (eval-after-load 'dired
   '(define-key dired-mode-map (kbd "C-c C-q") 'wdired-change-to-wdired-mode))
 
-;;; bindings.el ends here
+(provide 'ack-bindings)
+
+;;; ack-bindings.el ends here

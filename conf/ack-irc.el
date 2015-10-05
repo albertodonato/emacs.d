@@ -1,6 +1,6 @@
-;;; irc.el --- IRC configuration.
+;;; ack-irc.el --- IRC configuration.
 
-;; Copyright (C) 2014  Alberto Donato
+;; Copyright (C) 2015  Alberto Donato
 
 ;; Author: Alberto Donato <alberto.donato@gmail.com>
 ;; Keywords: lisp
@@ -166,4 +166,6 @@
 ;; rcirc configuration
 (setq rcirc-prompt "%n@%t> ")
 
-;;; irc.el ends here
+(provide 'ack-irc)
+
+;;; ack-irc.el ends here

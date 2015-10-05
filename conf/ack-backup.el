@@ -1,4 +1,4 @@
-;;; ack-packages.el --- Emacs packaging.
+;;; ack-backup.el --- Backup and autosave
 
 ;; Copyright (C) 2015  Alberto Donato
 
@@ -20,23 +20,15 @@
 
 ;;; Commentary:
 
-;; Package-related configuration
+;; Backup and austosave configuration
 
 ;;; Code:
 
-(require 'package)
+(setq auto-save-file-name-transforms '((".*" "~/.emacs-saves/autosaves/\\1" t)))
+(setq auto-save-list-file-prefix "~/.emacs-saves/autosaves/saves-")
+(setq backup-directory-alist '((".*" . "~/.emacs-saves/backups/")))
 
-(setq package-user-dir "~/.emacs-packages")
 
-(package-initialize)
+(provide 'ack-backup)
 
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-
-(package-install-selected-packages)
-
-(provide 'ack-packages)
-
-;;; ack-packages.el ends here
+;;; ack-backup.el ends here

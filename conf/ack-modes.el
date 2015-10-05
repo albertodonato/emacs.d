@@ -1,4 +1,4 @@
-;; modes.el --- Modes configuration
+;; ack-modes.el --- Modes configuration
 
 ;; Copyright (C) 2015  Alberto Donato
 
@@ -130,4 +130,6 @@
 (when (load "whitespace" t)
   (autoload 'whitespace-toggle-options "whitespace" t))
 
-;;; modes.el ends here
+(provide 'ack-modes)
+
+;;; ack-modes.el ends here
