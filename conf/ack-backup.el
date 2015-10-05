@@ -28,7 +28,6 @@
 (setq auto-save-list-file-prefix "~/.emacs-saves/autosaves/saves-")
 (setq backup-directory-alist '((".*" . "~/.emacs-saves/backups/")))
 
-
 (provide 'ack-backup)
 
 ;;; ack-backup.el ends here

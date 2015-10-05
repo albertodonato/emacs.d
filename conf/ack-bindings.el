@@ -27,7 +27,7 @@
 (global-set-key (kbd "M-p") 'current-buffer-path)
 (global-set-key (kbd "C-M-`") 'open-emacs-dir)
 (global-set-key (kbd "C-c k") 'kill-all-buffers)
-(global-set-key (kbd "C-c C-j") 'beautify-json)
+(global-set-key (kbd "C-c C-j") 'json-pretty-print)
 (global-set-key (kbd "C-c C-S-a") 'ack)
 (global-set-key (kbd "C-M-|") 'indent-whole-buffer)
 (global-set-key (kbd "C-c M-r") 'revert-buffer)

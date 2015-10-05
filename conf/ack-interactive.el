@@ -24,8 +24,6 @@
 
 ;;; Code:
 
-(require 'cl-lib)
-
 (defun sudo ()
   "Use TRAMP to `sudo' the current buffer."
   (interactive)
@@ -38,7 +36,7 @@
   (interactive)
   (let ((keep-buffers '("*scratch*" "*Messages*")))
     (mapc 'kill-buffer
-          (remove-if
+          (cl-remove-if
            (lambda (buf) (member (buffer-name buf) keep-buffers))
            (buffer-list)))))
 
@@ -53,42 +51,9 @@
   (dired "~/.emacs.d"))
 
 (defun indent-whole-buffer ()
-  "Indent current buffer."
+  "Indent the current buffer."
   (interactive)
-  (let ((b (if mark-active (min (point) (mark)) (point-min)))
-        (e (if mark-active (max (point) (mark)) (point-max))))
-    (indent-region b e)))
-
-(defun beautify-json ()
-  "Indent JSON data."
-  (interactive)
-  (let ((b (if mark-active (min (point) (mark)) (point-min)))
-        (e (if mark-active (max (point) (mark)) (point-max))))
-    (shell-command-on-region b e "json-indent" (current-buffer) t)))
-
-(defun python-output-requote (start end)
-  "Double-quote python region between START and END and remove unicode prefix."
-  (interactive "r")
-
-  ;; remove unicode prefix from double-quoted strings
-  (replace-regexp "u?\"\\(\\([^\\]\\|\\\\\"\\)*?\\)\"" "\"\\1\"" nil start end)
-
-  (goto-char start)
-  (while (re-search-forward "u?\'\\(\\([^\\]\\|\\\\\'\\)*?\\)\'" end t)
-    (let ((start-position (match-beginning 0)) (end-position (match-end 0))
-          (matched (buffer-substring (match-beginning 1) (match-end 1)))
-          (main-buffer (current-buffer)))
-      (with-temp-buffer
-        (insert matched)
-        ;; escape double quotes
-        (replace-regexp "\"" "\\\\\"" nil (point-min) (point-max))
-        ;; unescape single quotes
-        (replace-regexp "\\\\'" "\'" nil (point-min) (point-max))
-        (let ((replacement (buffer-string)))
-          (set-buffer main-buffer)
-          (delete-region start-position end-position)
-          (goto-char start-position)
-          (insert "\"" replacement "\""))))))
+  (save-excursion (indent-region (point-min) (point-max))))
 
 (provide 'ack-interactive)
 
