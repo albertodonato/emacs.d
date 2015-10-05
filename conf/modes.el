@@ -97,10 +97,11 @@
    python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"))
 
 ;; smartparens-mode
+(require 'smartparens)
 (smartparens-global-mode)
 (show-smartparens-global-mode t)
 (require 'smartparens-config)
-(setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode))
+(setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode))
 
 ;; twisted tac files
 (when (load "python" t)
@@ -108,8 +109,7 @@
   (add-to-list 'auto-mode-alist '("\\.tac$" . python-mode)))
 
 ;; Zope files
-(when (load "xml-mode" t)
-  (add-to-list 'auto-mode-alist '("\\.zcml$" . xml-mode)))
+(add-to-list 'auto-mode-alist '("\\.zcml$" . xml-mode))
 
 (add-to-list 'auto-mode-alist '("\\.pt$" . html-mode))
 
