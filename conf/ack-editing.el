@@ -37,9 +37,7 @@
 
 ;; don't let the cursor go into minibuffer prompt
 (setq minibuffer-prompt-properties
-      (quote (read-only
-              t point-entered minibuffer-avoid-prompt
-              face minibuffer-prompt)))
+      '(read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt))
 
 (setq browse-url-browser-function 'browse-url-default-browser)
 
