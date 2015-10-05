@@ -43,7 +43,7 @@
 (defun current-buffer-path ()
   "Print path for file in current buffer."
   (interactive)
-   (message buffer-file-name))
+  (message buffer-file-name))
 
 (defun open-emacs-dir ()
   "Open Emacs config dir."
