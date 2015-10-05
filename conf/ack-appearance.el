@@ -1,6 +1,6 @@
 ;;; ack-appearance.el --- Appearance settings
 
-;; Copyright (C) 2014  Alberto Donato
+;; Copyright (C) 2015  Alberto Donato
 
 ;; Author: Alberto Donato <alberto.donato@gmail.com>
 ;; Keywords: lisp
@@ -20,7 +20,7 @@
 
 ;;; Commentary:
 
-;; Appearance and themes settings
+;; Appearance and themes settings.
 
 ;;; Code:
 

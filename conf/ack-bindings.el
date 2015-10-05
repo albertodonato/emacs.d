@@ -20,7 +20,7 @@
 
 ;;; Commentary:
 
-;; This contains additional key bindings.
+;; Additional key bindings.
 
 ;;; Code:
 
