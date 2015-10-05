@@ -24,6 +24,8 @@
 
 ;;; Code:
 
+(require 'iso-transl) ;; For dead keys
+
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
@@ -34,27 +36,21 @@
 (show-paren-mode t)
 (winner-mode t)
 
-;; For dead keys
-(require 'iso-transl)
 
-(require 'dired-x)
-
-;; tabbar-mode
-(when (load "tabbar" t)
-  (tabbar-mode t))
-
-;; IDO mode
-(when (load "ido" t)
-  (ido-mode t)
-  (ido-everywhere t)
-  (setq ido-enable-flex-matching t)
-  ;; Display ido results vertically, rather than horizontally
-  (setq ido-decorations '("\n " "" "\n " "\n   ..."
-                          "[" "]" " [No match]" " [Matched]"
-                          " [Not readable]" " [Too big]" " [Confirm]"))
-  (defun ido-disable-line-trucation () 
-    (set (make-local-variable 'truncate-lines) nil))
-  (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation))
+;; ido-mode
+(require 'ido)
+(add-hook 'ido-mode-hook
+          (progn
+            (ido-mode t)
+            (ido-everywhere t)
+            (setq ido-enable-flex-matching t
+                  ;; Display ido results vertically, rather than horizontally
+                  ido-decorations '("\n " "" "\n " "\n   ..."
+                                    "[" "]" " [No match]" " [Matched]"
+                                    " [Not readable]" " [Too big]" " [Confirm]"))
+            (defun ido-disable-line-trucation ()
+              (set (make-local-variable 'truncate-lines) nil))
+            (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)))
 
 ;; full-ack
 (autoload 'ack-same "full-ack" nil t)
@@ -75,26 +71,25 @@
 (require 'multiple-cursors)
 
 ;; jedi
-(when (load "jedi" t)
-  (add-hook 'python-mode-hook 'jedi:setup)
-  (setq jedi:complete-on-dot t))
+(require 'jedi)
+(add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'jedi-mode-hook '(lambda () (setq jedi:complete-on-dot t)))
 
 ;; flycheck
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
-;; vc-mode
-(setq vc-diff-switches "-u")
-
 ;; python-mode
-(when (load "python" t)
-  (add-hook 'python-mode-hook '(lambda () (superword-mode 1)))
+(require 'python)
+(defun ack/python-setup ()
+  "Configuration for `python-mode' load."
+  (superword-mode 1)
   (setq
    python-shell-interpreter "ipython"
    python-shell-prompt-regexp "In \\[[0-9]+\\]: "
    python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
    python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
-   python-shell-completion-module-string-code "';'.join(module_completion('''%s'''))\n"
    python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"))
+(add-hook 'python-mode-hook 'ack/python-setup)
 
 ;; smartparens-mode
 (require 'smartparens)

@@ -24,6 +24,7 @@
 
 ;;; Code:
 
+(require 'dired)
 (require 'go-mode)
 
 (global-set-key (kbd "M-p") 'current-buffer-path)
