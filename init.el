@@ -28,16 +28,16 @@
 (add-to-list 'load-path "~/.emacs.d/conf")
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
-(require 'ack-appearance)
-(require 'ack-custom)
+(require 'ack-custom) ;; for package-selected-packages
 
 ;; packages configuration
 (setq package-user-dir "~/.emacs-packages")
 (package-initialize)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-(add-to-list 'package-archives '("elpy" . "http://jorgenschaefer.github.io/packages/"))
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         ("org" . "http://orgmode.org/elpa/")
+                         ("elpy" . "http://jorgenschaefer.github.io/packages/")))
 (package-install-selected-packages)
 
 (require 'ack-backup)
@@ -47,6 +47,7 @@
 (require 'ack-bindings)
 (load-file "~/Documents/private/keys/irc.el")
 (require 'ack-irc)
+(require 'ack-appearance)
 
 (provide 'init)
 

@@ -35,6 +35,8 @@
 (setq custom-theme-directory "~/.emacs.d/themes")
 (setq custom-safe-themes t)
 
+(load-theme 'ack t)
+
 (provide 'ack-appearance)
 
 ;;; ack-appearance.el ends here
