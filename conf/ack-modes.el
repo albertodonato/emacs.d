@@ -62,13 +62,10 @@
 
 ;; auto-complete
 (require 'auto-complete-config)
-(global-auto-complete-mode t)
+(add-hook 'after-init-hook 'global-auto-complete-mode)
 (ac-config-default)
 (setq ac-comphist-file "~/.emacs.saves/auto-complete.dat")
 (setq ac-dictionary-directories '("/usr/share/auto-complete/dict"))
-
-;; multiple-cursors
-(require 'multiple-cursors)
 
 ;; jedi
 (require 'jedi)
@@ -98,18 +95,6 @@
 (show-smartparens-global-mode t)
 (require 'smartparens-config)
 (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode))
-
-;; Zope files
-(add-to-list 'auto-mode-alist '("\\.zcml$" . xml-mode))
-(add-to-list 'auto-mode-alist '("\\.pt$" . html-mode))
-
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
-
-(require 'js)
-(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
-(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 
 (require 'whitespace)
 (autoload 'whitespace-toggle-options "whitespace" t)
