@@ -25,7 +25,7 @@
 ;;; Code:
 
 (setq custom-file "~/.emacs.d/custom.el")
-(load custom-file 'noerror)
+(load custom-file)
 
 (provide 'ack-custom)
 

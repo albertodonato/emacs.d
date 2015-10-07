@@ -24,6 +24,9 @@
 
 ;;; Code:
 
+(require 'uniquify)
+(require 'dired-x)
+
 (setq scroll-conservatively 5)
 (setq fill-column 79)
 (setq-default indent-tabs-mode nil)

@@ -1,4 +1,4 @@
-;;; ack-backup.el --- Backup and autosave
+;;; ack-automode.el -- Automode file types
 
 ;; Copyright (C) 2015  Alberto Donato
 
@@ -20,19 +20,27 @@
 
 ;;; Commentary:
 
-;; Backup and austosave configuration
+;; Automode binding for file extensions.
 
 ;;; Code:
 
-(setq auto-save-file-name-transforms '((".*" "~/.emacs-saves/autosaves/\\1" t))
-      auto-save-list-file-prefix "~/.emacs-saves/autosaves/saves-")
-(setq backup-directory-alist '((".*" . "~/.emacs-saves/backups/"))
-      backup-by-copying t
-      delete-old-versions t
-      kept-new-versions 10
-      kept-old-versions 2
-      version-control t)
+(require 'python)
+(require 'yaml-mode)
+(require 'js)
 
-(provide 'ack-backup)
+;; Twisted tac files
+(add-to-list 'auto-mode-alist '("\\.tac$" . python-mode))
+;; Zope files
+(add-to-list 'auto-mode-alist '("\\.zcml$" . xml-mode))
+(add-to-list 'auto-mode-alist '("\\.pt$" . html-mode))
+;; YAML files
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
+;; js files
+(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 
-;;; ack-backup.el ends here
+(provide 'ack-automode)
+
+;;; ack-automode.el ends here
+

@@ -25,7 +25,9 @@
 ;;; Code:
 
 (require 'dired)
+(require 'multiple-cursors)
 (require 'go-mode)
+(require 'yaml-mode)
 
 (global-set-key (kbd "M-p") 'current-buffer-path)
 (global-set-key (kbd "C-M-`") 'open-emacs-dir)
@@ -48,10 +50,14 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this-dwim)
 
 (add-hook 'golang-load-hook
-          (define-key go-mode-map (kbd "M-g f") 'gofmt))
-
+          (lambda ()
+            (define-key go-mode-map (kbd "M-g f") 'gofmt)))
 (add-hook 'dired-load-hook
-          (define-key dired-mode-map (kbd "C-c C-q") 'wdired-change-to-wdired-mode))
+          (lambda ()
+            (define-key dired-mode-map (kbd "C-c C-q") 'wdired-change-to-wdired-mode)))
+(add-hook 'yaml-mode-hook
+          (lambda ()
+            (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent)))
 
 (provide 'ack-bindings)
 

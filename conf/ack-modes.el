@@ -76,6 +76,7 @@
 (add-hook 'jedi-mode-hook '(lambda () (setq jedi:complete-on-dot t)))
 
 ;; flycheck
+(require 'flycheck)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
 ;; python-mode
@@ -98,32 +99,20 @@
 (require 'smartparens-config)
 (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode))
 
-;; twisted tac files
-(when (load "python" t)
-  (setq python-check-command "pycheck")
-  (add-to-list 'auto-mode-alist '("\\.tac$" . python-mode)))
-
 ;; Zope files
 (add-to-list 'auto-mode-alist '("\\.zcml$" . xml-mode))
-
 (add-to-list 'auto-mode-alist '("\\.pt$" . html-mode))
 
-;; yaml-mode
-(when (load "yaml-mode" t)
-  (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-  (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
-  (add-hook 'yaml-mode-hook
-            '(lambda ()
-               (define-key yaml-mode-map "\C-m" 'newline-and-indent))))
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 
-;; js-mode
-(when (load "js" t)
-  (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
-  (add-to-list 'auto-mode-alist '("\\.json$" . js-mode)))
+(require 'js)
+(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 
-;; whitespace-mode
-(when (load "whitespace" t)
-  (autoload 'whitespace-toggle-options "whitespace" t))
+(require 'whitespace)
+(autoload 'whitespace-toggle-options "whitespace" t)
 
 (provide 'ack-modes)
 
