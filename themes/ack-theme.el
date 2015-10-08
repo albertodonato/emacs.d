@@ -46,8 +46,8 @@
  '(diff-added ((t (:foreground "Green" :background "Black"))))
  '(diff-removed ((t (:foreground "Red" :background "Black"))))
  '(diff-changed ((t (:foreground "LightBlue" :background "Black"))))
- '(diff-header ((t (:foreground "Blue" :background "Black"))))
- '(diff-hunk-header ((t (:foreground "LightBlue" :background "Black"))))
+ '(diff-header ((t (:foreground "LightSkyBlue" :background "Black"))))
+ '(diff-hunk-header ((t (:foreground "LightSkyBlue" :background "Black"))))
  '(diff-file-header ((t (:foreground "Yellow" :background "Black"))))
 
  '(flymake-errline ((t (:foreground "White" :background "DarkRed"))))
