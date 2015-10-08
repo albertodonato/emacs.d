@@ -3,7 +3,7 @@
 ;; Copyright (C) 2014  Alberto Donato
 
 ;; Author: Alberto Donato <alberto.donato@gmail.com>
-;; Keywords: theme
+;; Keywords: lisp
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -20,14 +20,27 @@
 
 ;;; Commentary:
 
-;; My own emacs theme.
+;; My personal Emacs theme.
 
 ;;; Code:
 
-(deftheme ack "Created by Alberto Donato.")
+(deftheme ack "Dark background theme.")
 
 (custom-theme-set-faces
  'ack
+ '(default ((t (:inherit nil :stipple nil :background "Black" :foreground "White"
+                         :inverse-video nil :box nil :strike-through nil :overline nil
+                         :underline nil :slant normal :weight normal :height 102 :width normal
+                         :foundry "unknown" :family "Ubuntu Mono"))))
+ '(cursor ((t (:foreground "DarkGray" :background "White"))))
+ '(region ((t (:background "Gray40"))))
+ '(hl-line ((t (:background "Gray20"))))
+ '(isearch ((t (:background "ForestGreen"))))
+ '(tabbar-default ((t (:inherit t :height 0.9 :foreground "White" :background "DarkGray"))))
+ '(ido-first-match ((t (:foreground "PaleGreen"))))
+ '(ido-only-match ((t (:foreground "PaleGreen"))))
+ '(eshell-prompt ((t (:foreground "Green" :weight normal))))
+
  '(ack-match ((t (:foreground "Orange" :background "Black"))))
 
  '(diff-added ((t (:foreground "Green" :background "Black"))))
@@ -39,23 +52,11 @@
 
  '(flymake-errline ((t (:foreground "White" :background "DarkRed"))))
  '(flymake-warnline ((t (:foreground "White" :background "DarkBlue"))))
+
  '(flycheck-error ((t (:foreground "White" :background "DarkRed"))))
  '(flycheck-warning ((t (:foreground "White" :background "DarkBlue"))))
  '(flycheck-fringe-error ((t (:foreground "White" :background "DarkRed"))))
  '(flycheck-fringe-warning ((t (:foreground "White" :background "DarkBlue"))))
-
- '(ido-first-match ((t (:foreground "PaleGreen"))))
- '(ido-only-match ((t (:foreground "PaleGreen"))))
- '(isearch ((t (:background "ForestGreen"))))
- '(cursor ((t (:foreground "DarkGray" :background "White"))))
- '(region ((t (:background "Gray40"))))
- '(default ((t (:inherit nil :stipple nil :background "Black" :foreground "White"
-                         :inverse-video nil :box nil :strike-through nil :overline nil
-                         :underline nil :slant normal :weight normal :height 102 :width normal
-                         :foundry "unknown" :family "Ubuntu Mono"))))
- '(hl-line ((t (:background "Gray20"))))
- '(tabbar-default ((t (:inherit t :height 0.9 :foreground "White" :background "DarkGray"))))
- '(eshell-prompt ((t (:foreground "Green" :weight normal))))
 
  '(erc-current-nick-face ((t (:foreground "Yellow"))))
  '(erc-prompt-face ((t (:background "Black" :foreground "DarkGray"))))
