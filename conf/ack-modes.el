@@ -25,6 +25,7 @@
 ;;; Code:
 
 (require 'iso-transl) ;; For dead keys
+(require 'multiple-cursors)
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -35,7 +36,6 @@
 (which-function-mode t)
 (show-paren-mode t)
 (winner-mode t)
-
 
 ;; ido-mode
 (require 'ido)

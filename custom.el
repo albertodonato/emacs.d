@@ -3,8 +3,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(jit-lock-stealth-load 100)
- '(jit-lock-stealth-nice 1)
  '(package-selected-packages
    (quote
     (go-mode full-ack multiple-cursors yasnippet rcirc-notify rcirc-color less-css-mode unicode-fonts web-mode smartparens scss-mode python-mode ox-reveal jedi flycheck find-file-in-repository f ercn erc-view-log erc-hl-nicks autopair))))

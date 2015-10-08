@@ -24,11 +24,6 @@
 
 ;;; Code:
 
-(require 'dired)
-(require 'multiple-cursors)
-(require 'go-mode)
-(require 'yaml-mode)
-
 (global-set-key (kbd "M-p") 'current-buffer-path)
 (global-set-key (kbd "C-M-`") 'open-emacs-dir)
 (global-set-key (kbd "C-c k") 'kill-all-buffers)
@@ -45,19 +40,17 @@
 
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this-dwim)
+(with-eval-after-load 'multiple-cursors
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this-dwim))
 
-(add-hook 'golang-load-hook
-          (lambda ()
-            (define-key go-mode-map (kbd "M-g f") 'gofmt)))
-(add-hook 'dired-load-hook
-          (lambda ()
-            (define-key dired-mode-map (kbd "C-c C-q") 'wdired-change-to-wdired-mode)))
-(add-hook 'yaml-mode-hook
-          (lambda ()
-            (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent)))
+(with-eval-after-load 'go-mode
+  (define-key go-mode-map (kbd "M-g f") 'gofmt))
+(with-eval-after-load 'dired
+  (define-key dired-mode-map (kbd "C-c C-q") 'wdired-change-to-wdired-mode))
+(with-eval-after-load 'yaml-mode
+  (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent))
 
 (provide 'ack-bindings)
 
