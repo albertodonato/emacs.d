@@ -1,4 +1,4 @@
-;;; init.el --- Emacs init file
+;;; ack-packages.el --- Package configuration
 
 ;; Copyright (C) 2015  Alberto Donato
 
@@ -20,28 +20,21 @@
 
 ;;; Commentary:
 
-;; Emacs default config file.
-;; This is the entry point to load other config files.
+;; Package system and repositories configuration.
 
 ;;; Code:
 
-; (package-initialize)
+(require 'package)
 
-(add-to-list 'load-path "~/.emacs.d/conf")
-(add-to-list 'load-path "~/.emacs.d/lisp")
+(setq package-user-dir "~/.emacs-packages"
+      package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         ("org" . "http://orgmode.org/elpa/")
+                         ("elpy" . "http://jorgenschaefer.github.io/packages/")))
+(package-initialize)
+(package-install-selected-packages)
 
-(require 'ack-custom) ; for package-selected-packages
-(require 'ack-packages)
-(require 'ack-backup)
-(require 'ack-interactive)
-(require 'ack-editing)
-(require 'ack-modes)
-(require 'ack-automode)
-(require 'ack-bindings)
-(load-file "~/Documents/private/keys/irc.el")
-(require 'ack-irc)
-(require 'ack-appearance)
+(provide 'ack-packages)
 
-(provide 'init)
-
-;;; init.el ends here
+;;; ack-packages.el ends here
