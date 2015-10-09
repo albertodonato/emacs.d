@@ -45,11 +45,6 @@
   (interactive)
   (message buffer-file-name))
 
-(defun open-emacs-dir ()
-  "Open Emacs config dir."
-  (interactive)
-  (dired "~/.emacs.d"))
-
 (defun indent-whole-buffer ()
   "Indent the current buffer."
   (interactive)

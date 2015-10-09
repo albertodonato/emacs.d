@@ -25,13 +25,11 @@
 ;;; Code:
 
 (global-set-key (kbd "M-p") 'current-buffer-path)
-(global-set-key (kbd "C-M-`") 'open-emacs-dir)
-(global-set-key (kbd "C-c k") 'kill-all-buffers)
-(global-set-key (kbd "C-c C-j") 'json-pretty-print)
 (global-set-key (kbd "C-c C-S-a") 'ack)
 (global-set-key (kbd "C-M-|") 'indent-whole-buffer)
 (global-set-key (kbd "C-c M-r") 'revert-buffer)
 (global-set-key (kbd "C-c s") 'string-insert-rectangle)
+(global-set-key (kbd "C-c C-j") 'json-pretty-print)
 
 (global-set-key (kbd "C-c M-e") 'eshell)
 (global-set-key (kbd "C-c M-t") (lambda () (interactive) (ansi-term "/bin/bash")))
@@ -41,6 +39,7 @@
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
 (with-eval-after-load 'multiple-cursors
+  (global-set-key (kbd "C-c C->") 'mc/edit-lines)
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this-dwim))

@@ -33,13 +33,6 @@
 (require 'erc-highlight-nicknames)
 
 ;; ERC settings for networks
-(setq erc-autojoin-mode t)
-(setq erc-current-nick-highlight-type 'all)
-(setq erc-fill-column 100)
-(setq erc-insert-timestamp-function 'erc-insert-timestamp-left)
-(setq erc-join-buffer 'bury)
-(setq erc-keyword-highlight-type 'all)
-(setq erc-log-channels-directory "~/.erc-log")
 (setq erc-modules
       '(autojoin button completion dcc fill
 		 irccontrols list log match menu
@@ -47,11 +40,24 @@
 		 noncommands readonly ring
 		 scrolltobottom services stamp track
 		 notifications highlight-nicknames))
-(setq erc-networks-mode t)
+(setq erc-autojoin-mode t
+      erc-networks-mode t
+      erc-notifications-mode t
+      erc-notify-mode t
+      erc-scrolltobottom-mode t
+      erc-services-mode 1
+      erc-stamp-mode t)
+
+(setq erc-current-nick-highlight-type 'all)
+(setq erc-fill-column 100)
+(setq erc-insert-timestamp-function 'erc-insert-timestamp-left)
+(setq erc-join-buffer 'bury)
+(setq erc-keyword-highlight-type 'all)
+(setq erc-log-channels-directory "~/.erc-log")
+
 (setq erc-nickserv-identify-mode 'autodetect)
 (setq erc-notifications-icon "/usr/share/icons/hicolor/scalable/apps/emacs-snapshot.svg")
-(setq erc-notifications-mode t)
-(setq erc-notify-mode t)
+
 (setq erc-pal-highlight-type 'all)
 (setq erc-pcomplete-nick-postfix ",")
 (setq erc-prompt
@@ -77,19 +83,18 @@
 (setq erc-prompt-for-password nil)
 (setq erc-query-display 'buffer)
 (setq erc-rename-buffers nil)
-(setq erc-scrolltobottom-mode t)
-(setq erc-services-mode 1)
 (setq erc-speedbar-sort-users-type 'alphabetical)
-(setq erc-stamp-mode t)
 (setq erc-timestamp-format "[%H:%M] ")
 (setq erc-timestamp-only-if-changed-flag nil)
+
 ;; network and user configuration
-(setq erc-user-full-name "ack")
-(setq erc-email-userid "ack")
+(setq erc-user-full-name "ack"
+      erc-email-userid "ack")
+(setq erc-keywords '("landscape-crew" "alberto"))
 (setq erc-networks-alist
       '((Azzurra "azzurra.net")
-	(Canonical "canonical.com")
-	(freenode "freenode.net")))
+        (Canonical "canonical.com")
+        (freenode "freenode.net")))
 (setq erc-server-alist
       '(("Azzurra" Azzurra "irc.azzurra.net" 6667)
 	("Canonical" Canonical "irc.canonical.com" 6667)
@@ -108,11 +113,11 @@
 	(freenode "NickServ!NickServ@services."
 		  "/msg\\s-NickServ\\s-identify\\s-<password>" "NickServ"
 		  "IDENTIFY" nil nil "You\\s-are\\s-now\\s-idenfified")))
-(setq erc-keywords '("landscape-crew" "alberto"))
 
-;; Settings for erc-view-log
-(add-to-list 'auto-mode-alist `(,(format "%s/.*\\.log" (regexp-quote (expand-file-name erc-log-channels-directory))) . erc-view-log-mode))
+(add-to-list 'auto-mode-alist
+             `(,(format "%s/.*\\.log" (regexp-quote (expand-file-name erc-log-channels-directory))) . erc-view-log-mode))
 (add-hook 'erc-view-log-mode-hook 'turn-on-auto-revert-tail-mode)
+
 
 ;; Helper functions to connect to IRC
 (defun irc-network-password (network)
