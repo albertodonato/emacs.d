@@ -52,6 +52,7 @@
 (setq erc-fill-column 100)
 (setq erc-insert-timestamp-function 'erc-insert-timestamp-left)
 (setq erc-join-buffer 'bury)
+(setq erc-server-reconnect-attempts 5)
 (setq erc-keyword-highlight-type 'all)
 (setq erc-log-channels-directory "~/.erc-log")
 
