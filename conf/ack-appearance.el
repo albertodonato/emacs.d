@@ -26,6 +26,7 @@
 
 (setq inhibit-startup-message t)
 (setq initial-frame-alist '((fullscreen . maximized)))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; display Emacs version and buffer name in window title
 (setq frame-title-format

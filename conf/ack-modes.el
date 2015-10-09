@@ -64,8 +64,7 @@
 (require 'auto-complete-config)
 (add-hook 'after-init-hook 'global-auto-complete-mode)
 (ac-config-default)
-(setq ac-comphist-file "~/.emacs.saves/auto-complete.dat")
-(setq ac-dictionary-directories '("/usr/share/auto-complete/dict"))
+(setq ac-comphist-file "~/.emacs-saves/auto-complete.dat")
 
 ;; jedi
 (require 'jedi)
