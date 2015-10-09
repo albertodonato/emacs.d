@@ -26,6 +26,7 @@
 
 (require 'iso-transl) ;; For dead keys
 (require 'multiple-cursors)
+(require 'ox-reveal)
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
