@@ -33,9 +33,19 @@
       '("Emacs " emacs-version ": "
         (:eval (if (buffer-file-name) (abbreviate-file-name (buffer-file-name)) "%b"))))
 
-(setq custom-theme-directory "~/.emacs.d/themes")
-(setq custom-safe-themes t)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(winner-mode t)
 
+(global-hl-line-mode t)
+(column-number-mode t)
+(which-function-mode t)
+(show-paren-mode t)
+
+;; theme configuration
+(setq custom-theme-directory "~/.emacs.d/themes"
+      custom-safe-themes t)
 (load-theme 'ack t)
 
 (provide 'ack-appearance)

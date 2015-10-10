@@ -33,11 +33,12 @@
             (setq
              python-shell-interpreter "ipython"
              python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
-             python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"))
-          )
+             python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")))
 
 ;; jedi setup
 (add-hook 'python-mode-hook 'jedi:setup)
 (add-hook 'jedi-mode-hook (lambda () (setq jedi:complete-on-dot t)))
+
+(provide 'ack-python)
 
 ;;; ack-python.el ends here

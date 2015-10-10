@@ -27,40 +27,10 @@
 (require 'secrets)
 (require 'ox-reveal)
 
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-
-(global-hl-line-mode t)
-(column-number-mode t)
-(which-function-mode t)
-(show-paren-mode t)
-(winner-mode t)
-
 ;; full-ack
-(autoload 'ack-same "full-ack" nil t)
-(autoload 'ack "full-ack" nil t)
-(autoload 'ack-find-same-file "full-ack" nil t)
-(autoload 'ack-find-file "full-ack" nil t)
-(setq ack-executable "/usr/bin/ack-grep")
-(setq ack-use-environment nil)
-
-;; auto-complete
-(require 'auto-complete-config)
-(add-hook 'after-init-hook 'global-auto-complete-mode)
-(ac-config-default)
-(setq ac-comphist-file "~/.emacs-saves/auto-complete.dat")
-
-;; flycheck
-(require 'flycheck)
-(add-hook 'after-init-hook 'global-flycheck-mode)
-
-;; smartparens-mode
-(require 'smartparens)
-(smartparens-global-mode)
-(show-smartparens-global-mode t)
-(require 'smartparens-config)
-(setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode))
+(require 'full-ack)
+(setq ack-executable "/usr/bin/ack-grep"
+      ack-use-environment nil)
 
 (provide 'ack-modes)
 

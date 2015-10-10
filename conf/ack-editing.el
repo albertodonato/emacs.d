@@ -61,6 +61,24 @@
               (set (make-local-variable 'truncate-lines) nil))
             (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)))
 
+;; auto-complete
+(require 'auto-complete)
+(require 'auto-complete-config)
+(add-hook 'after-init-hook 'global-auto-complete-mode)
+(ac-config-default)
+(setq ac-comphist-file "~/.emacs-saves/auto-complete.dat")
+
+;; flycheck
+(require 'flycheck)
+(add-hook 'after-init-hook 'global-flycheck-mode)
+
+;; smartparens-mode
+(require 'smartparens)
+(require 'smartparens-config)
+(add-hook 'after-init-hook 'smartparens-global-mode)
+(show-smartparens-global-mode t)
+(setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode))
+
 (provide 'ack-editing)
 
 ;;; ack-editing.el ends here
