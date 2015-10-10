@@ -29,7 +29,6 @@
 (global-set-key (kbd "C-M-|") 'indent-whole-buffer)
 (global-set-key (kbd "C-c M-r") 'revert-buffer)
 (global-set-key (kbd "C-c s") 'string-insert-rectangle)
-(global-set-key (kbd "C-c C-j") 'json-pretty-print)
 
 (global-set-key (kbd "C-c M-e") 'eshell)
 (global-set-key (kbd "C-c M-t") (lambda () (interactive) (ansi-term "/bin/bash")))
