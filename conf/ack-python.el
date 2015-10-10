@@ -1,4 +1,4 @@
-;;; init.el --- Emacs init file
+;;; ack-python.el --- Python editing configuration
 
 ;; Copyright (C) 2015  Alberto Donato
 
@@ -20,29 +20,24 @@
 
 ;;; Commentary:
 
-;; Emacs default config file.
-;; This is the entry point to load other config files.
+;; Configuration for python editing.
 
 ;;; Code:
 
-; (package-initialize)
+(require 'python)
+(require 'jedi)
 
-(add-to-list 'load-path "~/.emacs.d/conf")
-(add-to-list 'load-path "~/.emacs.d/lisp")
+(add-hook 'python-mode-hook
+          (lambda ()
+            (superword-mode 1)
+            (setq
+             python-shell-interpreter "ipython"
+             python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
+             python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"))
+          )
 
-(require 'ack-custom) ; for package-selected-packages
-(require 'ack-packages)
-(require 'ack-backup)
-(require 'ack-interactive)
-(require 'ack-editing)
-(require 'ack-python)
-(require 'ack-modes)
-(require 'ack-automode)
-(require 'ack-bindings)
-(load-file "~/Documents/private/keys/irc.el")
-(require 'ack-irc)
-(require 'ack-appearance)
+;; jedi setup
+(add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'jedi-mode-hook (lambda () (setq jedi:complete-on-dot t)))
 
-(provide 'init)
-
-;;; init.el ends here
+;;; ack-python.el ends here

@@ -25,7 +25,9 @@
 ;;; Code:
 
 (require 'uniquify)
+(require 'iso-transl) ;; For dead keys
 (require 'dired-x)
+(require 'multiple-cursors)
 
 (setq scroll-conservatively 5)
 (setq fill-column 79)
@@ -43,6 +45,21 @@
       '(read-only t point-entered minibuffer-avoid-prompt face minibuffer-prompt))
 
 (setq browse-url-browser-function 'browse-url-default-browser)
+
+;; ido-mode
+(require 'ido)
+(add-hook 'ido-mode-hook
+          (progn
+            (ido-mode t)
+            (ido-everywhere t)
+            (setq ido-enable-flex-matching t
+                  ;; Display ido results vertically, rather than horizontally
+                  ido-decorations '("\n " "" "\n " "\n   ..."
+                                    "[" "]" " [No match]" " [Matched]"
+                                    " [Not readable]" " [Too big]" " [Confirm]"))
+            (defun ido-disable-line-trucation ()
+              (set (make-local-variable 'truncate-lines) nil))
+            (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)))
 
 (provide 'ack-editing)
 
