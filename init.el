@@ -27,7 +27,6 @@
 
 ; (package-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/conf")
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
 (require 'ack-custom) ; for package-selected-packages

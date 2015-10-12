@@ -30,7 +30,7 @@
 (require 'tls)
 (require 'erc-view-log)
 (require 'erc-desktop-notifications)
-(require 'erc-highlight-nicknames)
+(require 'erc-hl-nicks)
 
 ;; ERC settings for networks
 (setq erc-modules
@@ -39,11 +39,10 @@
 		 move-to-prompt netsplit networks
 		 noncommands readonly ring
 		 scrolltobottom services stamp track
-		 notifications highlight-nicknames))
+		 notifications hl-nicks))
 (setq erc-autojoin-mode t
       erc-networks-mode t
       erc-notifications-mode t
-      erc-notify-mode t
       erc-scrolltobottom-mode t
       erc-services-mode 1
       erc-stamp-mode t)
