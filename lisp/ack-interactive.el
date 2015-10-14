@@ -31,14 +31,12 @@
     (find-alternate-file
      (concat "/sudo:root@localhost:" buffer-file-name))))
 
-(defun kill-all-buffers ()
-  "Kill all buffers."
+(defun kill-all-file-buffers ()
+  "Kill all buffers that visit a file."
   (interactive)
-  (let ((keep-buffers '("*scratch*" "*Messages*")))
-    (mapc 'kill-buffer
-          (cl-remove-if
-           (lambda (buf) (member (buffer-name buf) keep-buffers))
-           (buffer-list)))))
+  (mapc
+   (lambda (buf) (when (buffer-file-name buf) (kill-buffer buf)))
+   (buffer-list)))
 
 (defun current-buffer-path ()
   "Print path for file in current buffer."
