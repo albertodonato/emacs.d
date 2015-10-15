@@ -38,7 +38,6 @@
 (require 'ack-modes)
 (require 'ack-automode)
 (require 'ack-bindings)
-(load-file "~/Documents/private/keys/irc.el")
 (require 'ack-irc)
 (require 'ack-appearance)
 

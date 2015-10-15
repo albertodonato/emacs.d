@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-;; ERC configuration
+(require 'secrets)
 (require 'erc)
 (require 'erc-services)
 (require 'tls)
@@ -35,11 +35,11 @@
 ;; ERC settings for networks
 (setq erc-modules
       '(autojoin button completion dcc fill
-		 irccontrols list log match menu
-		 move-to-prompt netsplit networks
-		 noncommands readonly ring
-		 scrolltobottom services stamp track
-		 notifications hl-nicks))
+                 irccontrols list log match menu
+                 move-to-prompt netsplit networks
+                 noncommands readonly ring
+                 scrolltobottom services stamp track
+                 notifications hl-nicks))
 (setq erc-autojoin-mode t
       erc-networks-mode t
       erc-notifications-mode t
@@ -62,23 +62,23 @@
 (setq erc-pcomplete-nick-postfix ",")
 (setq erc-prompt
       (lambda nil
-	(if
-	    (and
-	     (boundp
-	      (quote erc-default-recipients))
-	     (erc-default-target))
-	    (erc-propertize
-	     (concat
-	      (erc-default-target)
-	      ">")
-	     (quote read-only) t
-	     (quote rear-nonsticky) t
-	     (quote front-nonsticky) t)
-	  (erc-propertize
-	   (concat "ERC>")
-	   (quote read-only) t
-	   (quote rear-nonsticky) t
-	   (quote front-nonsticky) t))))
+        (if
+            (and
+             (boundp
+              (quote erc-default-recipients))
+             (erc-default-target))
+            (erc-propertize
+             (concat
+              (erc-default-target)
+              ">")
+             (quote read-only) t
+             (quote rear-nonsticky) t
+             (quote front-nonsticky) t)
+          (erc-propertize
+           (concat "ERC>")
+           (quote read-only) t
+           (quote rear-nonsticky) t
+           (quote front-nonsticky) t))))
 (setq erc-prompt-for-nickserv-password nil)
 (setq erc-prompt-for-password nil)
 (setq erc-query-display 'buffer)
@@ -97,22 +97,22 @@
         (freenode "freenode.net")))
 (setq erc-server-alist
       '(("Azzurra" Azzurra "irc.azzurra.net" 6667)
-	("Canonical" Canonical "irc.canonical.com" 6667)
-	("Freenode: Random server" freenode "irc.freenode.net" 6667)
-	("Freenode: Random EU server" freenode "irc.eu.freenode.net" 6667)
-	("Freenode: Random US server" freenode "irc.us.freenode.net" 6667)))
+        ("Canonical" Canonical "irc.canonical.com" 6667)
+        ("Freenode: Random server" freenode "irc.freenode.net" 6667)
+        ("Freenode: Random EU server" freenode "irc.eu.freenode.net" 6667)
+        ("Freenode: Random US server" freenode "irc.us.freenode.net" 6667)))
 (setq erc-autojoin-channels-alist
       '(("canonical.com" "#Cisco" "#landscape-pvt" "#eco" "#landscape"
-	 "#cloud-dev" "#juju" "#hr" "#webops" "#canonical" "#italia" "#is"
-	 "#is-outage" "#maas" "#server")
-	("freenode.net" "#la-it")
-	("azzurra.org" "#retrocomputing")))
+         "#cloud-dev" "#juju" "#hr" "#webops" "#canonical" "#italia" "#is"
+         "#is-outage" "#maas" "#server")
+        ("freenode.net" "#la-it")
+        ("azzurra.org" "#retrocomputing")))
 (setq erc-nickserv-alist
       '((Azzurra "NickServ!service@azzurra.org" "/ns\\s-IDENTIFY\\s-password"
-		 "NickServ" "IDENTIFY" nil nil nil)
-	(freenode "NickServ!NickServ@services."
-		  "/msg\\s-NickServ\\s-identify\\s-<password>" "NickServ"
-		  "IDENTIFY" nil nil "You\\s-are\\s-now\\s-idenfified")))
+                 "NickServ" "IDENTIFY" nil nil nil)
+        (freenode "NickServ!NickServ@services."
+                  "/msg\\s-NickServ\\s-identify\\s-<password>" "NickServ"
+                  "IDENTIFY" nil nil "You\\s-are\\s-now\\s-idenfified")))
 
 (add-to-list 'auto-mode-alist
              `(,(format "%s/.*\\.log" (regexp-quote (expand-file-name erc-log-channels-directory))) . erc-view-log-mode))
@@ -120,9 +120,10 @@
 
 
 ;; Helper functions to connect to IRC
+
 (defun irc-network-password (network)
   "Return the NETWORK password for an IRC network."
-  (cdr (assoc network irc-network-passwords)))
+  (secrets-get-secret "Login" (concat "IRC-NET-" network)))
 
 (defun irc-bip (network port)
   "Connect to a NETWORK on the specified PORT via Bip proxy."
@@ -131,7 +132,7 @@
    :port port
    :nick "ack"
    :full-name "ack"
-   :password (format "ack:%s:%s" (irc-network-password 'Ack) network)))
+   :password (format "ack:%s:%s" (irc-network-password "ack") network)))
 
 (defun irc-freenode ()
   "Connect to Freenode IRC network."
@@ -159,7 +160,7 @@
    :port 6697
    :nick "ack"
    :full-name "Alberto Donato"
-   :password (irc-network-password 'Canonical)))
+   :password (irc-network-password "canonical")))
 
 (defun irc-connect ()
   "Connect to all IRC networks."
