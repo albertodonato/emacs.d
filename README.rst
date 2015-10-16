@@ -1,0 +1,6 @@
+==============
+Ack's .emacs.d
+==============
+
+This is my own Emacs configuration.
+
