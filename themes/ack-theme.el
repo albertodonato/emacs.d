@@ -36,7 +36,6 @@
  '(region ((t (:background "Gray40"))))
  '(hl-line ((t (:background "Gray20"))))
  '(isearch ((t (:background "ForestGreen"))))
- '(tabbar-default ((t (:inherit t :height 0.9 :foreground "White" :background "DarkGray"))))
  '(ido-first-match ((t (:foreground "PaleGreen"))))
  '(ido-only-match ((t (:foreground "PaleGreen"))))
  '(eshell-prompt ((t (:foreground "Green" :weight normal))))
@@ -57,6 +56,8 @@
  '(flycheck-warning ((t (:foreground "White" :background "DarkBlue"))))
  '(flycheck-fringe-error ((t (:foreground "White" :background "DarkRed"))))
  '(flycheck-fringe-warning ((t (:foreground "White" :background "DarkBlue"))))
+
+ '(jedi:highlight-function-argument ((t (:foreground "PaleGreen"))))
 
  '(erc-current-nick-face ((t (:foreground "Yellow"))))
  '(erc-prompt-face ((t (:background "Black" :foreground "DarkGray"))))

@@ -31,17 +31,17 @@
 
 (setq python-environment-directory "~/virtualenv"
       python-environment-default-root-name "emacs"
-      jedi:tooltip-method nil
-      jedi:server-command (cons (format "%s/%s/bin/jediepcserver"
-                                        python-environment-directory
-                                        python-environment-default-root-name)
-                                '())
       python-shell-interpreter "ipython"
       python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
       python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
 (add-hook 'python-mode-hook
           (lambda ()
+            (setq jedi:tooltip-method nil
+                  jedi:server-command (cons (format "%s/%s/bin/jediepcserver"
+                                                    python-environment-directory
+                                                    python-environment-default-root-name)
+                                            '()))
             (jedi:setup)
             (superword-mode 1)))
 
