@@ -1,6 +1,6 @@
 ;;; ack-irc.el --- IRC configuration.
 
-;; Copyright (C) 2015  Alberto Donato
+;; Copyright (C) 2015-  Alberto Donato
 
 ;; Author: Alberto Donato <alberto.donato@gmail.com>
 ;; Keywords: lisp
@@ -28,11 +28,11 @@
 (require 'erc)
 (require 'erc-services)
 (require 'tls)
+(require 'erc-log)
 (require 'erc-view-log)
 (require 'erc-desktop-notifications)
 (require 'erc-hl-nicks)
 
-;; ERC settings for networks
 (setq erc-modules
       '(autojoin button completion dcc fill
                  irccontrols list log match menu
@@ -47,15 +47,20 @@
       erc-services-mode 1
       erc-stamp-mode t)
 
+(setq erc-nickserv-identify-mode 'autodetect)
 (setq erc-current-nick-highlight-type 'all)
 (setq erc-fill-column 100)
 (setq erc-insert-timestamp-function 'erc-insert-timestamp-left)
 (setq erc-join-buffer 'bury)
 (setq erc-server-reconnect-attempts 5)
 (setq erc-keyword-highlight-type 'all)
-(setq erc-log-channels-directory "~/.erc-log")
 
-(setq erc-nickserv-identify-mode 'autodetect)
+(setq erc-log-channels-directory "~/.erc-log")
+(setq erc-save-buffer-on-part nil
+      erc-save-queries-on-quit nil
+      erc-log-write-after-send t
+      erc-log-write-after-insert t)
+
 (setq erc-notifications-icon "/usr/share/icons/hicolor/scalable/apps/emacs-snapshot.svg")
 
 (setq erc-pal-highlight-type 'all)
@@ -83,7 +88,6 @@
 (setq erc-prompt-for-password nil)
 (setq erc-query-display 'buffer)
 (setq erc-rename-buffers nil)
-(setq erc-speedbar-sort-users-type 'alphabetical)
 (setq erc-timestamp-format "[%H:%M] ")
 (setq erc-timestamp-only-if-changed-flag nil)
 
@@ -114,12 +118,10 @@
                   "/msg\\s-NickServ\\s-identify\\s-<password>" "NickServ"
                   "IDENTIFY" nil nil "You\\s-are\\s-now\\s-idenfified")))
 
-(add-to-list 'auto-mode-alist
-             `(,(format "%s/.*\\.log" (regexp-quote (expand-file-name erc-log-channels-directory))) . erc-view-log-mode))
+
 (add-hook 'erc-view-log-mode-hook 'turn-on-auto-revert-tail-mode)
 
-
-;; Helper functions to connect to IRC
+;; Helpers for connection
 
 (defun irc-network-password (network)
   "Return the NETWORK password for an IRC network."
@@ -168,9 +170,6 @@
   (irc-bip "canonical" 7778)
   (irc-bip "freenode" 7779)
   (irc-bip "azzurra" 7780))
-
-;; rcirc configuration
-(setq rcirc-prompt "%n@%t> ")
 
 (provide 'ack-irc)
 

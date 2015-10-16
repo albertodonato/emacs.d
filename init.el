@@ -1,6 +1,6 @@
 ;;; init.el --- Emacs init file
 
-;; Copyright (C) 2015  Alberto Donato
+;; Copyright (C) 2014-  Alberto Donato
 
 ;; Author: Alberto Donato <alberto.donato@gmail.com>
 ;; Keywords: lisp
@@ -29,16 +29,16 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
-(require 'ack-custom) ; for package-selected-packages
+(require 'ack-custom)
 (require 'ack-packages)
 (require 'ack-backup)
 (require 'ack-interactive)
 (require 'ack-editing)
 (require 'ack-python)
 (require 'ack-modes)
-(require 'ack-automode)
 (require 'ack-bindings)
 (require 'ack-irc)
+(require 'ack-automode)
 (require 'ack-appearance)
 
 (provide 'init)
