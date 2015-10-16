@@ -27,24 +27,28 @@
 (require 'python)
 (require 'python-environment)
 (require 'jedi)
+(require 'jedi-direx)
 
-(add-hook 'python-mode-hook
-          (lambda ()
-            (superword-mode 1)
-            (setq
-             python-environment-directory "~/virtualenv"
-             python-environment-default-root-name "emacs"
-             python-shell-interpreter "ipython"
-             python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
-             python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")))
+(setq python-environment-directory "~/virtualenv"
+      python-environment-default-root-name "emacs"
+      jedi:tooltip-method nil
+      jedi:server-command (cons (format "%s/%s/bin/jediepcserver"
+                                        python-environment-directory
+                                        python-environment-default-root-name)
+                                '())
+      python-shell-interpreter "ipython"
+      python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
+      python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
-;; jedi setup
 (add-hook 'python-mode-hook
           (lambda ()
             (jedi:setup)
-            (setq jedi:tooltip-method nil
-                  jedi:environment-root "jedi")))
-(add-hook 'jedi-mode-hook (lambda () (setq jedi:complete-on-dot t)))
+            (superword-mode 1)))
+
+(add-hook 'jedi-mode-hook
+          (lambda ()
+            (jedi-direx:setup)
+            (setq jedi:complete-on-dot t)))
 
 (provide 'ack-python)
 

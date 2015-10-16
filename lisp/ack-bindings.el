@@ -49,6 +49,8 @@
   (define-key dired-mode-map (kbd "C-c C-q") 'wdired-change-to-wdired-mode))
 (with-eval-after-load 'yaml-mode
   (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent))
+(with-eval-after-load 'python
+  (define-key python-mode-map (kbd "C-c x") 'jedi-direx:pop-to-buffer))
 
 (provide 'ack-bindings)
 
