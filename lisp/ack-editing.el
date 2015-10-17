@@ -29,11 +29,11 @@
 (require 'dired-x)
 (require 'multiple-cursors)
 
-(setq scroll-conservatively 5)
-(setq fill-column 79)
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq-default require-final-newline t)
+(setq-default scroll-conservatively 5
+              fill-column 79
+              tab-width 4
+              indent-tabs-mode nil
+              require-final-newline t)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
