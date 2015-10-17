@@ -38,10 +38,9 @@
 (add-hook 'python-mode-hook
           (lambda ()
             (setq jedi:tooltip-method nil
-                  jedi:server-command (cons (format "%s/%s/bin/jediepcserver"
+                  jedi:server-command (list (format "%s/%s/bin/jediepcserver"
                                                     python-environment-directory
-                                                    python-environment-default-root-name)
-                                            '()))
+                                                    python-environment-default-root-name)))
             (jedi:setup)
             (superword-mode 1)))
 
