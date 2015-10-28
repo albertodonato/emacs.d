@@ -26,7 +26,7 @@
 
 (global-set-key (kbd "M-p") 'current-buffer-path)
 (global-set-key (kbd "C-c C-S-a") 'ack)
-(global-set-key (kbd "C-M-|") 'indent-whole-buffer)
+(global-set-key (kbd "C-M-|") 'indent-buffer)
 (global-set-key (kbd "C-c M-r") 'revert-buffer)
 (global-set-key (kbd "C-c s") 'string-insert-rectangle)
 

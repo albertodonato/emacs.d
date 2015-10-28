@@ -79,6 +79,13 @@
 (show-smartparens-global-mode t)
 (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode))
 
+(defadvice show-paren-function (after ack/advice--show-paren-function activate)
+  "If a matching paren is off-screen, echo the matching line."
+  (when (char-equal (char-syntax (char-before (point))) ?\))
+    (let ((matching-text (blink-matching-open)))
+      (when matching-text
+        (message matching-text)))))
+
 (provide 'ack-editing)
 
 ;;; ack-editing.el ends here

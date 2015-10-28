@@ -43,7 +43,7 @@
   (interactive)
   (message buffer-file-name))
 
-(defun indent-whole-buffer ()
+(defun indent-buffer ()
   "Indent the current buffer."
   (interactive)
   (save-excursion (indent-region (point-min) (point-max))))
