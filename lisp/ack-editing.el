@@ -46,7 +46,6 @@
 
 (setq browse-url-browser-function 'browse-url-default-browser)
 
-;; ido-mode
 (require 'ido)
 (add-hook 'ido-mode-hook
           (progn
@@ -61,30 +60,54 @@
               (set (make-local-variable 'truncate-lines) nil))
             (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)))
 
-;; auto-complete
 (require 'auto-complete)
 (require 'auto-complete-config)
 (add-hook 'after-init-hook 'global-auto-complete-mode)
 (ac-config-default)
 (setq ac-comphist-file "~/.emacs-saves/auto-complete.dat")
 
-;; flycheck
 (require 'flycheck)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
-;; smartparens-mode
 (require 'smartparens)
 (require 'smartparens-config)
 (add-hook 'after-init-hook 'smartparens-global-mode)
 (show-smartparens-global-mode t)
 (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode))
 
-(defadvice show-paren-function (after ack/advice--show-paren-function activate)
-  "If a matching paren is off-screen, echo the matching line."
-  (when (char-equal (char-syntax (char-before (point))) ?\))
-    (let ((matching-text (blink-matching-open)))
-      (when matching-text
-        (message matching-text)))))
+(require 's)
+(defadvice sp-show--pair-function (after sp-show--pair-function-offscreen activate)
+  "If the matching paren is offscreen, show the matching line in the echo area."
+  (interactive)
+  (let ((vis-buf (save-excursion
+                   (cons
+                    (progn (move-to-window-line 0) (point))
+                    (progn (move-to-window-line -1) (line-end-position)))))
+        (matching-sexp (if (and (sp-get (sp-get-sexp nil) :beg)
+                                (= (point) (sp-get (sp-get-sexp nil) :beg)))
+                           (cons (sp-get (sp-get-sexp nil) :beg)
+                                 (sp-get (sp-get-sexp nil) :end))
+                         (if (and (not (= (point) (point-min)))
+                                  (sp-get (sp-get-sexp t) :end)
+                                  (= (point) (sp-get (sp-get-sexp t) :end)))
+                             (cons (sp-get (sp-get-sexp t) :beg)
+                                   (sp-get (sp-get-sexp t) :end))
+                           nil))))
+    (when matching-sexp
+      (if (> (car vis-buf) (car matching-sexp))
+          ;; opening delim is offscreen
+          (message "Matches %s"
+                   (s-trim
+                    (save-excursion
+                      (goto-char (car matching-sexp))
+                      (thing-at-point 'line))))
+        (if (< (cdr vis-buf) (cdr matching-sexp))
+            ;; closing delim is offscreen
+            (message "Matches %s"
+                     (s-trim
+                      (save-excursion
+                        (goto-char (cdr matching-sexp))
+                        (thing-at-point 'line)))))))))
 
 (provide 'ack-editing)
 
