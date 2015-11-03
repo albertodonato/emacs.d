@@ -48,6 +48,11 @@
   (interactive)
   (save-excursion (indent-region (point-min) (point-max))))
 
+(defun shell-command-on-region-replace (command)
+  "Execute COMMAND with region as input and replace it with output."
+  (interactive "sShell command: ")
+  (shell-command-on-region (region-beginning) (region-end) command t t))
+
 (provide 'ack-interactive)
 
 ;;; ack-interactive.el ends here

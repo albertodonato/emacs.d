@@ -29,6 +29,7 @@
 (global-set-key (kbd "C-M-|") 'indent-buffer)
 (global-set-key (kbd "C-c M-r") 'revert-buffer)
 (global-set-key (kbd "C-c s") 'string-insert-rectangle)
+(global-set-key (kbd "C-c C-!") 'shell-command-on-region-replace)
 
 (global-set-key (kbd "C-c M-e") 'eshell)
 (global-set-key (kbd "C-c M-t") (lambda () (interactive) (ansi-term "/bin/bash")))
