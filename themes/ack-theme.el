@@ -60,6 +60,8 @@
  '(jedi:highlight-function-argument ((t (:foreground "PaleGreen"))))
 
  '(erc-current-nick-face ((t (:foreground "Yellow"))))
+ '(erc-input-face ((t (:foreground "Gray"))))
+ '(erc-my-nick-face ((t (:foreground "Gray"))))
  '(erc-prompt-face ((t (:background "Black" :foreground "DarkGray"))))
  '(erc-timestamp-face ((t (:foreground "DimGray"))))
 
