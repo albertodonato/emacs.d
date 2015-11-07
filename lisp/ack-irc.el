@@ -49,7 +49,7 @@
 
 (setq erc-nickserv-identify-mode 'autodetect)
 (setq erc-current-nick-highlight-type 'all)
-(setq erc-fill-column 100)
+(setq erc-fill-column 92)
 (setq erc-insert-timestamp-function 'erc-insert-timestamp-left)
 (setq erc-join-buffer 'bury)
 (setq erc-server-reconnect-attempts 5)
