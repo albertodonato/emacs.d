@@ -24,7 +24,9 @@
 
 ;;; Code:
 
-(setq inhibit-startup-message t)
+(setq inhibit-startup-message t
+      initial-scratch-message nil
+      inhibit-startup-echo-area-message "ack")
 (setq initial-frame-alist '((fullscreen . maximized)))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 

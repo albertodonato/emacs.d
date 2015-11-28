@@ -32,6 +32,9 @@
 (require 'erc-view-log)
 (require 'erc-desktop-notifications)
 (require 'erc-hl-nicks)
+(require 'znc)
+
+(require 'ack-private)
 
 (setq erc-modules
       '(autojoin button completion dcc fill
@@ -93,83 +96,18 @@
 
 ;; network and user configuration
 (setq erc-user-full-name "ack"
-      erc-email-userid "ack")
-(setq erc-keywords '("landscape-crew" "alberto"))
-(setq erc-networks-alist
-      '((Azzurra "azzurra.net")
-        (Canonical "canonical.com")
-        (freenode "freenode.net")))
-(setq erc-server-alist
-      '(("Azzurra" Azzurra "irc.azzurra.net" 6667)
-        ("Canonical" Canonical "irc.canonical.com" 6667)
-        ("Freenode: Random server" freenode "irc.freenode.net" 6667)
-        ("Freenode: Random EU server" freenode "irc.eu.freenode.net" 6667)
-        ("Freenode: Random US server" freenode "irc.us.freenode.net" 6667)))
-(setq erc-autojoin-channels-alist
-      '(("canonical.com" "#Cisco" "#landscape-pvt" "#eco" "#landscape"
-         "#cloud-dev" "#juju" "#hr" "#webops" "#canonical" "#italia" "#is"
-         "#is-outage" "#maas" "#server")
-        ("freenode.net" "#la-it")
-        ("azzurra.org" "#retrocomputing")))
-(setq erc-nickserv-alist
-      '((Azzurra "NickServ!service@azzurra.org" "/ns\\s-IDENTIFY\\s-password"
-                 "NickServ" "IDENTIFY" nil nil nil)
-        (freenode "NickServ!NickServ@services."
-                  "/msg\\s-NickServ\\s-identify\\s-<password>" "NickServ"
-                  "IDENTIFY" nil nil "You\\s-are\\s-now\\s-idenfified")))
-
+      erc-email-userid "ack"
+      erc-keywords '("landscape-crew" "alberto"))
 
 (add-hook 'erc-view-log-mode-hook 'turn-on-auto-revert-tail-mode)
 
-;; Helpers for connection
-
-(defun irc-network-password (network)
-  "Return the NETWORK password for an IRC network."
-  (secrets-get-secret "Login" (concat "IRC-NET-" network)))
-
-(defun irc-bip (network port)
-  "Connect to a NETWORK on the specified PORT via Bip proxy."
-  (erc
-   :server "localhost"
-   :port port
-   :nick "ack"
-   :full-name "ack"
-   :password (format "ack:%s:%s" (irc-network-password "ack") network)))
-
-(defun irc-freenode ()
-  "Connect to Freenode IRC network."
-  (interactive)
-  (erc-tls
-   :server "irc.freenode.net"
-   :port 6697
-   :nick "ackk"
-   :full-name "ack"))
-
-(defun irc-azzurra ()
-  "Connect to Azzurra IRC network."
-  (interactive)
-  (erc
-   :server "irc.eu.azzurra.org"
-   :port 6667
-   :nick "ack"
-   :full-name "ack"))
-
-(defun irc-canonical ()
-  "Connect to Canonical IRC network."
-  (interactive)
-  (erc-tls
-   :server "irc.canonical.com"
-   :port 6697
-   :nick "ack"
-   :full-name "Alberto Donato"
-   :password (irc-network-password "canonical")))
-
-(defun irc-connect ()
-  "Connect to all IRC networks."
-  (interactive)
-  (irc-bip "canonical" 7778)
-  (irc-bip "freenode" 7779)
-  (irc-bip "azzurra" 7780))
+(let* ((username "ack")
+       (password (secrets-get-secret "Login" "ZNC-ack"))
+       (networks '(Canonical Freenode Azzurra))
+       (define-net (lambda (net)
+                     (list net (concat username "/" (symbol-name net)) password))))
+  (setq znc-servers
+        (list (list ack-znc-server-host ack-znc-server-port t (mapcar define-net networks)))))
 
 (provide 'ack-irc)
 
