@@ -7,6 +7,7 @@
 
 (require 'secrets)
 (require 'ox-reveal)
+(require 'whitespace)
 
 ;; full-ack
 (require 'full-ack)
