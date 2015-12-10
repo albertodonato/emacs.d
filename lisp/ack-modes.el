@@ -14,6 +14,10 @@
 (setq ack-executable "/usr/bin/ack-grep"
       ack-use-environment nil)
 
+;; sgml
+(require 'zencoding-mode)
+(add-hook 'sgml-mode-hook 'zencoding-mode)
+
 (provide 'ack-modes)
 
 ;;; ack-modes.el ends here
