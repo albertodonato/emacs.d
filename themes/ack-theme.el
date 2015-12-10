@@ -35,6 +35,7 @@
  '(cursor ((t (:foreground "DarkGray" :background "White"))))
  '(region ((t (:background "Gray40"))))
  '(hl-line ((t (:background "Gray20"))))
+ '(font-lock-warning-face ((t (:foreground "Yellow"))))
  '(isearch ((t (:background "ForestGreen"))))
  '(ido-first-match ((t (:foreground "PaleGreen"))))
  '(ido-only-match ((t (:foreground "PaleGreen"))))
