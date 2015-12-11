@@ -31,6 +31,8 @@
 (setq browse-url-browser-function 'browse-url-default-browser)
 
 (require 'ido)
+(ido-mode 1)
+(ido-everywhere 1)
 (add-hook 'ido-mode-hook
           (progn
             (ido-mode t)
@@ -43,6 +45,12 @@
             (defun ido-disable-line-trucation ()
               (set (make-local-variable 'truncate-lines) nil))
             (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)))
+
+(require 'flx-ido)
+(flx-ido-mode 1)
+
+;; disable ido faces to see flx highlights.
+(setq ido-use-faces nil)
 
 (require 'auto-complete)
 (require 'auto-complete-config)
