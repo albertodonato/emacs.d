@@ -31,13 +31,14 @@
 (setq browse-url-browser-function 'browse-url-default-browser)
 
 (require 'ido)
-(ido-mode 1)
-(ido-everywhere 1)
+(require 'flx-ido)
 (add-hook 'ido-mode-hook
           (progn
             (ido-mode t)
             (ido-everywhere t)
-            (setq ido-enable-flex-matching t
+            (flx-ido-mode 1)
+            (setq ido-use-faces nil
+                  ido-enable-flex-matching t
                   ;; Display ido results vertically, rather than horizontally
                   ido-decorations '("\n " "" "\n " "\n   ..."
                                     "[" "]" " [No match]" " [Matched]"
@@ -45,12 +46,6 @@
             (defun ido-disable-line-trucation ()
               (set (make-local-variable 'truncate-lines) nil))
             (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)))
-
-(require 'flx-ido)
-(flx-ido-mode 1)
-
-;; disable ido faces to see flx highlights.
-(setq ido-use-faces nil)
 
 (require 'auto-complete)
 (require 'auto-complete-config)
