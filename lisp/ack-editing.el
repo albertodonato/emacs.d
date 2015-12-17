@@ -37,8 +37,8 @@
             (ido-mode t)
             (ido-everywhere t)
             (flx-ido-mode 1)
-            (setq ido-use-faces nil
-                  ido-enable-flex-matching t
+            (setq ido-enable-flex-matching t
+                  flx-ido-use-faces nil
                   ;; Display ido results vertically, rather than horizontally
                   ido-decorations '("\n " "" "\n " "\n   ..."
                                     "[" "]" " [No match]" " [Matched]"
