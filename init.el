@@ -22,6 +22,7 @@
 (require 'ack-irc)
 (require 'ack-automode)
 (require 'ack-appearance)
+(require 'ack-landscape)
 
 (provide 'init)
 
