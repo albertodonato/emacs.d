@@ -9,12 +9,10 @@
 (require 'ox-reveal)
 (require 'whitespace)
 
-;; full-ack
 (require 'full-ack)
 (setq ack-executable "/usr/bin/ack-grep"
       ack-use-environment nil)
 
-;; sgml
 (require 'zencoding-mode)
 (add-hook 'sgml-mode-hook 'zencoding-mode)
 
