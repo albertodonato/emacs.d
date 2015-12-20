@@ -1,6 +1,6 @@
-==============
-Ack's .emacs.d
-==============
+================
+Ack's ~/.emacs.d
+================
 
 This is my own Emacs configuration (including my custom theme).
 
