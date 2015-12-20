@@ -15,8 +15,6 @@
 (require 'erc-hl-nicks)
 (require 'znc)
 
-(require 'ack-private)
-
 (setq erc-modules
       '(autojoin button completion dcc fill
                  irccontrols list log match menu

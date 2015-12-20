@@ -13,6 +13,7 @@
 
 (require 'ack-init)
 (require 'ack-custom)
+(require 'ack-private)
 (require 'ack-packages)
 (require 'ack-backup)
 (require 'ack-interactive)
