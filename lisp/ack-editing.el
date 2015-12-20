@@ -8,7 +8,6 @@
 (require 'uniquify)
 (require 'iso-transl) ;; For dead keys
 (require 'dired-x)
-(require 'multiple-cursors)
 
 (setq-default scroll-conservatively 5
               fill-column 79
@@ -39,6 +38,7 @@
             (flx-ido-mode 1)
             (setq ido-enable-flex-matching t
                   flx-ido-use-faces nil
+                  ido-save-directory-list-file (file-path-in-cache-dir "ido.last")
                   ;; Display ido results vertically, rather than horizontally
                   ido-decorations '("\n " "" "\n " "\n   ..."
                                     "[" "]" " [No match]" " [Matched]"
@@ -61,6 +61,12 @@
 (add-hook 'after-init-hook 'smartparens-global-mode)
 (show-smartparens-global-mode t)
 (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode))
+
+(require 'smex)
+(setq smex-save-file (file-path-in-cache-dir "smex-items"))
+
+(require 'multiple-cursors)
+(setq mc/list-file (file-path-in-cache-dir "mc-list.el"))
 
 ;; (require 's)
 ;; (defadvice sp-show--pair-function (after sp-show--pair-function-offscreen activate)

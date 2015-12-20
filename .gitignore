@@ -1,9 +1,6 @@
 *~
+/cache
 /extra
-/ido.last
-/.mc-lists.el
-/network-security.data
-/tramp
 /url
 /var
 /lisp/ack-private.el

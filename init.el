@@ -11,6 +11,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'load-path "~/.emacs.d/extra")
 
+(require 'ack-init)
 (require 'ack-custom)
 (require 'ack-packages)
 (require 'ack-backup)
