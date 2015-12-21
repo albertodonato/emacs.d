@@ -63,6 +63,7 @@
 (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode))
 
 (require 'smex)
+(smex-initialize)
 (setq smex-save-file (file-path-in-cache-dir "smex-items"))
 
 (require 'multiple-cursors)
