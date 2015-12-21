@@ -69,40 +69,6 @@
 (require 'multiple-cursors)
 (setq mc/list-file (file-path-in-cache-dir "mc-list.el"))
 
-;; (require 's)
-;; (defadvice sp-show--pair-function (after sp-show--pair-function-offscreen activate)
-;;   "If the matching paren is offscreen, show the matching line in the echo area."
-;;   (interactive)
-;;   (let ((vis-buf (save-excursion
-;;                    (cons
-;;                     (progn (move-to-window-line 0) (point))
-;;                     (progn (move-to-window-line -1) (line-end-position)))))
-;;         (matching-sexp (if (and (sp-get (sp-get-sexp nil) :beg)
-;;                                 (= (point) (sp-get (sp-get-sexp nil) :beg)))
-;;                            (cons (sp-get (sp-get-sexp nil) :beg)
-;;                                  (sp-get (sp-get-sexp nil) :end))
-;;                          (if (and (not (= (point) (point-min)))
-;;                                   (sp-get (sp-get-sexp t) :end)
-;;                                   (= (point) (sp-get (sp-get-sexp t) :end)))
-;;                              (cons (sp-get (sp-get-sexp t) :beg)
-;;                                    (sp-get (sp-get-sexp t) :end))
-;;                            nil))))
-;;     (when matching-sexp
-;;       (if (> (car vis-buf) (car matching-sexp))
-;;           ;; opening delim is offscreen
-;;           (message "Matches %s"
-;;                    (s-trim
-;;                     (save-excursion
-;;                       (goto-char (car matching-sexp))
-;;                       (thing-at-point 'line))))
-;;         (if (< (cdr vis-buf) (cdr matching-sexp))
-;;             ;; closing delim is offscreen
-;;             (message "Matches %s"
-;;                      (s-trim
-;;                       (save-excursion
-;;                         (goto-char (cdr matching-sexp))
-;;                         (thing-at-point 'line)))))))))
-
 (provide 'ack-editing)
 
 ;;; ack-editing.el ends here
