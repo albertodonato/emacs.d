@@ -8,8 +8,8 @@
 
 ; (package-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/lisp")
-(add-to-list 'load-path "~/.emacs.d/extra")
+(add-to-list 'load-path (concat user-emacs-directory "lisp"))
+(add-to-list 'load-path (concat user-emacs-directory "extra"))
 
 (require 'ack-init)
 (require 'ack-custom)

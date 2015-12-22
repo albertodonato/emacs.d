@@ -27,7 +27,7 @@
 (show-paren-mode t)
 
 ;; theme configuration
-(setq custom-theme-directory "~/.emacs.d/themes"
+(setq custom-theme-directory (concat user-emacs-directory "themes")
       custom-safe-themes t)
 (load-theme 'ack t)
 

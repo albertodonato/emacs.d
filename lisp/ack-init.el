@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-(defvar cache-dir "~/emacs.d/cache")
+(defvar cache-dir (concat user-emacs-directory "cache"))
 
 (defun file-path-in-cache-dir (filename)
   "Return the full path for FILENAME in the cache directory."
