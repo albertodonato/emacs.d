@@ -8,6 +8,7 @@
 (require 'uniquify)
 (require 'iso-transl) ;; For dead keys
 (require 'dired-x)
+(require 'expand-region)
 
 (setq-default scroll-conservatively 5
               fill-column 79

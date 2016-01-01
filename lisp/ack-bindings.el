@@ -22,6 +22,8 @@
 
 (global-set-key (kbd "M-x") 'smex)
 
+(global-set-key (kbd "C-+") 'er/expand-region)
+
 (with-eval-after-load 'multiple-cursors
   (global-set-key (kbd "C-c C->") 'mc/edit-lines)
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -30,10 +32,13 @@
 
 (with-eval-after-load 'go-mode
   (define-key go-mode-map (kbd "M-g f") 'gofmt))
+
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "C-c C-q") 'wdired-change-to-wdired-mode))
+
 (with-eval-after-load 'yaml-mode
   (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent))
+
 (with-eval-after-load 'python
   (define-key python-mode-map (kbd "C-c x") 'jedi-direx:pop-to-buffer))
 
