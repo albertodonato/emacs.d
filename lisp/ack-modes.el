@@ -13,10 +13,11 @@
 (setq ack-executable "/usr/bin/ack-grep"
       ack-use-environment nil)
 
-;; sgml-mode
-(require 'zencoding-mode)
-(add-hook 'sgml-mode-hook 'zencoding-mode)
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode)
 
+;; sgml-mode
 (defadvice sgml-delete-tag (after reindent activate)
   "After deleting a tag, indent properly."
   (indent-region (point-min) (point-max)))
