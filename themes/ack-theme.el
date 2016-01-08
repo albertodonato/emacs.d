@@ -44,7 +44,7 @@
 
  '(erc-current-nick-face ((t (:foreground "Yellow"))))
  '(erc-input-face ((t (:foreground "Gray"))))
- '(erc-my-nick-face ((t (:foreground "Gray"))))
+ '(erc-my-nick-face ((t (:foreground "LightGray"))))
  '(erc-prompt-face ((t (:background "Black" :foreground "DarkGray"))))
  '(erc-timestamp-face ((t (:foreground "DimGray"))))
 
