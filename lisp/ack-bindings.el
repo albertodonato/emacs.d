@@ -24,11 +24,10 @@
 
 (global-set-key (kbd "C-+") 'er/expand-region)
 
-(with-eval-after-load 'multiple-cursors
-  (global-set-key (kbd "C-c C->") 'mc/edit-lines)
-  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this-dwim))
+(global-set-key (kbd "C-c C->") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this-dwim)
 
 (with-eval-after-load 'go-mode
   (define-key go-mode-map (kbd "M-g f") 'gofmt))
