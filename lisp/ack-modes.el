@@ -18,9 +18,10 @@
 (add-hook 'css-mode-hook  'emmet-mode)
 
 ;; sgml-mode
-(defadvice sgml-delete-tag (after reindent activate)
-  "After deleting a tag, indent properly."
+(defun sgml-delete-tag--reindent (ARG)
+  "After deleting a tag, indent properly.  ARG is ignored."
   (indent-region (point-min) (point-max)))
+(advice-add 'sgml-delete-tag :before #'sgml-delete-tag--reindent)
 
 (require 'tramp-cache)
 (setq tramp-persistency-file-name (file-path-in-cache-dir "tramp"))
