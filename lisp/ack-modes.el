@@ -29,6 +29,9 @@
 (require 'nsm)
 (setq nsm-settings-file (file-path-in-cache-dir "network-security.data"))
 
+(require 'abbrev)
+(setq abbrev-file-name (file-path-in-cache-dir "abbrev_defs"))
+
 (provide 'ack-modes)
 
 ;;; ack-modes.el ends here

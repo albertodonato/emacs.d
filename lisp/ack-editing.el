@@ -9,6 +9,7 @@
 (require 'iso-transl) ;; For dead keys
 (require 'dired-x)
 (require 'expand-region)
+(require 'hippie-exp)
 
 (setq-default scroll-conservatively 5
               fill-column 79

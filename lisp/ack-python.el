@@ -5,16 +5,14 @@
 
 ;;; Code:
 
-(require 'python)
+(require 'python-mode)
 (require 'python-environment)
 (require 'jedi)
 (require 'jedi-direx)
 
 (setq python-environment-directory "~/virtualenv"
       python-environment-default-root-name "emacs"
-      python-shell-interpreter "ipython"
-      python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
-      python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+      py-shell-name "ipython")
 
 (add-hook 'python-mode-hook
           (lambda ()
