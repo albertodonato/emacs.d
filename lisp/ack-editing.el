@@ -8,6 +8,7 @@
 (require 'uniquify)
 (require 'iso-transl) ;; For dead keys
 (require 'dired-x)
+(require 'dired-subtree)
 (require 'expand-region)
 (require 'hippie-exp)
 

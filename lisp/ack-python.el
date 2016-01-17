@@ -5,14 +5,14 @@
 
 ;;; Code:
 
-(require 'python-mode)
+(require 'python)
 (require 'python-environment)
 (require 'jedi)
 (require 'jedi-direx)
 
 (setq python-environment-directory "~/virtualenv"
       python-environment-default-root-name "emacs"
-      py-shell-name "ipython")
+      python-shell-interpreter "ipython")
 
 (add-hook 'python-mode-hook
           (lambda ()

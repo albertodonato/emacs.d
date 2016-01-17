@@ -35,6 +35,10 @@
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "C-c C-q") 'wdired-change-to-wdired-mode))
 
+(with-eval-after-load 'dired-subtree
+  (define-key dired-mode-map (kbd "C-<right>") 'dired-subtree-insert)
+  (define-key dired-mode-map (kbd "C-<left>") 'dired-subtree-remove))
+
 (with-eval-after-load 'yaml-mode
   (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent))
 
