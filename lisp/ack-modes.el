@@ -32,6 +32,9 @@
 (require 'abbrev)
 (setq abbrev-file-name (file-path-in-cache-dir "abbrev_defs"))
 
+(require 'pcache)
+(setq pcache-directory (file-path-in-cache-dir "pcache"))
+
 (provide 'ack-modes)
 
 ;;; ack-modes.el ends here
