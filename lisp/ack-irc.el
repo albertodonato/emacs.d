@@ -37,6 +37,10 @@
 (setq erc-server-reconnect-attempts 5)
 (setq erc-keyword-highlight-type 'all)
 
+(setq erc-track-exclude-types '("JOIN" "PART" "QUIT" "NICK" "MODE")
+      erc-track-faces-priority-list '(erc-current-nick-face erc-keyword-face)
+      erc-track-priority-faces-only 'all)
+
 (setq erc-log-channels-directory "~/.erc-log")
 (setq erc-save-buffer-on-part nil
       erc-save-queries-on-quit nil
