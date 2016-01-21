@@ -1,7 +1,7 @@
 ;;; ack-init.el --- Initialization helpers
 
 ;;; Commentary:
-;;;   Helper functions and variables for emacs initialization.
+;;;   Helper functions and variables for Emacs initialization.
 
 ;;; Code:
 
