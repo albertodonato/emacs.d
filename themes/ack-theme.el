@@ -18,12 +18,14 @@
  '(hl-line ((t (:background "Gray20"))))
  '(font-lock-warning-face ((t (:foreground "Yellow"))))
  '(compilation-error ((t (:foreground "Red"))))
+ '(compilation-line-number ((t (:foreground "Yellow"))))
+ '(compilation-column-number ((t (:foreground "Red"))))
+ '(match ((t (:foreground "White" :background "Blue"))))
  '(isearch ((t (:background "ForestGreen"))))
  '(ido-first-match ((t (:foreground "PaleGreen"))))
  '(ido-only-match ((t (:foreground "PaleGreen"))))
  '(eshell-prompt ((t (:foreground "Green" :weight normal))))
-
- '(ack-match ((t (:foreground "Orange" :background "Black"))))
+ '(success ((t (:foreground "Green"))))
 
  '(diff-added ((t (:foreground "Green" :background "Black"))))
  '(diff-removed ((t (:foreground "Red" :background "Black"))))
@@ -47,11 +49,6 @@
  '(erc-my-nick-face ((t (:foreground "LightGray"))))
  '(erc-prompt-face ((t (:background "Black" :foreground "DarkGray"))))
  '(erc-timestamp-face ((t (:foreground "DimGray"))))
-
- '(rcirc-my-nick ((t (:foreground "Yellow"))))
- '(rcirc-timestamp ((t (:foreground "DimGray"))))
- '(rcirc-track-keyword ((t (:foreground "LightGreen"))))
- '(rcirc-prompt ((t (:foreground "DarkGray"))))
  )
 
 (provide-theme 'ack)

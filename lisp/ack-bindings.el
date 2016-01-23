@@ -6,7 +6,8 @@
 ;;; Code:
 
 (global-set-key (kbd "M-p") 'current-buffer-path)
-(global-set-key (kbd "C-c C-S-a") 'ack)
+(global-set-key (kbd "C-c C-S-a") 'ag-project)
+(global-set-key (kbd "C-c C-S-f") 'ag-project-files)
 (global-set-key (kbd "C-M-|") 'indent-buffer)
 (global-set-key (kbd "C-M-`") 'whitespace-cleanup)
 (global-set-key (kbd "C-c M-r") 'revert-buffer)

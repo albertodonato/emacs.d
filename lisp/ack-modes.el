@@ -9,13 +9,12 @@
 (require 'ox-reveal)
 (require 'whitespace)
 
-(require 'full-ack)
-(setq ack-executable "/usr/bin/ack-grep"
-      ack-use-environment nil)
+(require 'ag)
+(setq ag-highlight-search t
+      ag-arguments '("--line-number" "--smart-case" "--nogroup" "--column" "--stats" "-A5" "-B5" "--"))
 
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
-(add-hook 'css-mode-hook  'emmet-mode)
 
 ;; sgml-mode
 (defun sgml-delete-tag--reindent (ARG)
