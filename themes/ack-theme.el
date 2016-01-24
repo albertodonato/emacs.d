@@ -20,7 +20,7 @@
  '(compilation-error ((t (:foreground "Red"))))
  '(compilation-line-number ((t (:foreground "Yellow"))))
  '(compilation-column-number ((t (:foreground "Red"))))
- '(match ((t (:foreground "White" :background "Blue"))))
+ '(match ((t (:foreground "Gray40" :background "Orange" :weight bold))))
  '(isearch ((t (:background "ForestGreen"))))
  '(ido-first-match ((t (:foreground "PaleGreen"))))
  '(ido-only-match ((t (:foreground "PaleGreen"))))
