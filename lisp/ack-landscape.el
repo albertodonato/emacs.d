@@ -12,5 +12,4 @@
       ls-lxc-container-name "landscape-trusty")
 
 (provide 'ack-landscape)
-
 ;;; ack-landscape.el ends here

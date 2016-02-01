@@ -27,5 +27,4 @@
 (require 'ack-landscape)
 
 (provide 'init)
-
 ;;; init.el ends here

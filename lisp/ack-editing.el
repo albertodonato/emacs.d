@@ -73,5 +73,4 @@
 (setq mc/list-file (file-path-in-cache-dir "mc-list.el"))
 
 (provide 'ack-editing)
-
 ;;; ack-editing.el ends here

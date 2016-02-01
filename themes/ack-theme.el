@@ -52,5 +52,4 @@
  )
 
 (provide-theme 'ack)
-
 ;;; ack-theme.el ends here

@@ -6,7 +6,7 @@
 ;;; Code:
 
 (global-set-key (kbd "M-p") 'current-buffer-path)
-(global-set-key (kbd "C-c C-S-a") 'ag-project)
+(global-set-key (kbd "C-c C-S-a") 'ag-project-regexp)
 (global-set-key (kbd "C-c C-S-f") 'ag-project-files)
 (global-set-key (kbd "C-M-|") 'indent-buffer)
 (global-set-key (kbd "C-M-`") 'whitespace-cleanup)
@@ -48,5 +48,4 @@
   (define-key python-mode-map (kbd "C-c p p") 'python-insert-pdb-statement))
 
 (provide 'ack-bindings)
-
 ;;; ack-bindings.el ends here

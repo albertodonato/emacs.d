@@ -29,5 +29,4 @@
             (setq jedi:complete-on-dot t)))
 
 (provide 'ack-python)
-
 ;;; ack-python.el ends here

@@ -17,5 +17,4 @@
 (package-install-selected-packages)
 
 (provide 'ack-packages)
-
 ;;; ack-packages.el ends here

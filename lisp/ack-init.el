@@ -12,5 +12,4 @@
   (concat (file-name-as-directory cache-dir) filename))
 
 (provide 'ack-init)
-
 ;;; ack-init.el ends here

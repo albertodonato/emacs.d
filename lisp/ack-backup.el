@@ -15,5 +15,4 @@
       version-control t)
 
 (provide 'ack-backup)
-
 ;;; ack-backup.el ends here

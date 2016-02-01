@@ -9,5 +9,4 @@
 (load custom-file)
 
 (provide 'ack-custom)
-
 ;;; ack-custom.el ends here

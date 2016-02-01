@@ -93,5 +93,4 @@
         (list (list ack-znc-server-host ack-znc-server-port t (mapcar define-net networks)))))
 
 (provide 'ack-irc)
-
 ;;; ack-irc.el ends here

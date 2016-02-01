@@ -32,5 +32,4 @@
 (load-theme 'ack t)
 
 (provide 'ack-appearance)
-
 ;;; ack-appearance.el ends here

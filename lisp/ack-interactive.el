@@ -48,5 +48,4 @@
     (indent-region beg (line-end-position))))
 
 (provide 'ack-interactive)
-
 ;;; ack-interactive.el ends here

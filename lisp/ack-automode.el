@@ -28,6 +28,5 @@
                    'erc-view-log-mode))
 
 (provide 'ack-automode)
-
 ;;; ack-automode.el ends here
 
