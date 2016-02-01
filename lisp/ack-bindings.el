@@ -30,6 +30,9 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this-dwim)
 
+(with-eval-after-load 'ag-mode
+  (define-key ag-mode-map (kbd "<C-return>") 'ag-compile-goto-error-and-kill-search-buffer))
+
 (with-eval-after-load 'go-mode
   (define-key go-mode-map (kbd "M-g f") 'gofmt))
 

@@ -47,5 +47,12 @@
     (insert (concat text "\n"))
     (indent-region beg (line-end-position))))
 
+(defun ag-compile-goto-error-and-kill-search-buffer ()
+  "Jump to the error at point and kill the search buffer."
+  (interactive)
+  (let ((buf (current-buffer)))
+    (compile-goto-error)
+    (kill-buffer buf)))
+
 (provide 'ack-interactive)
 ;;; ack-interactive.el ends here
