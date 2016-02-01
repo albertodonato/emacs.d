@@ -22,6 +22,8 @@
                  noncommands readonly ring
                  scrolltobottom services stamp track
                  notifications hl-nicks))
+(erc-update-modules)
+
 (setq erc-autojoin-mode t
       erc-networks-mode t
       erc-notifications-mode t
@@ -29,13 +31,13 @@
       erc-services-mode 1
       erc-stamp-mode t)
 
-(setq erc-nickserv-identify-mode 'autodetect)
-(setq erc-current-nick-highlight-type 'all)
-(setq erc-fill-column 92)
-(setq erc-insert-timestamp-function 'erc-insert-timestamp-left)
-(setq erc-join-buffer 'bury)
-(setq erc-server-reconnect-attempts 5)
-(setq erc-keyword-highlight-type 'all)
+(setq erc-nickserv-identify-mode 'autodetect
+      erc-current-nick-highlight-type 'all
+      erc-fill-column 92
+      erc-insert-timestamp-function 'erc-insert-timestamp-left
+      erc-join-buffer 'bury
+      erc-server-reconnect-attempts 5
+      erc-keyword-highlight-type 'all)
 
 (setq erc-track-exclude-types '("JOIN" "PART" "QUIT" "NICK" "MODE")
       erc-track-faces-priority-list '(erc-current-nick-face erc-keyword-face)
@@ -70,12 +72,12 @@
            (quote read-only) t
            (quote rear-nonsticky) t
            (quote front-nonsticky) t))))
-(setq erc-prompt-for-nickserv-password nil)
-(setq erc-prompt-for-password nil)
+(setq erc-prompt-for-nickserv-password nil
+      erc-prompt-for-password nil)
 (setq erc-query-display 'buffer)
 (setq erc-rename-buffers nil)
-(setq erc-timestamp-format "[%H:%M] ")
-(setq erc-timestamp-only-if-changed-flag nil)
+(setq erc-timestamp-format "[%H:%M] "
+      erc-timestamp-only-if-changed-flag nil)
 
 ;; network and user configuration
 (setq erc-user-full-name "ack"
