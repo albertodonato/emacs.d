@@ -5,16 +5,13 @@
 
 ;;; Code:
 
-(require 'autoinsert)
 (require 'secrets)
 (require 'ox-reveal)
 (require 'whitespace)
 
 (require 'ag)
 (setq ag-highlight-search t
-      ag-group-matches t
-      ag-context-lines 3
-      ag-arguments '("--stats" "--"))
+      ag-arguments '("--line-number" "--smart-case" "--nogroup" "--column" "--stats" "-A5" "-B5" "--"))
 
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
@@ -38,4 +35,5 @@
 (setq pcache-directory (file-path-in-cache-dir "pcache"))
 
 (provide 'ack-modes)
+
 ;;; ack-modes.el ends here
