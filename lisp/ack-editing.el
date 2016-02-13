@@ -32,6 +32,18 @@
 
 (setq browse-url-browser-function 'browse-url-default-browser)
 
+;; make the file executable on save if it has a shebang
+(add-hook 'after-save-hook
+        #'(lambda ()
+            (and (save-excursion
+               (save-restriction
+                 (widen)
+                 (goto-char (point-min))
+                 (save-match-data (looking-at "^#!"))))
+                 (not (file-executable-p buffer-file-name))
+                 (shell-command (concat "chmod +x " buffer-file-name))
+                 (message (concat "Saved as script: " buffer-file-name)))))
+
 (require 'ido)
 (require 'flx-ido)
 (add-hook 'ido-mode-hook
