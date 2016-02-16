@@ -54,24 +54,13 @@
 (setq erc-pal-highlight-type 'all)
 (setq erc-pcomplete-nick-postfix ",")
 (setq erc-prompt
-      (lambda nil
-        (if
-            (and
-             (boundp
-              (quote erc-default-recipients))
-             (erc-default-target))
+      (lambda ()
+        (if (and (boundp 'erc-default-recipients) (erc-default-target))
             (erc-propertize
-             (concat
-              (erc-default-target)
-              ">")
-             (quote read-only) t
-             (quote rear-nonsticky) t
-             (quote front-nonsticky) t)
+             (concat (erc-default-target) ">")
+             'read-only t 'rear-nonsticky t 'front-nonsticky t)
           (erc-propertize
-           (concat "ERC>")
-           (quote read-only) t
-           (quote rear-nonsticky) t
-           (quote front-nonsticky) t))))
+           "ERC>" 'read-only t 'rear-nonsticky t 'front-nonsticky t))))
 (setq erc-prompt-for-nickserv-password nil
       erc-prompt-for-password nil)
 (setq erc-query-display 'buffer)
