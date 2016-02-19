@@ -5,10 +5,10 @@
 
 ;;; Code:
 
-(global-set-key (kbd "M-p") 'current-buffer-path)
-(global-set-key (kbd "C-c C-S-a") 'ag-project-regexp)
-(global-set-key (kbd "C-c C-S-f") 'ag-project-files)
-(global-set-key (kbd "C-M-|") 'indent-buffer)
+(global-set-key (kbd "M-p") (lambda () (interactive) (message buffer-file-name)))
+(global-set-key (kbd "C-M-|") (lambda () (interactive)
+                                (save-excursion
+                                  (indent-region (point-min) (point-max)))))
 (global-set-key (kbd "C-M-`") 'whitespace-cleanup)
 (global-set-key (kbd "C-c M-r") 'revert-buffer)
 (global-set-key (kbd "C-c s") 'string-insert-rectangle)
@@ -20,6 +20,9 @@
 (global-set-key (kbd "C-c n") 'linum-mode)
 
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
+
+(global-set-key (kbd "C-c C-S-a") 'ag-project-regexp)
+(global-set-key (kbd "C-c C-S-f") 'ag-project-files)
 
 (global-set-key (kbd "M-x") 'smex)
 

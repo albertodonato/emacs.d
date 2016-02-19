@@ -19,16 +19,6 @@
    (lambda (buf) (when (buffer-file-name buf) (kill-buffer buf)))
    (buffer-list)))
 
-(defun current-buffer-path ()
-  "Print path for file in current buffer."
-  (interactive)
-  (message buffer-file-name))
-
-(defun indent-buffer ()
-  "Indent the current buffer."
-  (interactive)
-  (save-excursion (indent-region (point-min) (point-max))))
-
 (defun shell-command-on-region-replace (command)
   "Execute COMMAND with region as input and replace it with output."
   (interactive "sShell command: ")
