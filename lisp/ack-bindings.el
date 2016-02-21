@@ -5,14 +5,19 @@
 
 ;;; Code:
 
+(global-set-key (kbd "C-`") (lambda () (interactive) (dired user-emacs-directory)))
+;; print buffer name
 (global-set-key (kbd "M-p") (lambda () (interactive) (message buffer-file-name)))
+
+(global-set-key (kbd "C-c M-r") 'revert-buffer)
+
+(global-set-key (kbd "C-M-`") 'whitespace-cleanup)
+(global-set-key (kbd "C-c s") 'string-insert-rectangle)
+(global-set-key (kbd "C-c C-!") 'shell-command-on-region-replace)
+;; indent whole buffer
 (global-set-key (kbd "C-M-|") (lambda () (interactive)
                                 (save-excursion
                                   (indent-region (point-min) (point-max)))))
-(global-set-key (kbd "C-M-`") 'whitespace-cleanup)
-(global-set-key (kbd "C-c M-r") 'revert-buffer)
-(global-set-key (kbd "C-c s") 'string-insert-rectangle)
-(global-set-key (kbd "C-c C-!") 'shell-command-on-region-replace)
 
 (global-set-key (kbd "C-c M-e") 'eshell)
 (global-set-key (kbd "C-c M-t") (lambda () (interactive) (ansi-term "/bin/bash")))
