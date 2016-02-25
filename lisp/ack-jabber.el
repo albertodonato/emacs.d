@@ -17,7 +17,7 @@
       jabber-show-offline-contacts nil)
 
 (setq jabber-account-list
-      `(("alberto.donato@gmail.com")
+      `((user-email-address)
         (:network-server . "talk.google.com")
         (:password . ,(secrets-get-secret "Login" "jabber-ack"))))
 
