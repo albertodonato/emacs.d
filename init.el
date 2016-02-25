@@ -21,6 +21,7 @@
 (require 'ack-modes)
 (require 'ack-bindings)
 (require 'ack-irc)
+(require 'ack-jabber)
 (require 'ack-automode)
 (require 'ack-appearance)
 (require 'ack-python)

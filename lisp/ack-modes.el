@@ -5,9 +5,13 @@
 
 ;;; Code:
 
+(require 'autoinsert)
 (require 'secrets)
 (require 'ox-reveal)
 (require 'whitespace)
+
+(require 'compile)
+(setq compilation-scroll-output 'first-error)
 
 (require 'ag)
 (setq ag-highlight-search t
@@ -35,5 +39,4 @@
 (setq pcache-directory (file-path-in-cache-dir "pcache"))
 
 (provide 'ack-modes)
-
 ;;; ack-modes.el ends here
