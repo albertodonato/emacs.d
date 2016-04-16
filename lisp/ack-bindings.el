@@ -11,6 +11,8 @@
 
 (global-set-key (kbd "C-c M-r") 'revert-buffer)
 
+(global-set-key (kbd "C-x M-k") 'kill-matching-buffers)
+
 (global-set-key (kbd "C-M-`") 'whitespace-cleanup)
 (global-set-key (kbd "C-c s") 'string-insert-rectangle)
 (global-set-key (kbd "C-c C-!") 'shell-command-on-region-replace)
