@@ -7,7 +7,7 @@
 
 (setq inhibit-startup-message t
       initial-scratch-message nil
-      inhibit-startup-echo-area-message "ack")
+      inhibit-startup-echo-area-message t)
 (setq initial-frame-alist '((fullscreen . maximized)))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
