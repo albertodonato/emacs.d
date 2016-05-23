@@ -33,11 +33,11 @@
  '(diff-hunk-header ((t (:foreground "LightSkyBlue" :background "Black"))))
  '(diff-file-header ((t (:foreground "Yellow" :background "Black"))))
 
- '(flymake-errline ((t (:foreground "White" :background "DarkRed"))))
- '(flymake-warnline ((t (:foreground "White" :background "DarkBlue"))))
+ '(flymake-errline ((t (:underline (:color "Red" :style wave)))))
+ '(flymake-warnline ((t (:underline (:color "Blue" :style wave)))))
 
- '(flycheck-error ((t (:foreground "White" :background "DarkRed"))))
- '(flycheck-warning ((t (:foreground "White" :background "DarkBlue"))))
+ '(flycheck-error ((t (:underline (:color "Red" :style wave)))))
+ '(flycheck-warning ((t (:underline (:color "Blue" :style wave)))))
  '(flycheck-fringe-error ((t (:foreground "White" :background "DarkRed"))))
  '(flycheck-fringe-warning ((t (:foreground "White" :background "DarkBlue"))))
 
