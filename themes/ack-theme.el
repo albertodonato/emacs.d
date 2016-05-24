@@ -34,12 +34,12 @@
  '(diff-file-header ((t (:foreground "Yellow" :background "Black"))))
 
  '(flymake-errline ((t (:underline (:color "Red" :style wave)))))
- '(flymake-warnline ((t (:underline (:color "Blue" :style wave)))))
+ '(flymake-warnline ((t (:underline (:color "DeepSkyBlue" :style wave)))))
 
  '(flycheck-error ((t (:underline (:color "Red" :style wave)))))
- '(flycheck-warning ((t (:underline (:color "Blue" :style wave)))))
- '(flycheck-fringe-error ((t (:foreground "White" :background "DarkRed"))))
- '(flycheck-fringe-warning ((t (:foreground "White" :background "DarkBlue"))))
+ '(flycheck-warning ((t (:underline (:color "DeepSkyBlue" :style wave)))))
+ '(flycheck-fringe-error ((t (:foreground "White" :background "Red"))))
+ '(flycheck-fringe-warning ((t (:foreground "White" :background "Blue"))))
 
  '(jedi:highlight-function-argument ((t (:foreground "PaleGreen"))))
 
