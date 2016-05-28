@@ -12,24 +12,24 @@
     (find-alternate-file
      (concat "/sudo:root@localhost:" buffer-file-name))))
 
-(defun kill-all-file-buffers ()
+(defun ack/kill-all-file-buffers ()
   "Kill all buffers that visit a file."
   (interactive)
   (mapc
    (lambda (buf) (when (buffer-file-name buf) (kill-buffer buf)))
    (buffer-list)))
 
-(defun shell-command-on-region-replace (command)
+(defun ack/shell-command-on-region-replace (command)
   "Execute COMMAND with region as input and replace it with output."
   (interactive "sShell command: ")
   (shell-command-on-region (region-beginning) (region-end) command t t))
 
-(defun python-insert-pdb-statement ()
+(defun ack/python-insert-pdb-statement ()
   "Insert pdb statement on the line at point."
   (interactive)
-    (insert-text-and-reindent "import pdb; pdb.set_trace()"))
+    (ack/insert-text-and-reindent "import pdb; pdb.set_trace()"))
 
-(defun insert-text-and-reindent (text)
+(defun ack/insert-text-and-reindent (text)
   "Insert TEXT on a new line at point and reindent."
   (interactive)
   (let ((beg (line-beginning-position)))
@@ -37,7 +37,7 @@
     (insert (concat text "\n"))
     (indent-region beg (line-end-position))))
 
-(defun ag-compile-goto-error-and-kill-search-buffer ()
+(defun ack/ag-compile-goto-error-and-kill-search-buffer ()
   "Jump to the error at point and kill the search buffer."
   (interactive)
   (let ((buf (current-buffer)))

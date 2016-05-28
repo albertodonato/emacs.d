@@ -15,7 +15,7 @@
 
 (global-set-key (kbd "C-M-`") 'whitespace-cleanup)
 (global-set-key (kbd "C-c s") 'string-insert-rectangle)
-(global-set-key (kbd "C-c C-!") 'shell-command-on-region-replace)
+(global-set-key (kbd "C-c C-!") 'ack/shell-command-on-region-replace)
 ;; indent whole buffer
 (global-set-key (kbd "C-M-|") (lambda () (interactive)
                                 (save-excursion
@@ -41,7 +41,8 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this-dwim)
 
 (with-eval-after-load 'ag-mode
-  (define-key ag-mode-map (kbd "<C-return>") 'ag-compile-goto-error-and-kill-search-buffer))
+  (define-key ag-mode-map (kbd "<C-return>")
+    'ack/ag-compile-goto-error-and-kill-search-buffer))
 
 (with-eval-after-load 'go-mode
   (define-key go-mode-map (kbd "M-g f") 'gofmt))
@@ -58,7 +59,7 @@
 
 (with-eval-after-load 'python
   (define-key python-mode-map (kbd "C-c x") 'jedi-direx:pop-to-buffer)
-  (define-key python-mode-map (kbd "C-c p p") 'python-insert-pdb-statement))
+  (define-key python-mode-map (kbd "C-c p p") 'ack/python-insert-pdb-statement))
 
 (provide 'ack-bindings)
 ;;; ack-bindings.el ends here
