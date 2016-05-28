@@ -8,6 +8,7 @@
 (setq inhibit-startup-message t
       initial-scratch-message nil
       inhibit-startup-echo-area-message t)
+
 (setq initial-frame-alist '((fullscreen . maximized)))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -15,6 +16,8 @@
 (setq frame-title-format
       '("Emacs " emacs-version ": "
         (:eval (if (buffer-file-name) (abbreviate-file-name (buffer-file-name)) "%b"))))
+
+(setq-default indicate-empty-lines t)
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -26,9 +29,11 @@
 (which-function-mode t)
 (show-paren-mode t)
 
-;; theme configuration
+;; themes configuration
 (setq custom-theme-directory (concat user-emacs-directory "themes")
-      custom-safe-themes t)
+      custom-safe-themes t
+      frame-background-mode 'dark)
+
 (load-theme 'ack t)
 
 (provide 'ack-appearance)
