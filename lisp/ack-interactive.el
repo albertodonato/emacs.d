@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-(defun sudo ()
+(defun ack/sudo ()
   "Use TRAMP to `sudo' the current buffer."
   (interactive)
   (when buffer-file-name
@@ -23,11 +23,6 @@
   "Execute COMMAND with region as input and replace it with output."
   (interactive "sShell command: ")
   (shell-command-on-region (region-beginning) (region-end) command t t))
-
-(defun ack/python-insert-pdb-statement ()
-  "Insert pdb statement on the line at point."
-  (interactive)
-    (ack/insert-text-and-reindent "import pdb; pdb.set_trace()"))
 
 (defun ack/insert-text-and-reindent (text)
   "Insert TEXT on a new line at point and reindent."

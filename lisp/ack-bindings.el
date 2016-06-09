@@ -58,8 +58,7 @@
   (define-key yaml-mode-map (kbd "C-m") 'newline-and-indent))
 
 (with-eval-after-load 'python
-  (define-key python-mode-map (kbd "C-c x") 'jedi-direx:pop-to-buffer)
-  (define-key python-mode-map (kbd "C-c p p") 'ack/python-insert-pdb-statement))
+  (define-key python-mode-map (kbd "C-c x") 'jedi-direx:pop-to-buffer))
 
 (provide 'ack-bindings)
 ;;; ack-bindings.el ends here
