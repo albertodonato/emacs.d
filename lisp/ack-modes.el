@@ -15,7 +15,9 @@
 
 (require 'ag)
 (setq ag-highlight-search t
-      ag-arguments '("--line-number" "--smart-case" "--nogroup" "--column" "--stats" "-A5" "-B5" "--"))
+      ag-group-matches t
+      ag-context-lines 3
+      ag-search-stats t)
 
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
