@@ -1,7 +1,7 @@
 ;;; ack-solarized-theme-el --- Additional customization over the solarized theme.
 
 ;;; Commentary:
-;;;   My changes over the solarized dark theme.
+;;;   My changes on top of the solarized dark theme.
 
 ;;; Code:
 
@@ -13,6 +13,11 @@
                          :background "Black" :foreground "White"))))
  '(fringe ((t (:background "Gray10"))))
  '(hl-line ((t (:background "Gray20"))))
+
+ '(linum ((t (:background "Black"))))
+
+ '(diff-header ((t (:background "Black"))))
+ '(diff-file-header ((t (:background "Black"))))
  )
 
 (provide-theme 'ack-solarized)
