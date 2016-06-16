@@ -17,7 +17,7 @@
  '(linum ((t (:background "Black"))))
 
  '(diff-header ((t (:background "Black"))))
- '(diff-file-header ((t (:background "Black"))))
+ '(diff-file-header ((t (:background "Black" :foreground "#b58900"))))
  )
 
 (provide-theme 'ack-solarized)
