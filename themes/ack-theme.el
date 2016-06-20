@@ -26,12 +26,12 @@
  '(eshell-prompt ((t (:foreground "Green" :weight normal))))
  '(success ((t (:foreground "Green"))))
 
- '(diff-added ((t (:foreground "Green" :background "Black"))))
- '(diff-removed ((t (:foreground "Red" :background "Black"))))
- '(diff-changed ((t (:foreground "LightBlue" :background "Black"))))
- '(diff-header ((t (:foreground "LightSkyBlue" :background "Black"))))
- '(diff-hunk-header ((t (:foreground "LightSkyBlue" :background "Black"))))
- '(diff-file-header ((t (:foreground "Yellow" :background "Black"))))
+ '(diff-added ((t (:inherit 'diff-context :foreground "Green"))))
+ '(diff-removed ((t (:inherit 'diff-context :foreground "Red"))))
+ '(diff-changed ((t (:inherit 'diff-context :foreground "LightBlue"))))
+ '(diff-header ((t (:inherit 'diff-context :foreground "LightSkyBlue"))))
+ '(diff-hunk-header ((t (:inherit 'diff-context :foreground "LightSkyBlue"))))
+ '(diff-file-header ((t (:inherit 'diff-context :foreground "Yellow"))))
 
  '(flymake-errline ((t (:underline (:color "Red" :style wave)))))
  '(flymake-warnline ((t (:underline (:color "DeepSkyBlue" :style wave)))))
@@ -46,7 +46,7 @@
  '(erc-current-nick-face ((t (:foreground "Yellow"))))
  '(erc-input-face ((t (:foreground "Gray"))))
  '(erc-my-nick-face ((t (:foreground "LightGray"))))
- '(erc-prompt-face ((t (:background "Black" :foreground "DarkGray"))))
+ '(erc-prompt-face ((t (:inherit 'erc-default-face :foreground "DarkGray"))))
  '(erc-timestamp-face ((t (:foreground "DimGray"))))
  )
 
