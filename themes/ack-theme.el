@@ -16,15 +16,18 @@
  '(region ((t (:background "Gray40"))))
  '(hl-line ((t (:background "Gray20"))))
  '(font-lock-warning-face ((t (:foreground "Yellow"))))
+ '(eshell-prompt ((t (:foreground "Green" :weight normal))))
+ '(success ((t (:foreground "Green"))))
+
  '(compilation-error ((t (:foreground "Red"))))
  '(compilation-line-number ((t (:foreground "Yellow"))))
  '(compilation-column-number ((t (:foreground "Red"))))
+
  '(match ((t (:foreground "Yellow" :underline "Yellow" :weight bold))))
  '(isearch ((t (:background "ForestGreen"))))
+
  '(ido-first-match ((t (:foreground "PaleGreen"))))
  '(ido-only-match ((t (:foreground "PaleGreen"))))
- '(eshell-prompt ((t (:foreground "Green" :weight normal))))
- '(success ((t (:foreground "Green"))))
 
  '(diff-added ((t (:inherit 'diff-context :foreground "Green"))))
  '(diff-removed ((t (:inherit 'diff-context :foreground "Red"))))
@@ -42,12 +45,6 @@
  '(flycheck-fringe-warning ((t (:foreground "White" :background "Blue"))))
 
  '(jedi:highlight-function-argument ((t (:foreground "PaleGreen"))))
-
- '(erc-current-nick-face ((t (:foreground "Yellow"))))
- '(erc-input-face ((t (:foreground "Gray"))))
- '(erc-my-nick-face ((t (:foreground "LightGray"))))
- '(erc-prompt-face ((t (:inherit 'erc-default-face :foreground "DarkGray"))))
- '(erc-timestamp-face ((t (:foreground "DimGray"))))
  )
 
 (provide-theme 'ack)
