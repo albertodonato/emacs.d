@@ -13,6 +13,7 @@
                          :background "Black" :foreground "Gray80"))))
  '(fringe ((t (:background "Gray10"))))
  '(hl-line ((t (:background "Gray20"))))
+ '(error ((t (:foreground "Red1"))))
 
  '(linum ((t (:background "Black"))))
 
