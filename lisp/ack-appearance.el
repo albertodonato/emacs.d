@@ -30,13 +30,14 @@
 (show-paren-mode t)
 
 ;; themes configuration
+(require 'color-theme)
 (require 'color-theme-solarized)
 
 (setq custom-theme-directory (concat user-emacs-directory "themes")
       custom-safe-themes t
       frame-background-mode 'dark)
 
-(load-theme 'solarized-dark t)
+(load-theme 'solarized t)
 (load-theme 'ack-solarized t)
 (load-theme 'ack-common t)
 
