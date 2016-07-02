@@ -23,6 +23,9 @@
 (put 'narrow-to-page   'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
+;; use y/n to answer questions
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; use UTF-8 when pasting
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
