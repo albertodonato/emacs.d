@@ -9,8 +9,7 @@
 
 (custom-theme-set-faces
  'ack-solarized
- '(default ((t (:inherit nil :family "Ubuntu Mono" :height 102
-                         :background "Black" :foreground "Gray80"))))
+ '(default ((t (:background "Black" :foreground "Gray80"))))
  '(fringe ((t (:background "Gray10"))))
  '(hl-line ((t (:background "Gray20"))))
  '(error ((t (:foreground "Red1" :inverse-video nil))))
