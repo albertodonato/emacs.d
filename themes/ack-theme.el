@@ -9,9 +9,9 @@
 
 (custom-theme-set-faces
  'ack
- '(default ((t (:inherit nil :family "Ubuntu Mono" :height 102
-                         :background "Black" :foreground "White"))))
- 
+ '(default ((t (:background "Black" :foreground "White"))))
+
+ '(fringe ((t (:background "Gray10"))))
  '(cursor ((t (:foreground "DarkGray" :background "White"))))
  '(region ((t (:background "Gray40"))))
  '(hl-line ((t (:background "Gray20"))))
