@@ -9,17 +9,10 @@
 
 (custom-theme-set-faces
  'ack-solarized
- '(default ((t (:background "Black" :foreground "Gray80"))))
- '(fringe ((t (:background "Gray10"))))
- '(hl-line ((t (:background "Gray20"))))
- '(error ((t (:foreground "Red1" :inverse-video nil))))
-
- '(linum ((t (:background "Black"))))
-
- '(diff-header ((t (:background "Black"))))
- '(diff-file-header ((t (:background "Black" :foreground "#b58900"))))
- '(diff-added ((t (:background "Black"))))
- '(diff-removed ((t (:background "Black"))))
+'(error ((t (:foreground "Red1" :inverse-video nil))))
+'(diff-file-header ((t (:background nil))))
+ '(diff-added ((t (:background nil))))
+ '(diff-removed ((t (:background nil))))
 
  '(jedi:highlight-function-argument ((t (:foreground "#2aa198"))))
  )
