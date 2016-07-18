@@ -9,8 +9,9 @@
 
 (custom-theme-set-faces
  'ack-solarized
-'(error ((t (:foreground "Red1" :inverse-video nil))))
-'(diff-file-header ((t (:background nil))))
+ '(error ((t (:foreground "Red1" :inverse-video nil))))
+
+ '(diff-file-header ((t (:background nil))))
  '(diff-added ((t (:background nil))))
  '(diff-removed ((t (:background nil))))
 
