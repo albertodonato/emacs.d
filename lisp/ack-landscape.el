@@ -9,7 +9,7 @@
 
 (setq ls-code-root (concat (file-name-as-directory (getenv "HOME")) "canonical/src")
       ls-shell-source-file "~/system/source/landscape"
-      ls-lxc-container-name "landscape-trusty")
+      ls-lxc-container-name "landscape-xenial")
 
 (provide 'ack-landscape)
 ;;; ack-landscape.el ends here
