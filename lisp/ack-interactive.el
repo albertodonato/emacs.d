@@ -5,6 +5,8 @@
 
 ;;; Code:
 
+(require 'compile)
+
 (defun ack/sudo ()
   "Use TRAMP to `sudo' the current buffer."
   (interactive)
