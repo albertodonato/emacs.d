@@ -11,6 +11,7 @@
  'ack-solarized
 
  '(jedi:highlight-function-argument ((t (:foreground "#2aa198"))))
+ '(which-func ((t (:foreground "#b58900"))))
  )
 
 (provide-theme 'ack-solarized)
