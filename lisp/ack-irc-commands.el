@@ -19,6 +19,8 @@
 (ack/def-erc-message-cmd "TABLERESET" "Reset table and send LINE." "┬──┬◡ﾉ(° -°ﾉ)")
 (ack/def-erc-message-cmd "TARMAC" "Ask the bot to build tarmac job."
                          "sweetie: build tarmac now")
+(ack/def-erc-message-cmd "BETA" "Send a message to members of beta squad"
+                         "bogdana, tealeg, sparkiegeek, Ursinha")
 
 (provide 'ack-irc-commands)
 ;;; ack-irc-commands.el ends here
