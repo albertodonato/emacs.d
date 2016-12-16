@@ -71,7 +71,7 @@
 ;; network and user configuration
 (setq erc-user-full-name "ack"
       erc-email-userid "ack"
-      erc-keywords '("landscape-crew" "alberto" "beta"))
+      erc-keywords '("alberto" "gamma" "landscape-crew"))
 
 (add-hook 'erc-view-log-mode-hook 'turn-on-auto-revert-tail-mode)
 
