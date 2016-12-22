@@ -26,6 +26,8 @@
  '(match ((t (:foreground "Yellow" :underline "Yellow" :weight bold))))
  '(isearch ((t (:background "ForestGreen"))))
 
+ '(font-lock-doc-face ((t (:inherit font-lock-string-face :slant italic))))
+
  '(ido-first-match ((t (:foreground "PaleGreen"))))
  '(ido-only-match ((t (:foreground "PaleGreen"))))
 

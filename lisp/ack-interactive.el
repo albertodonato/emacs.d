@@ -41,5 +41,15 @@
     (compile-goto-error)
     (kill-buffer buf)))
 
+(defun ack/get-faces-at-point ()
+  "Print out font faces at point."
+  (interactive)
+  (message "Faces at point: %s"
+           (remq nil
+                 (list
+                  (get-char-property (point) 'read-face-name)
+                  (get-char-property (point) 'face)
+                  (plist-get (text-properties-at (point)) 'face)))))
+
 (provide 'ack-interactive)
 ;;; ack-interactive.el ends here

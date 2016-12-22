@@ -37,8 +37,7 @@
       custom-safe-themes t
       frame-background-mode 'dark)
 
-(load-theme 'solarized t)
-(load-theme 'ack-solarized t)
+(load-theme 'ack t)
 (load-theme 'ack-common t)
 
 (provide 'ack-appearance)
