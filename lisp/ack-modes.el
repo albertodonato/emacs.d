@@ -39,7 +39,7 @@
 (setq pcache-directory (file-path-in-cache-dir "pcache"))
 
 (require 'projectile)
-(projectile-global-mode)
+(projectile-mode)
 (setq projectile-known-projects-file (file-path-in-cache-dir "projectile-bookmarks.eld"))
 
 (provide 'ack-modes)
