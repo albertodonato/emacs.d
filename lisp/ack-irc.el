@@ -68,10 +68,10 @@
 (setq erc-timestamp-format "[%H:%M] "
       erc-timestamp-only-if-changed-flag nil)
 
-;; network and user configuration
+;; user configuration
 (setq erc-user-full-name "ack"
       erc-email-userid "ack"
-      erc-keywords '("alberto" "gamma" "landscape-crew"))
+      erc-keywords '("alberto" "beta" "landscape-crew"))
 
 (add-hook 'erc-view-log-mode-hook 'turn-on-auto-revert-tail-mode)
 

@@ -14,9 +14,8 @@
 ;; YAML files
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
-;; JavaScript files
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx$" . js2-mode))
+;; React JSX files
+(add-to-list 'auto-mode-alist '("\\.jsx$" . js-jsx-mode))
 ;; Twisted tac files
 (add-to-list 'auto-mode-alist '("\\.tac$" . python-mode))
 ;; Zope files
