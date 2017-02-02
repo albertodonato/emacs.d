@@ -25,6 +25,7 @@
 (global-set-key (kbd "C-c M-t") (lambda () (interactive) (ansi-term "/bin/bash")))
 
 (global-set-key (kbd "C-c n") 'linum-mode)
+(global-set-key (kbd "C-c w") 'whitespace-mode)
 
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
