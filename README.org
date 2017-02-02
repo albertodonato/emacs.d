@@ -1,0 +1,10 @@
+* ~ack/.emacs.d (my own Emacs config)
+
+This is my Emacs configuration (including custom theme).
+
+Some code is taken/inspired from various places around the internet, mainly the following:
+
+- [[http://www.emacswiki.org/][EmacsWiki]]
+- [[http://emacsrocks.com/][Emacs Rocks!]]
+- [[http://whattheemacsd.com/][What the .emacs.d!?]]
+- [[https://github.com/tealeg/dot-emacs-dot-d][Tealeg's Emacs configuration]]
