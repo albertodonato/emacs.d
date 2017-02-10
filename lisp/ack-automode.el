@@ -21,6 +21,8 @@
 ;; Zope files
 (add-to-list 'auto-mode-alist '("\\.zcml$" . xml-mode))
 (add-to-list 'auto-mode-alist '("\\.pt$" . html-mode))
+;; Jinja2 files
+(add-to-list 'auto-mode-alist '("\\.j2$" . jinja2-mode))
 ;; ERC log files
 (add-to-list 'auto-mode-alist
              (cons (format "%s/\.*\\.txt$" (regexp-quote
