@@ -24,7 +24,6 @@
 (scroll-bar-mode -1)
 (winner-mode t)
 
-(global-font-lock-mode t)
 (global-hl-line-mode t)
 (column-number-mode t)
 (which-function-mode t)

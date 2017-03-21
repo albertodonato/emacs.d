@@ -16,8 +16,7 @@
 (require 'ag)
 (setq ag-highlight-search t
       ag-group-matches t
-      ag-context-lines 3
-      ag-search-stats t)
+      ag-context-lines 3)
 
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
