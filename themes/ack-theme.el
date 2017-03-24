@@ -9,7 +9,7 @@
 
 (custom-theme-set-faces
  'ack
- '(default ((t (:background "Black" :foreground "White"))))
+ '(default ((t (:background "#232729" :foreground "White"))))
 
  '(fringe ((t (:background "Gray10"))))
  '(cursor ((t (:foreground "DarkGray" :background "White"))))
