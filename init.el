@@ -26,7 +26,6 @@
 (require 'ack-automode)
 (require 'ack-appearance)
 (require 'ack-python)
-(require 'ack-landscape)
 
 (provide 'init)
 ;;; init.el ends here
