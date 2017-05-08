@@ -51,6 +51,12 @@
 
 (setq erc-notifications-icon "/usr/share/icons/hicolor/scalable/apps/emacs-snapshot.svg")
 
+(setq erc-button-url-regexp
+      (concat
+       "\\(www\\.\\|\\(s?https?\\|ftp\\|file\\|gopher\\|news\\|telnet\\|wais\\|mailto\\):\\)"
+       "\\(//[-a-zA-Z0-9_.]+:[0-9]*\\)?"
+       "[-a-zA-Z0-9_=!?#$@~`%&*+\\/:;.,]+[-a-zA-Z0-9_=#$@~`%&*+\\/]"))
+
 (setq erc-pal-highlight-type 'all)
 (setq erc-pcomplete-nick-postfix ",")
 (setq erc-prompt
