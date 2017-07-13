@@ -13,13 +13,17 @@
 (require 'compile)
 (setq compilation-scroll-output 'first-error)
 
+(require 'go-guru)
+(add-hook 'go-mode-hook #'go-guru-hl-identifier-mode)
+(setq go-guru-command "/home/ack/go/bin/guru")
+
 (require 'ag)
 (setq ag-highlight-search t
       ag-group-matches t
       ag-context-lines 3)
 
 (require 'emmet-mode)
-(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'sgml-mode-hook #'emmet-mode)
 
 (require 'sgml-mode)
 ;; reindent after tag is removed
