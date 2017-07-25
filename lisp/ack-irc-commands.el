@@ -16,7 +16,7 @@
      (erc-send-message (concat ,prefix (string-join line " "))))))
 
 (ack/def-erc-message-cmd "TABLEFLIP" "Flip table and send LINE." "(╯°□°）╯︵ ┻━┻ ")
-(ack/def-erc-message-cmd "TABLERESET" "Reset table and send LINE." "┬──┬◡ﾉ(° -°ﾉ)")
+(ack/def-erc-message-cmd "TABLERESET" "Reset table and send LINE." "┳━┳ ノ( ゜-゜ノ)")
 
 (provide 'ack-irc-commands)
 ;;; ack-irc-commands.el ends here

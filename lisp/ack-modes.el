@@ -45,5 +45,7 @@
 (projectile-mode)
 (setq projectile-known-projects-file (file-path-in-cache-dir "projectile-bookmarks.eld"))
 
+(require 'go-projectile)
+
 (provide 'ack-modes)
 ;;; ack-modes.el ends here
