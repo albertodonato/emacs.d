@@ -47,5 +47,7 @@
 
 (require 'go-projectile)
 
+(require 'magit)
+
 (provide 'ack-modes)
 ;;; ack-modes.el ends here

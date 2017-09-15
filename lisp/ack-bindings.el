@@ -41,6 +41,8 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this-dwim)
 
+(global-set-key (kbd "C-x g") 'magit-status)
+
 (with-eval-after-load 'ag-mode
   (define-key ag-mode-map (kbd "<C-return>")
     'ack/ag-compile-goto-error-and-kill-search-buffer))

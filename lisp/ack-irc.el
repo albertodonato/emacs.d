@@ -51,6 +51,27 @@
 
 (setq erc-notifications-icon "/usr/share/icons/hicolor/scalable/apps/emacs-snapshot.svg")
 
+;; override the original erc-notifications-notify-on-match to include channel
+(defcustom erc-notifications-include-channel nil
+  "Include channel name in notifications."
+  :group 'erc-notifications
+  :type 'bool)
+
+(setq erc-notifications-include-channel t)
+
+(defun erc-notifications-notify-on-match (match-type nickuserhost msg)
+  (when (eq match-type 'current-nick)
+    (let ((nick (nth 0 (erc-parse-user nickuserhost))))
+      (unless (or (string-match-p "^Server:" nick)
+                  (when (boundp 'erc-track-exclude)
+                    (member nick erc-track-exclude)))
+        (when erc-notifications-include-channel
+          (setq nick (format "%s (%s)" nick (buffer-name))))
+        (erc-notifications-notify nick msg)))))
+;; -- end override
+
+
+;; don't include parenthesis in the url
 (setq erc-button-url-regexp
       (concat
        "\\(www\\.\\|\\(s?https?\\|ftp\\|file\\|gopher\\|news\\|telnet\\|wais\\|mailto\\):\\)"
