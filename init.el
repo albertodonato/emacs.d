@@ -11,6 +11,7 @@
 (add-to-list 'load-path (concat user-emacs-directory "lisp"))
 (add-to-list 'load-path (concat user-emacs-directory "extra"))
 
+(require 'ack-server)
 (require 'ack-init)
 (require 'ack-custom)
 (require 'ack-private)
