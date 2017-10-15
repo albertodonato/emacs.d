@@ -7,6 +7,7 @@
 
 (require 'python)
 (require 'yaml-mode)
+(require 'po-mode)
 (require 'js)
 (require 'erc-log)
 (require 'erc-view-log)
@@ -21,6 +22,8 @@
 ;; Zope files
 (add-to-list 'auto-mode-alist '("\\.zcml$" . xml-mode))
 (add-to-list 'auto-mode-alist '("\\.pt$" . html-mode))
+;; PO files
+(add-to-list 'auto-mode-alist'("\\.po\\'\\|\\.po\\." . po-mode))
 ;; Jinja2 files
 (add-to-list 'auto-mode-alist '("\\.j2$" . jinja2-mode))
 ;; ERC log files
