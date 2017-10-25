@@ -17,7 +17,7 @@
 (add-hook 'python-mode-hook
           (lambda ()
             (setq jedi:tooltip-method nil
-                  jedi:get-in-function-call-delay 500
+                  jedi:get-in-function-call-delay 100
                   jedi:server-command (list (format "%s/%s/bin/jediepcserver"
                                                     python-environment-directory
                                                     python-environment-default-root-name)))
