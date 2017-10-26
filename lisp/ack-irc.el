@@ -51,7 +51,8 @@
 
 (setq erc-notifications-icon "/usr/share/icons/hicolor/scalable/apps/emacs-snapshot.svg")
 
-;; override the original erc-notifications-notify-on-match to include channel
+;; override erc-notifications-notify-on-match to include channel
+;; override erc-notification-notify to keep notifications per-channel/user
 (defcustom erc-notifications-include-channel nil
   "Include channel name in notifications."
   :group 'erc-notifications
@@ -68,6 +69,18 @@
         (when erc-notifications-include-channel
           (setq nick (format "%s (%s)" nick (buffer-name))))
         (erc-notifications-notify nick msg)))))
+
+(defun erc-notifications-notify (nick msg)
+  "Notify that NICK send some MSG.
+This will replace the last notification sent with this function."
+  (dbus-ignore-errors
+    (setf (alist-get nick erc-notifications-last-notification nil t 'equal)
+          (notifications-notify
+           :bus erc-notifications-bus
+	   :title (xml-escape-string nick)
+           :body (xml-escape-string msg)
+           :replaces-id (alist-get nick erc-notifications-last-notification nil nil 'equal)
+           :app-icon erc-notifications-icon))))
 ;; -- end override
 
 
