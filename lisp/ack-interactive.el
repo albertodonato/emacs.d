@@ -51,5 +51,12 @@
                   (get-char-property (point) 'face)
                   (plist-get (text-properties-at (point)) 'face)))))
 
+(defun ack/toggle-window-dedicated ()
+  "Toggle dedicated status for current window."
+  (interactive)
+  (let ((window (selected-window)))
+    (set-window-dedicated-p window (not (window-dedicated-p window)))
+    (message "Toggle window dedicated to %S" (window-dedicated-p window))))
+
 (provide 'ack-interactive)
 ;;; ack-interactive.el ends here

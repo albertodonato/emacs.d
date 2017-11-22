@@ -27,6 +27,8 @@
 (global-set-key (kbd "C-c n") 'linum-mode)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
+(global-set-key (kbd "C-c t") 'ack/toggle-window-dedicated)
+
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
 (global-set-key (kbd "C-c C-S-a") 'ag-project-regexp)
