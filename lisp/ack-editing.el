@@ -72,6 +72,7 @@
 (setq ac-comphist-file "~/.emacs-saves/auto-complete.dat")
 
 (require 'flycheck)
+(setq flycheck-checker-error-threshold 2000)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
 (require 'smartparens)
