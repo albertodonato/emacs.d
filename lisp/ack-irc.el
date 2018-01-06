@@ -39,7 +39,7 @@
       erc-server-reconnect-attempts 5
       erc-keyword-highlight-type 'all)
 
-(setq erc-track-position-in-mode-line t
+(setq erc-track-position-in-mode-line nil
       erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
                                 "324" "329" "332" "333" "353" "477")
       erc-track-exclude-server-buffer t
