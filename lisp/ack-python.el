@@ -12,7 +12,8 @@
 
 (setq python-environment-directory "~/virtualenv"
       python-environment-default-root-name "emacs"
-      python-shell-interpreter "ipython")
+      python-shell-interpreter "ipython"
+      python-indent-offset 4)
 
 (add-hook 'python-mode-hook
           (lambda ()
