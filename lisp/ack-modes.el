@@ -48,6 +48,7 @@
 (require 'go-projectile)
 
 (require 'magit)
+(magit-add-section-hook 'magit-status-sections-hook 'magit-insert-modules nil t)
 
 (provide 'ack-modes)
 ;;; ack-modes.el ends here
