@@ -22,7 +22,7 @@
                                   (indent-region (point-min) (point-max)))))
 
 (global-set-key (kbd "C-c M-e") 'eshell)
-(global-set-key (kbd "C-c M-t") (lambda () (interactive) (ansi-term "/bin/bash")))
+(global-set-key (kbd "C-c M-t") 'shell)
 
 (global-set-key (kbd "C-c n") 'linum-mode)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
