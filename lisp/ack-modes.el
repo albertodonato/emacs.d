@@ -50,5 +50,8 @@
 (require 'magit)
 (magit-add-section-hook 'magit-status-sections-hook 'magit-insert-modules nil t)
 
+(require 'bash-completion)
+(bash-completion-setup)
+
 (provide 'ack-modes)
 ;;; ack-modes.el ends here
