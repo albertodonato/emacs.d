@@ -71,6 +71,15 @@
 (ac-config-default)
 (setq ac-comphist-file "~/.emacs-saves/auto-complete.dat")
 
+(require 'lsp-mode)
+(require 'lsp-ui)
+(require 'lsp-pyls)
+(add-hook 'lsp-ui-mode-hook
+          (progn
+            (setq lsp-ui-doc-position 'at-point
+                  lsp-pyls-plugins-pylint-enabled nil)
+            ))
+
 (require 'flycheck)
 (setq flycheck-checker-error-threshold 2000)
 (setq flycheck-python-flake8-executable "python3")
