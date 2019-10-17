@@ -10,11 +10,10 @@
 (setq package-user-dir "~/.emacs-packages"
       package-gnupghome-dir (expand-file-name "gnupg" package-user-dir)
       package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")
                          ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ("org" . "http://orgmode.org/elpa/")
-                         ("elpy" . "http://jorgenschaefer.github.io/packages/")))
+                         ("org" . "http://orgmode.org/elpa/")))
+
 (package-initialize)
 (package-install-selected-packages)
 
