@@ -8,7 +8,6 @@
 (require 'secrets)
 (require 'erc)
 (require 'erc-services)
-(require 'tls)
 (require 'erc-log)
 (require 'erc-view-log)
 (require 'erc-desktop-notifications)
@@ -114,7 +113,7 @@ This will replace the last notification sent with this function."
 ;; user configuration
 (setq erc-user-full-name "ack"
       erc-email-userid "ack"
-      erc-keywords '("alberto.donato" "albertodonato"))
+      erc-keywords '("alberto.donato" "albertodonato" "maas-crew"))
 
 (add-hook 'erc-view-log-mode-hook 'turn-on-auto-revert-tail-mode)
 
