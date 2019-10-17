@@ -74,6 +74,10 @@
 (require 'lsp-mode)
 (require 'lsp-ui)
 (require 'lsp-pyls)
+(add-hook 'lsp-mode-hook
+          (progn
+            (setq lsp-auto-guess-root t)
+            ))
 (add-hook 'lsp-ui-mode-hook
           (progn
             (setq lsp-ui-doc-position 'at-point

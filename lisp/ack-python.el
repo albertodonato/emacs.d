@@ -28,6 +28,7 @@
           (lambda ()
             (jedi-direx:setup)
             (setq jedi:complete-on-dot t)))
+(add-hook 'python-mode-hook #'lsp)
 
 (provide 'ack-python)
 ;;; ack-python.el ends here
