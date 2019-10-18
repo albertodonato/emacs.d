@@ -86,6 +86,9 @@
 
 (require 'flycheck)
 (setq flycheck-checker-error-threshold 2000)
+(setq flycheck-python-flake8-executable "python3")
+(setq flycheck-python-pylint-executable "python3")
+(setq flycheck-python-pycompile-executable "python3")
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
 (require 'smartparens)
