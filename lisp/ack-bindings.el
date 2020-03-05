@@ -53,6 +53,9 @@
 (with-eval-after-load 'go-mode
   (define-key go-mode-map (kbd "M-g f") 'gofmt))
 
+(with-eval-after-load 'lsp-mode
+  (define-key lsp-mode-map (kbd "M-g f") 'lsp-format-buffer))
+
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "C-c C-q") 'wdired-change-to-wdired-mode))
 
