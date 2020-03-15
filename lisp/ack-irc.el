@@ -13,6 +13,7 @@
 (require 'erc-desktop-notifications)
 (require 'erc-hl-nicks)
 (require 'znc)
+(require 'emojify)
 
 (setq erc-modules
       '(autojoin button completion dcc fill
@@ -116,6 +117,7 @@ This will replace the last notification sent with this function."
       erc-keywords '("alberto.donato" "albertodonato" "maas-crew"))
 
 (add-hook 'erc-view-log-mode-hook 'turn-on-auto-revert-tail-mode)
+(add-hook 'erc-mode-hook #'emojify-mode)
 
 (let* ((username "ack")
        (password (secrets-get-secret "Login" "ZNC-ack"))
