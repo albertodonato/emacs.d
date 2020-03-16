@@ -78,6 +78,9 @@
 (setq erc-timestamp-format "[%H:%M] "
       erc-timestamp-only-if-changed-flag nil)
 
+(setq erc-log-matches-types-alist '((keyword . "ERC Notifications") (current-nick . "ERC Notifications")))
+(setq erc-log-matches-flag t)
+
 ;; user configuration
 (setq erc-user-full-name "ack"
       erc-email-userid "ack"
