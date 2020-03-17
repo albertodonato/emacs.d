@@ -53,8 +53,5 @@
 (require 'bash-completion)
 (bash-completion-setup)
 
-(require 'emojify)
-(add-hook 'after-init-hook #'global-emojify-mode)
-
 (provide 'ack-modes)
 ;;; ack-modes.el ends here
