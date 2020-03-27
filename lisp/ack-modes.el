@@ -6,6 +6,7 @@
 ;;; Code:
 
 (require 'autoinsert)
+(require 'scratch)
 (require 'secrets)
 (require 'ox-reveal)
 (require 'whitespace)

@@ -36,6 +36,8 @@
 
 (global-set-key (kbd "M-x") 'smex)
 
+(global-set-key (kbd "C-c s") 'scratch)
+
 (global-set-key (kbd "C-+") 'er/expand-region)
 
 (global-set-key (kbd "C-c C->") 'mc/edit-lines)
