@@ -38,6 +38,10 @@
 
 (global-set-key (kbd "C-c s") 'scratch)
 
+(global-set-key (kbd "C-c m") (lambda () (interactive)
+                                (when (active-minibuffer-window)
+                                  (select-window (active-minibuffer-window)))))
+
 (global-set-key (kbd "C-+") 'er/expand-region)
 
 (global-set-key (kbd "C-c C->") 'mc/edit-lines)
