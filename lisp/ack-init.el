@@ -1,15 +1,34 @@
-;;; ack-init.el --- Initialization helpers
+;;; ack-init.el --- Initialization config
 
 ;;; Commentary:
-;;;   Helper functions and variables for Emacs initialization.
+;;;   Base setup and helper.
 
 ;;; Code:
 
-(defvar cache-dir (concat user-emacs-directory "cache"))
+(use-package server
+  :config
+  (when (and (functionp 'server-running-p) (not (server-running-p)))
+    (server-start)))
 
-(defun file-path-in-cache-dir (filename)
+(defun ack/in-cache-dir (filename)
   "Return the full path for FILENAME in the cache directory."
-  (concat (file-name-as-directory cache-dir) filename))
+  (concat (file-name-as-directory (concat user-emacs-directory "cache")) filename))
+
+(use-package nsm
+  :config
+  (setq nsm-settings-file (ack/in-cache-dir "network-security.data")))
+
+(use-package pcache
+  :init
+  (setq pcache-directory (ack/in-cache-dir "pcache")))
+
+(use-package tramp-cache
+  :config
+  (setq tramp-persistency-file-name (ack/path-in-cache-dir "tramp")))
+
+(use-package url-cookie
+  :config
+  (setq url-cookie-file (ack/in-cache-dir "cookies")))
 
 (provide 'ack-init)
 ;;; ack-init.el ends here

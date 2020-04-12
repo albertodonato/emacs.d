@@ -1,6 +1,6 @@
 * ~ack/.emacs.d (my own Emacs config)
 
-This is my Emacs configuration (including custom theme).
+This is my Emacs configuration.
 
 Some code is taken/inspired from various places around the internet, mainly the following:
 

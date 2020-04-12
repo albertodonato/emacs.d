@@ -5,8 +5,6 @@
 
 ;;; Code:
 
-(require 'compile)
-
 (defun ack/sudo ()
   "Use TRAMP to `sudo' the current buffer."
   (interactive)
@@ -33,13 +31,6 @@
     (beginning-of-line)
     (insert (concat text "\n"))
     (indent-region beg (line-end-position))))
-
-(defun ack/ag-compile-goto-error-and-kill-search-buffer ()
-  "Jump to the error at point and kill the search buffer."
-  (interactive)
-  (let ((buf (current-buffer)))
-    (compile-goto-error)
-    (kill-buffer buf)))
 
 (defun ack/get-faces-at-point ()
   "Print out font faces at point."

@@ -10,7 +10,6 @@
 (custom-theme-set-faces
  'ack-ample
 
- '(default ((t (:background "#232729"))))
  '(hl-line ((t (:background "Gray20"))))
  '(region ((t (:background "Gray40"))))
  )

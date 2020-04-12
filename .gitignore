@@ -1,7 +1,5 @@
 *~
-/cache
-/eshell
-/extra
-/url
-/lisp/ack-private.el
 /.lsp-session-v1
+/cache
+/elpa
+/lisp/ack-private.el
