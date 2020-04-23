@@ -24,24 +24,26 @@
 (use-package jinja2-mode
   :mode "\\.j2\\'")
 
-(use-package lsp
-  :hook python-mode)
-
 (use-package lsp-mode
+  :commands lsp
   :bind (:map lsp-mode-map
               ("M-g f" . lsp-format-buffer))
+  :hook (python-mode . lsp)
   :config
-  (setq lsp-auto-guess-root t))
+  (setq lsp-auto-guess-root t
+        lsp-keep-workspace-alive nil))
 
-(use-package lsp-pyls)
+(use-package lsp-pyls
+  :config
+  (setq lsp-pyls-plugins-pylint-enabled nil))
 
 (use-package lsp-ui
   :config
-  (add-hook 'lsp-ui-mode-hook
-            (progn
-              (setq lsp-ui-doc-position 'at-point
-                    lsp-pyls-plugins-pylint-enabled nil)
-              )))
+  (setq lsp-ui-doc-enable t
+        lsp-ui-flycheck-enable t
+        lsp-ui-sideline-enable t
+        lsp-ui-sideline-ignore-duplicate t
+        lsp-ui-doc-position 'at-point))
 
 (use-package python
   :mode (("\\.tac\\'" . python-mode))

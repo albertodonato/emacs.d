@@ -24,7 +24,7 @@
 
 (use-package tramp-cache
   :config
-  (setq tramp-persistency-file-name (ack/path-in-cache-dir "tramp")))
+  (setq tramp-persistency-file-name (ack/in-cache-dir "tramp")))
 
 (use-package url-cookie
   :config
