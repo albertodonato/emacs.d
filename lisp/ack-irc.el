@@ -95,42 +95,45 @@
                       notifications hl-nicks))
   (erc-update-modules))
 
-  (use-package erc-view-log
-    :hook ((erc-view-log-mode . turn-on-auto-revert-tail-mode))
-    :config
-    (use-package autorevert
-      :ensure nil)
-    (add-to-list 'auto-mode-alist
-                 (cons (format "%s/\.*\\.txt$" (regexp-quote
-                                                (expand-file-name erc-log-channels-directory)))
-                       'erc-view-log-mode)))
+(use-package erc-view-log
+  :after (erc)
+  :hook ((erc-view-log-mode . turn-on-auto-revert-tail-mode))
+  :config
+  (use-package autorevert
+    :ensure nil)
+  (add-to-list 'auto-mode-alist
+               (cons (format "%s/\.*\\.txt$" (regexp-quote
+                                              (expand-file-name erc-log-channels-directory)))
+                     'erc-view-log-mode)))
 
-  (use-package znc
-    :commands (znc-erc znc-all)
-    :init
-    (use-package secrets
-      :ensure nil)
-    (let* ((password (secrets-get-secret "Login" "ZNC-ack"))
-           (define-net (lambda (net)
-                         "Define a network for the NET symbol, with ZNC 'username/network' user."
-                         (list net (concat ack/znc-username "/" (symbol-name net)) password))))
-      (setq znc-servers
-            (list (list ack/znc-server-host ack/znc-server-port t (mapcar define-net ack/znc-networks))))))
+(use-package znc
+  :after (erc)
+  :commands (znc-erc znc-all)
+  :init
+  (use-package secrets
+    :ensure nil)
+  (let* ((password (secrets-get-secret "Login" "ZNC-ack"))
+         (define-net (lambda (net)
+                       "Define a network for the NET symbol, with ZNC 'username/network' user."
+                       (list net (concat ack/znc-username "/" (symbol-name net)) password))))
+    (setq znc-servers
+          (list (list ack/znc-server-host ack/znc-server-port t (mapcar define-net ack/znc-networks))))))
 
-  (use-package emojify
-    :config
-    (setq emojify-emojis-dir (ack/in-cache-dir "emojis"))
-    :hook (erc-mode . emojify-mode))
+(use-package emojify
+  :after (erc)
+  :config
+  (setq emojify-emojis-dir (ack/in-cache-dir "emojis"))
+  :hook (erc-mode . emojify-mode))
 
-  (defmacro ack/def-erc-message-cmd (command description prefix)
-    "Define an ERC COMMAND with a DESCRIPTION and PREFIX text."
-    (let ((funcname (intern (concat "erc-cmd-" command))))
-      `(defun ,funcname (&rest line)
-         ,description
-         (erc-send-message (concat ,prefix (string-join line " "))))))
+(defmacro ack/def-erc-message-cmd (command description prefix)
+  "Define an ERC COMMAND with a DESCRIPTION and PREFIX text."
+  (let ((funcname (intern (concat "erc-cmd-" command))))
+    `(defun ,funcname (&rest line)
+       ,description
+       (erc-send-message (concat ,prefix (string-join line " "))))))
 
-  (ack/def-erc-message-cmd "TABLEFLIP" "Flip table and send LINE." "(╯°□°）╯︵ ┻━┻ ")
-  (ack/def-erc-message-cmd "TABLERESET" "Reset table and send LINE." "┳━┳ ノ( ゜-゜ノ)")
+(ack/def-erc-message-cmd "TABLEFLIP" "Flip table and send LINE." "(╯°□°）╯︵ ┻━┻ ")
+(ack/def-erc-message-cmd "TABLERESET" "Reset table and send LINE." "┳━┳ ノ( ゜-゜ノ)")
 
-  (provide 'ack-irc)
+(provide 'ack-irc)
 ;;; ack-irc.el ends here

@@ -20,6 +20,7 @@
               ("M-g f" . gofmt)))
 
 (use-package go-guru
+  :after (go-mode)
   :hook (go-mode . go-guru-hl-identifier-mode)
   :config
   (setq go-guru-command "~/go/bin/guru"))

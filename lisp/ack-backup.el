@@ -5,7 +5,10 @@
 
 ;;; Code:
 
-(setq auto-save-list-file-prefix "~/.emacs-saves/autosaves/saves-")
+(use-package startup
+  :ensure nil
+  :config
+  (setq auto-save-list-file-prefix "~/.emacs-saves/autosaves/saves-"))
 
 (use-package files
   :ensure nil

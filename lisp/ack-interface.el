@@ -24,10 +24,11 @@
 (put 'narrow-to-page   'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
+;; better unique naming for buffers
 (use-package uniquify
   :ensure nil)
 
- ;; dead keys
+;; support dead keys
 (use-package iso-transl
   :ensure nil)
 
@@ -55,6 +56,7 @@
                           " [Not readable]" " [Too big]" " [Confirm]")))
 
 (use-package flx-ido
+  :after (ido)
   :config
   (flx-ido-mode 1)
   (setq flx-ido-use-faces nil))
@@ -76,10 +78,10 @@
   :hook ((after-init . column-number-mode)))
 
 (use-package smex
+  :hook ((after-init . smex-initialize))
   :bind ("M-x" . smex)
   :config
-  (setq smex-save-file (ack/in-cache-dir "smex-items"))
-  (smex-initialize))
+  (setq smex-save-file (ack/in-cache-dir "smex-items")))
 
 (use-package winner
   :ensure nil
