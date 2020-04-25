@@ -45,8 +45,8 @@
     :ensure nil))
 
 (use-package ido
+  :init (ido-mode t)
   :config
-  (ido-mode t)
   (ido-everywhere t)
   (setq ido-enable-flex-matching t
         ido-save-directory-list-file (ack/in-cache-dir "ido.last")
@@ -57,8 +57,8 @@
 
 (use-package flx-ido
   :after (ido)
+  :init (flx-ido-mode 1)
   :config
-  (flx-ido-mode 1)
   (setq flx-ido-use-faces nil))
 
 (use-package hl-line
