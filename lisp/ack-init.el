@@ -13,7 +13,7 @@
 
 (defun ack/in-cache-dir (filename)
   "Return the full path for FILENAME in the cache directory."
-  (concat (file-name-as-directory (concat user-emacs-directory "cache")) filename))
+  (expand-file-name (concat "cache/" filename) user-emacs-directory))
 
 (use-package nsm
   :ensure nil
