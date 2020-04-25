@@ -21,7 +21,7 @@
         ag-context-lines 3))
 
 (use-package company
-  :hook ((after-init . global-company-mode))
+  :init (global-company-mode t)
   :bind (:map company-active-map
               ("RET" . nil)
               ("TAB" . company-complete-selection)
@@ -39,7 +39,7 @@
   :config (setq compilation-scroll-output 'first-error))
 
 (use-package flycheck
-  :hook ((after-init . global-flycheck-mode))
+  :init (global-flycheck-mode t)
   :config
   (setq flycheck-checker-error-threshold 2000
         flycheck-python-pycompile-executable "python3 -I"))

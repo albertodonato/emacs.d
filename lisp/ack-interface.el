@@ -63,7 +63,7 @@
 
 (use-package hl-line
   :ensure nil
-  :hook ((after-init . global-hl-line-mode)))
+  :init (global-hl-line-mode t))
 
 (use-package linum-mode
   :ensure nil
@@ -71,21 +71,22 @@
 
 (use-package paren
   :ensure nil
-  :hook ((after-init . show-paren-mode)))
+  :init (show-paren-mode t))
 
 (use-package simple
   :ensure nil
-  :hook ((after-init . column-number-mode)))
+  :init
+  (column-number-mode t))
 
 (use-package smex
-  :hook ((after-init . smex-initialize))
   :bind ("M-x" . smex)
+  :init (smex-initialize)
   :config
   (setq smex-save-file (ack/in-cache-dir "smex-items")))
 
 (use-package winner
   :ensure nil
-  :hook (after-init . winner-mode))
+  :init (winner-mode))
 
 (use-package which-func
   :ensure nil

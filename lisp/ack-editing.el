@@ -27,7 +27,8 @@
   (setq require-final-newline t))
 
 (use-package smartparens
-  :hook ((after-init . smartparens-global-mode))
+  :init
+  (smartparens-global-mode t)
   :config
   (use-package smartparens-config
     :ensure nil)
