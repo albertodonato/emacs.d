@@ -20,11 +20,6 @@
   :config
   (setq nsm-settings-file (ack/in-cache-dir "network-security.data")))
 
-(use-package pcache
-  :ensure nil
-  :init
-  (setq pcache-directory (ack/in-cache-dir "pcache")))
-
 (use-package tramp-cache
   :ensure nil
   :config
