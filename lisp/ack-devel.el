@@ -44,10 +44,6 @@
   (setq flycheck-checker-error-threshold 2000
         flycheck-python-pycompile-executable "python3 -I"))
 
-(use-package linum-mode
-  :ensure nil
-  :bind (("C-c n" . linum-mode)))
-
 (use-package magit
   :bind (("C-c g" . magit-status)
          ("C-c S-g" . magit-refresh-all))

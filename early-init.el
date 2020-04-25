@@ -35,18 +35,14 @@
       initial-scratch-message nil
       inhibit-startup-message t
       inhibit-startup-echo-area-message t)
-(setq-default indicate-empty-lines t)
 
-(add-hook 'focus-out-hook #'garbage-collect)
+(setq-default indicate-empty-lines t)
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
-(winner-mode t)
-(global-hl-line-mode t)
-(column-number-mode t)
-(which-function-mode t)
-(show-paren-mode t)
+
+(add-hook 'focus-out-hook #'garbage-collect)
 
 (provide 'early-init)
 ;;; early-init.el ends here
