@@ -24,19 +24,24 @@
 (put 'narrow-to-page   'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
-(use-package uniquify)
+(use-package uniquify
+  :ensure nil)
 
  ;; dead keys
-(use-package iso-transl)
+(use-package iso-transl
+  :ensure nil)
 
 (use-package dired
+  :ensure nil
   :bind (:map dired-mode-map
               ("C-c C-q" . wdired-change-to-wdired-mode)
               ("C-<right>" . dired-subtree-insert)
               ("C-<left>" . dired-subtree-remove))
   :config
-  (use-package dired-x)
-  (use-package dired-subtree))
+  (use-package dired-x
+    :ensure nil)
+  (use-package dired-subtree
+    :ensure nil))
 
 (use-package ido
   :config

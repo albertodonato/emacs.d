@@ -12,6 +12,7 @@
   :bind (([remap dabbrev-expand] . hippie-expand)))
 
 (use-package files
+  :ensure nil
   :hook ((after-save-hook . (lambda ()
                               (and (save-excursion
                                      (save-restriction
@@ -27,10 +28,10 @@
 (use-package smartparens
   :hook ((after-init-hook . smartparens-global-mode))
   :config
+  (use-package smartparens-config
+    :ensure nil)
   (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode))
   (show-smartparens-global-mode t))
-
-(use-package smartparens-config)
 
 (use-package multiple-cursors
   :bind (("C-c C->" . mc/edit-lines)

@@ -8,6 +8,7 @@
 (setq auto-save-list-file-prefix "~/.emacs-saves/autosaves/saves-")
 
 (use-package files
+  :ensure nil
   :config
   (setq auto-save-file-name-transforms '((".*" "~/.emacs-saves/autosaves/\\1" t))
         backup-directory-alist '((".*" . "~/.emacs-saves/backups/"))

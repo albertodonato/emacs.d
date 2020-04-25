@@ -26,10 +26,14 @@
   (setq ac-comphist-file "~/.emacs-saves/auto-complete.dat"))
 
 (use-package auto-complete-config
+  :ensure nil
   :config
   (ac-config-default))
 
+(use-package command-log-mode)
+
 (use-package compile
+  :ensure nil
   :config (setq compilation-scroll-output 'first-error))
 
 (use-package flycheck
@@ -39,6 +43,7 @@
         flycheck-python-pycompile-executable "python3 -I"))
 
 (use-package linum-mode
+  :ensure nil
   :bind (("C-c n" . linum-mode)))
 
 (use-package magit
@@ -57,6 +62,8 @@
   :config
   (setq projectile-known-projects-file (ack/in-cache-dir "projectile-bookmarks.eld"))
   (projectile-mode))
+
+(use-package restclient)
 
 (use-package scratch
   :bind (("C-c s" . scratch)))

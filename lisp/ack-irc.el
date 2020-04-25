@@ -6,7 +6,9 @@
 ;;; Code:
 
 (use-package erc
+  :ensure nil
   :config
+  (use-package erc-hl-nicks)
   (setq erc-modules '(autojoin
                       button completion dcc fill
                       irccontrols list log match menu
@@ -68,9 +70,12 @@
     (erc-update-modules))
 
 (use-package erc-view-log
+  :ensure nil
   :config
-  (use-package autorevert)
-  (use-package erc-log)
+  (use-package autorevert
+    :ensure nil)
+  (use-package erc-log
+    :ensure nil)
   (add-hook 'erc-view-log-mode-hook #'turn-on-auto-revert-tail-mode)
   (add-to-list 'auto-mode-alist
                (cons (format "%s/\.*\\.txt$" (regexp-quote
@@ -80,7 +85,8 @@
 (use-package znc
   :commands (znc-erc znc-all)
   :init
-  (use-package secrets)
+  (use-package secrets
+    :ensure nil)
   (let* ((username "ack")
          (password (secrets-get-secret "Login" "ZNC-ack"))
          (networks '(Canonical Freenode Azzurra))
@@ -93,7 +99,8 @@
   (setq emojify-emojis-dir (ack/in-cache-dir "emojis"))
   :hook (erc-mode . emojify-mode))
 
-(use-package subr-x)
+(use-package subr-x
+  :ensure nil)
 
 (defmacro ack/def-erc-message-cmd (command description prefix)
   "Define an ERC COMMAND with a DESCRIPTION and PREFIX text."

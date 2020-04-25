@@ -9,7 +9,10 @@
       custom-safe-themes t
       frame-background-mode 'dark)
 
-(load-theme 'ample t)
+(use-package ample-theme
+  :init
+  (load-theme 'ample t))
+
 (load-theme 'ack-ample t)
 (load-theme 'ack-common t)
 
