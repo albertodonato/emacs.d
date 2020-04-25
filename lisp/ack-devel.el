@@ -20,15 +20,17 @@
         ag-group-matches t
         ag-context-lines 3))
 
-(use-package auto-complete
-  :hook ((after-init-hook . global-auto-complete-mode))
+(use-package company
+  :hook ((after-init . global-company-mode))
+  :bind (:map company-active-map
+              ("RET" . nil)
+              ("TAB" . company-complete-selection)
+              ("<right>" . company-complete-common))
   :config
-  (setq ac-comphist-file "~/.emacs-saves/auto-complete.dat"))
-
-(use-package auto-complete-config
-  :ensure nil
-  :config
-  (ac-config-default))
+  (setq company-idle-delay 0.2
+        company-minimum-prefix-length 1
+        company-require-match nil
+        company-tooltip-align-annotations t))
 
 (use-package command-log-mode)
 
@@ -37,7 +39,7 @@
   :config (setq compilation-scroll-output 'first-error))
 
 (use-package flycheck
-  :hook ((after-init-hook . global-flycheck-mode))
+  :hook ((after-init . global-flycheck-mode))
   :config
   (setq flycheck-checker-error-threshold 2000
         flycheck-python-pycompile-executable "python3 -I"))

@@ -13,20 +13,20 @@
 
 (use-package files
   :ensure nil
-  :hook ((after-save-hook . (lambda ()
-                              (and (save-excursion
-                                     (save-restriction
-                                       (widen)
-                                       (goto-char (point-min))
-                                       (save-match-data (looking-at "^#!"))))
-                                   (not (file-executable-p buffer-file-name))
-                                   (shell-command (concat "chmod +x " buffer-file-name))
-                                   (message (concat "Saved as script: " buffer-file-name))))))
+  :hook ((after-save . (lambda ()
+                         (and (save-excursion
+                                (save-restriction
+                                  (widen)
+                                  (goto-char (point-min))
+                                  (save-match-data (looking-at "^#!"))))
+                              (not (file-executable-p buffer-file-name))
+                              (shell-command (concat "chmod +x " buffer-file-name))
+                              (message (concat "Saved as script: " buffer-file-name))))))
   :config
   (setq require-final-newline t))
 
 (use-package smartparens
-  :hook ((after-init-hook . smartparens-global-mode))
+  :hook ((after-init . smartparens-global-mode))
   :config
   (use-package smartparens-config
     :ensure nil)
@@ -40,7 +40,6 @@
          ("C-c C-<" . mc/mark-all-like-this-dwim))
   :config
   (setq mc/list-file (ack/in-cache-dir "mc-list.el")))
-
 
 (provide 'ack-editing)
 ;;; ack-editing.el ends here

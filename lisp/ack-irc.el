@@ -70,13 +70,12 @@
     (erc-update-modules))
 
 (use-package erc-view-log
-  :ensure nil
+  :hook ((erc-view-log-mode . turn-on-auto-revert-tail-mode))
   :config
   (use-package autorevert
     :ensure nil)
   (use-package erc-log
     :ensure nil)
-  (add-hook 'erc-view-log-mode-hook #'turn-on-auto-revert-tail-mode)
   (add-to-list 'auto-mode-alist
                (cons (format "%s/\.*\\.txt$" (regexp-quote
                                               (expand-file-name erc-log-channels-directory)))
