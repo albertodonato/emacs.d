@@ -6,8 +6,7 @@
 ;;; Code:
 
 (setq custom-theme-directory (concat user-emacs-directory "themes")
-      custom-safe-themes t
-      frame-background-mode 'dark)
+      custom-safe-themes t)
 
 (use-package ample-theme
   :init

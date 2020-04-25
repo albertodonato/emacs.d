@@ -20,6 +20,7 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package t))
+(require 'use-package)
 (setq use-package-always-defer t
       use-package-always-ensure t)
 
