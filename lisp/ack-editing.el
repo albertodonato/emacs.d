@@ -14,6 +14,7 @@
 (use-package files
   :ensure nil
   :hook ((after-save . (lambda ()
+                         "Make file executable if it starts with a shebang."
                          (and (save-excursion
                                 (save-restriction
                                   (widen)
@@ -30,8 +31,7 @@
   :config
   (use-package smartparens-config
     :ensure nil)
-  (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode))
-  (show-smartparens-global-mode t))
+  (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode)))
 
 (use-package multiple-cursors
   :bind (("C-c C->" . mc/edit-lines)
