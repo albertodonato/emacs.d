@@ -42,7 +42,8 @@
               ("M-g f" . lsp-format-buffer))
   :hook (python-mode . lsp)
   :config
-  (setq lsp-auto-guess-root t
+  (setq lsp-session-file (ack/in-cache-dir "lsp-session")
+        lsp-auto-guess-root t
         lsp-keep-workspace-alive nil))
 
 (use-package lsp-pyls

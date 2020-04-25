@@ -92,7 +92,7 @@
          (networks '(Canonical Freenode Azzurra))
          (define-net (lambda (net) (list net (concat username "/" (symbol-name net)) password))))
     (setq znc-servers
-          (list (list ack-znc-server-host ack-znc-server-port t (mapcar define-net networks))))))
+          (list (list ack/znc-server-host ack/znc-server-port t (mapcar define-net networks))))))
 
 (use-package emojify
   :config
