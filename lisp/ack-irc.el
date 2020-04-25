@@ -64,9 +64,9 @@
         erc-log-matches-types-alist '((keyword . "ERC Notifications") (current-nick . "ERC Notifications"))
         erc-log-matches-flag t
         ;; user configuration
-        erc-user-full-name "ack"
-        erc-email-userid "ack"
-        erc-keywords '("alberto.donato" "albertodonato" "maas-crew"))
+        erc-user-full-name ack/erc-user-full-name
+        erc-email-userid ack/erc-email-userid
+        erc-keywords ack/erc-keywords)
     (erc-update-modules))
 
 (use-package erc-view-log
@@ -86,12 +86,10 @@
   :init
   (use-package secrets
     :ensure nil)
-  (let* ((username "ack")
-         (password (secrets-get-secret "Login" "ZNC-ack"))
-         (networks '(Canonical Freenode Azzurra))
-         (define-net (lambda (net) (list net (concat username "/" (symbol-name net)) password))))
+  (let* ((password (secrets-get-secret "Login" "ZNC-ack"))
+         (define-net (lambda (net) (list net (concat ack/znc-username "/" (symbol-name net)) password))))
     (setq znc-servers
-          (list (list ack/znc-server-host ack/znc-server-port t (mapcar define-net networks))))))
+          (list (list ack/znc-server-host ack/znc-server-port t (mapcar define-net ack/znc-networks))))))
 
 (use-package emojify
   :config
