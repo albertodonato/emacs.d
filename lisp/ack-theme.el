@@ -12,5 +12,7 @@
   :init
   (load-theme 'sanityinc-tomorrow-night t))
 
+(load-theme 'ack-sanityinc-tomorrow)
+
 (provide 'ack-theme)
 ;;; ack-theme.el ends here
