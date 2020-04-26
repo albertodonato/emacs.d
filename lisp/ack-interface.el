@@ -44,6 +44,15 @@
   (use-package dired-subtree
     :ensure nil))
 
+(use-package doom-modeline
+  :init (doom-modeline-mode t)
+  :config
+  (setq doom-modeline-height 12
+        doom-modeline-bar-width 10
+        doom-modeline-buffer-encoding nil
+        doom-modeline-minor-modes t
+        doom-modeline-env-python-executable "python3"))
+
 (use-package ido
   :init (ido-mode t)
   :config
