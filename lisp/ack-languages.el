@@ -33,33 +33,36 @@
   :mode "\\.j2\\'")
 
 (use-package json-mode)
+
 (use-package jsonnet-mode)
 
 (use-package less-css-mode)
 
 (use-package lsp-mode
-  :commands lsp
+  :commands (lsp)
   :bind (:map lsp-mode-map
               ("M-g f" . lsp-format-buffer))
-  :hook (python-mode . lsp)
+  :hook ((python-mode . lsp) (go-mode . lsp))
   :config
   (setq lsp-session-file (ack/in-cache-dir "lsp-session")
         lsp-auto-guess-root t
         lsp-keep-workspace-alive nil))
 
-(use-package lsp-pyls
-  :ensure nil
-  :config
-  (setq lsp-pyls-plugins-pylint-enabled nil))
-
 (use-package lsp-ui
-  :ensure nil
+  :commands (lsp-ui-mode)
   :config
   (setq lsp-ui-doc-enable t
-        lsp-ui-flycheck-enable t
         lsp-ui-sideline-enable t
         lsp-ui-sideline-ignore-duplicate t
         lsp-ui-doc-position 'at-point))
+
+(use-package lsp-pyls
+  :ensure nil
+  :config
+  (setq lsp-pyls-configuration-sources ["flake8" "pycodestyle"]
+        lsp-pyls-plugins-pycodestyle-enabled nil
+        lsp-pyls-plugins-mccabe-enabled nil
+        lsp-pyls-plugins-flake8-enabled t))
 
 (use-package lua-mode)
 
@@ -83,7 +86,6 @@
         python-indent-guess-indent-offset-verbose nil))
 
 (use-package python-environment
-  :ensure nil
   :config
   (setq python-environment-directory "~/virtualenv"
         python-environment-default-root-name "emacs"))
