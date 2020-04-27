@@ -50,6 +50,7 @@
   (setq doom-modeline-height 12
         doom-modeline-bar-width 10
         doom-modeline-buffer-encoding nil
+        doom-modeline-icon t
         doom-modeline-minor-modes t
         doom-modeline-env-python-executable "python3"))
 
