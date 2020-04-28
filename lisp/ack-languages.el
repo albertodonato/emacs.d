@@ -59,10 +59,11 @@
 (use-package lsp-pyls
   :ensure nil
   :config
-  (setq lsp-pyls-configuration-sources ["flake8" "pycodestyle"]
+  (setq lsp-pyls-configuration-sources ["pycodestyle" "flake8"]
         lsp-pyls-plugins-pycodestyle-enabled nil
         lsp-pyls-plugins-mccabe-enabled nil
-        lsp-pyls-plugins-flake8-enabled t))
+        lsp-pyls-plugins-flake8-enabled t)
+  (lsp-register-custom-settings '(("pyls.plugins.pyls_mypy.enabled" t t))))
 
 (use-package lua-mode)
 
