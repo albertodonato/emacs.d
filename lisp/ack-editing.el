@@ -40,7 +40,7 @@
          ("C-<". mc/mark-previous-like-this)
          ("C-c C-<" . mc/mark-all-like-this-dwim))
   :config
-  (setq mc/list-file (ack/in-cache-dir "mc-list.el")))
+  (setq mc/list-file (ack/in-cache-dir "mc-lists.el")))
 
 (provide 'ack-editing)
 ;;; ack-editing.el ends here

@@ -20,17 +20,17 @@
    (buffer-list)))
 
 (defun ack/shell-command-on-region-replace (command)
-  "Execute COMMAND with region as input and replace it with output."
+  "Execute COMMAND with region as input and replace it with its output."
   (interactive "sShell command: ")
   (shell-command-on-region (region-beginning) (region-end) command t t))
 
-(defun ack/insert-text-and-reindent (text)
-  "Insert TEXT on a new line at point and reindent."
+(defun ack/yaml-to-python ()
+  "Convert region from YAML to Python."
   (interactive)
-  (let ((beg (line-beginning-position)))
-    (beginning-of-line)
-    (insert (concat text "\n"))
-    (indent-region beg (line-end-position))))
+  (shell-command-on-region
+   (region-beginning) (region-end)
+   "python3 -c 'import sys; import yaml; import pprint; pprint.pprint(yaml.safe_load(sys.stdin))'"
+   t t))
 
 (defun ack/get-faces-at-point ()
   "Print out font faces at point."
