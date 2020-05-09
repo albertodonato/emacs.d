@@ -86,11 +86,6 @@
         python-indent-offset 4
         python-indent-guess-indent-offset-verbose nil))
 
-(use-package python-environment
-  :config
-  (setq python-environment-directory "~/virtualenv"
-        python-environment-default-root-name "emacs"))
-
 (use-package scss-mode)
 
 (use-package sgml-mode

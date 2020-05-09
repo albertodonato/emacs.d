@@ -8,9 +8,6 @@
 (use-package expand-region
   :bind (("C-+" . 'er/expand-region)))
 
-(use-package hippie-exp
-  :bind (([remap dabbrev-expand] . hippie-expand)))
-
 (use-package files
   :ensure nil
   :hook ((after-save . (lambda ()

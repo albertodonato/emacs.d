@@ -24,6 +24,7 @@
   :init (global-company-mode t)
   :bind (:map company-active-map
               ("RET" . nil)
+              ("<return>" . nil)
               ("TAB" . company-complete-selection)
               ("<right>" . company-complete-common))
   :config
