@@ -70,6 +70,10 @@
           erc-track-exclude-server-buffer t
           erc-track-faces-priority-list '(erc-current-nick-face erc-keyword-face)
           erc-track-priority-faces-only 'all))
+  (use-package erc-truncate
+    :ensure nil
+    :config
+    (setq erc-truncate-mode t))
   (setq erc-query-display 'buffer
         erc-prompt (lambda ()
                      (if (and (boundp 'erc-default-recipients) (erc-default-target))
@@ -87,12 +91,10 @@
         ;; list all modules so that the call `erc-update-modules' enables all
         ;; minor modes
         erc-modules '(autojoin
-                      button completion dcc fill
-                      irccontrols list log match menu
-                      move-to-prompt netsplit networks
-                      noncommands pcomplete readonly ring
-                      scrolltobottom services stamp track
-                      notifications hl-nicks))
+                      button completion dcc fill hl-nicks irccontrols list log
+                      match menu move-to-prompt netsplit networks noncommand
+                      snotifications pcomplete readonly ring scrolltobottom
+                      services stamp track trunkcate))
   (erc-update-modules))
 
 (use-package erc-view-log
