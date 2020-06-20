@@ -92,9 +92,9 @@
         ;; minor modes
         erc-modules '(autojoin
                       button completion dcc fill hl-nicks irccontrols list log
-                      match menu move-to-prompt netsplit networks noncommand
-                      snotifications pcomplete readonly ring scrolltobottom
-                      services stamp track trunkcate))
+                      match menu move-to-prompt netsplit networks noncommands
+                      notifications pcomplete readonly ring scrolltobottom
+                      services stamp track truncate))
   (erc-update-modules))
 
 (use-package erc-view-log

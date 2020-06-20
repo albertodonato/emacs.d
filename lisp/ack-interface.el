@@ -97,6 +97,14 @@
   :ensure nil
   :init (winner-mode))
 
+(use-package desktop
+  :ensure nil
+  :init (desktop-save-mode)
+  :config
+  (setq desktop-auto-save-timeout 300
+        desktop-load-locked-desktop t
+        desktop-restore-eager 20))
+
 (use-package which-func
   :ensure nil
   :config
