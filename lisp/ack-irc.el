@@ -75,13 +75,7 @@
     :config
     (setq erc-truncate-mode t))
   (setq erc-query-display 'buffer
-        erc-prompt (lambda ()
-                     (if (and (boundp 'erc-default-recipients) (erc-default-target))
-                         (erc-propertize
-                          (concat (erc-default-target) ">")
-                          'read-only t 'rear-nonsticky t 'front-nonsticky t)
-                       (erc-propertize
-                        "ERC>" 'read-only t 'rear-nonsticky t 'front-nonsticky t)))
+        erc-prompt (lambda () (concat (or (erc-default-target) "ERC") ">"))
         erc-prompt-for-password nil
         erc-join-buffer 'bury
         erc-rename-buffers nil
