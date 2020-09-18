@@ -2,3 +2,4 @@
 /cache
 /elpa
 /lisp/ack-private.el
+/.emacs.desktop*
