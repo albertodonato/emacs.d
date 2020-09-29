@@ -70,7 +70,8 @@
 (use-package scratch
   :bind (("C-c s" . scratch)))
 
-(use-package vterm)
+(use-package vterm
+  :bind (("C-c v" . vterm-other-window)))
 
 (use-package whitespace
   :bind (("C-c w" . whitespace-mode)
