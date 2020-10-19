@@ -25,10 +25,9 @@
       use-package-always-ensure t)
 
 ;; setup defaults for frame and appearance before the frame itself is created
-(setq default-frame-alist '((font . "Ubuntu Mono-7.5")
-                            (fullscreen . maximized)
-                            (vertical-scroll-bars))
+(setq default-frame-alist '((fullscreen . maximized) (vertical-scroll-bars))
       initial-frame-alist default-frame-alist
+      font-use-system-font t
       frame-inhibit-implied-resize t
       frame-title-format '("Emacs " emacs-version ": "
                            (:eval (if (buffer-file-name) (abbreviate-file-name (buffer-file-name)) "%b")))
