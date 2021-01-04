@@ -36,6 +36,10 @@
 
 (use-package jsonnet-mode)
 
+(use-package ledger-mode
+  :config
+  (setq ledger-post-amount-alignment-column 65))
+
 (use-package less-css-mode)
 
 (use-package lsp-mode
