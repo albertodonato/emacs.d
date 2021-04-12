@@ -46,11 +46,13 @@
   :commands (lsp)
   :bind (:map lsp-mode-map
               ("M-g f" . lsp-format-buffer))
-  :hook ((python-mode . lsp) (go-mode . lsp))
+  :hook ((python-mode . (lambda () (require 'lsp-python-ms) (lsp))) (go-mode . lsp))
   :config
   (setq lsp-session-file (ack/in-cache-dir "lsp-session")
         lsp-auto-guess-root t
-        lsp-keep-workspace-alive nil))
+        lsp-keep-workspace-alive nil
+        lsp-headerline-breadcrumb-segments '(symbols)
+        lsp-headerline-breadcrumb-mode t))
 
 (use-package lsp-ui
   :commands (lsp-ui-mode)
