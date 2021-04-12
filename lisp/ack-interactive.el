@@ -49,5 +49,12 @@
     (set-window-dedicated-p window (not (window-dedicated-p window)))
     (message "Toggle window dedicated to %S" (window-dedicated-p window))))
 
+
+(defun ack/find-file-emacs-config ()
+  "Run `find-file` from the Emacs config directory."
+  (interactive)
+  (let ((default-directory user-emacs-directory))
+    (call-interactively #'find-file)))
+
 (provide 'ack-interactive)
 ;;; ack-interactive.el ends here

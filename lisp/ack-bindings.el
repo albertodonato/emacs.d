@@ -23,6 +23,7 @@
 (global-set-key (kbd "C-c M-t") 'shell)
 
 (global-set-key (kbd "C-c t") 'ack/toggle-window-dedicated)
+(global-set-key (kbd "C-c e") 'ack/find-file-emacs-config)
 ;; jump to minibuffer
 (global-set-key (kbd "C-c m") (lambda () (interactive)
                                 (when (active-minibuffer-window)
