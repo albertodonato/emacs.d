@@ -23,13 +23,13 @@
 (use-package company
   :init (global-company-mode t)
   :bind (:map company-active-map
-              ("RET" . nil)
-              ("<return>" . nil)
-              ("TAB" . company-complete-selection)
-              ("<right>" . company-complete-common))
+              ("RET" . company-complete-selection)
+              ("<return>" . company-complete-selection)
+              ("TAB" . company-complete-common-or-cycle)
+              ("<tab>" . company-complete-common-or-cycle))
   :config
   (setq company-idle-delay 0.2
-        company-minimum-prefix-length 1
+        company-minimum-prefix-length 0
         company-require-match nil
         company-tooltip-align-annotations t))
 
