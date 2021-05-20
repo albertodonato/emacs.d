@@ -49,11 +49,6 @@
     :ensure nil
     :config
     (setq erc-pcomplete-nick-postfix ","))
-  (use-package erc-services
-    :ensure nil
-    :config
-    (setq erc-prompt-for-nickserv-password nil
-          erc-nickserv-identify-mode 'autodetect))
   (use-package erc-stamp
     :ensure nil
     :config
@@ -88,7 +83,7 @@
                       button completion dcc fill hl-nicks irccontrols list log
                       match menu move-to-prompt netsplit networks noncommands
                       notifications pcomplete readonly ring scrolltobottom
-                      services stamp track truncate))
+                      stamp track truncate))
   (erc-update-modules))
 
 (use-package erc-view-log
