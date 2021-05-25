@@ -62,13 +62,11 @@
         lsp-ui-sideline-ignore-duplicate t
         lsp-ui-doc-position 'at-point))
 
-(use-package lsp-pyls
+(use-package lsp-pylsp
   :ensure nil
   :config
-  (setq lsp-pyls-configuration-sources ["flake8" "pycodestyle"]
-        lsp-pyls-plugins-pycodestyle-enabled nil
-        lsp-pyls-plugins-mccabe-enabled nil
-        lsp-pyls-plugins-flake8-enabled t)
+  (setq lsp-pylsp-plugins-flake8-max-line-length fill-column
+        lsp-pylsp-plugins-mccabe-enabled nil)
   (lsp-register-custom-settings '(("pyls.plugins.pyls_mypy.enabled" t t))))
 
 (use-package lua-mode)
