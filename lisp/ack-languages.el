@@ -98,7 +98,7 @@
   :ensure nil
   :config
   ;; reindent after tag is removed
-  (advice-add 'sgml-delete-tag :after '(lambda (arg) (indent-region (point-min) (point-max)))))
+  (advice-add 'sgml-delete-tag :after #'(lambda (arg) (indent-region (point-min) (point-max)))))
 
 (use-package web-mode)
 
