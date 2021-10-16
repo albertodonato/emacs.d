@@ -35,6 +35,8 @@
       inhibit-startup-message t
       inhibit-startup-echo-area-message t)
 
+(setq warning-suppress-log-types '((comp)))
+
 (setq-default indicate-empty-lines t)
 
 (menu-bar-mode -1)
