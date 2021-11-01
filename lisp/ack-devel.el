@@ -58,7 +58,9 @@
           transient-values-file (ack/in-cache-dir "transient/values.el")
           transient-history-file (ack/in-cache-dir "transient/history.el")))
   :config
-  (magit-add-section-hook 'magit-status-sections-hook 'magit-insert-modules nil t))
+  (magit-add-section-hook 'magit-status-sections-hook 'magit-insert-modules nil t)
+  (if (file-exists-p "/snap/gitlptools/current/lp.el")
+      (load-file "/snap/gitlptools/current/lp.el")))
 
 (use-package projectile
   :config
