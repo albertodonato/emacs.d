@@ -92,6 +92,8 @@
         python-indent-offset 4
         python-indent-guess-indent-offset-verbose nil))
 
+(use-package rust-mode)
+
 (use-package scss-mode)
 
 (use-package sgml-mode
