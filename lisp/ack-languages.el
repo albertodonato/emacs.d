@@ -65,7 +65,9 @@
 (use-package lsp-pylsp
   :ensure nil
   :config
-  (setq lsp-pylsp-plugins-flake8-max-line-length fill-column
+  (setq lsp-pylsp-server-command "/snap/bin/pylsp"
+        lsp-pylsp-plugins-flake8-max-line-length fill-column
+        lsp-pylsp-plugins-pydocstyle-enabled nil
         lsp-pylsp-plugins-mccabe-enabled nil)
   (lsp-register-custom-settings '(("pyls.plugins.pyls_mypy.enabled" t t))))
 
