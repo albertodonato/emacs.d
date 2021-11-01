@@ -71,6 +71,11 @@
         lsp-pylsp-plugins-mccabe-enabled nil)
   (lsp-register-custom-settings '(("pyls.plugins.pyls_mypy.enabled" t t))))
 
+(use-package lsp-rust
+  :ensure nil
+  :config
+  (setq lsp-rust-server "rls"))
+
 (use-package lua-mode)
 
 (use-package markdown-mode)
