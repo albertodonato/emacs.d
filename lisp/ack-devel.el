@@ -33,9 +33,6 @@
         company-require-match nil
         company-tooltip-align-annotations t))
 
-(use-package company-lsp
-  :commands (company-lsp))
-
 (use-package command-log-mode)
 
 (use-package compile

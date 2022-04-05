@@ -46,12 +46,16 @@
   :commands (lsp)
   :bind (:map lsp-mode-map
               ("M-g f" . lsp-format-buffer))
-  :hook ((python-mode . (lambda () (require 'lsp-python-ms) (lsp))) (go-mode . lsp))
   :config
   (setq lsp-session-file (ack/in-cache-dir "lsp-session")
         lsp-auto-guess-root t
         lsp-keep-workspace-alive nil
-        lsp-headerline-breadcrumb-segments '(symbols)
+        lsp-file-watch-threshold nil))
+
+(use-package lsp-headerline
+  :ensure nil
+  :config
+  (setq lsp-headerline-breadcrumb-segments '(symbols)
         lsp-headerline-breadcrumb-mode t))
 
 (use-package lsp-ui
@@ -62,14 +66,11 @@
         lsp-ui-sideline-ignore-duplicate t
         lsp-ui-doc-position 'at-point))
 
-(use-package lsp-pylsp
-  :ensure nil
+(use-package lsp-pyright
+  :hook (python-mode . (lambda () (require 'lsp-pyright) (lsp)))
   :config
-  (setq lsp-pylsp-server-command "/snap/bin/pylsp"
-        lsp-pylsp-plugins-flake8-max-line-length fill-column
-        lsp-pylsp-plugins-pydocstyle-enabled nil
-        lsp-pylsp-plugins-mccabe-enabled nil)
-  (lsp-register-custom-settings '(("pyls.plugins.pyls_mypy.enabled" t t))))
+  (setq lsp-pyright-disable-organize-imports t
+        lsp-pyright-log-level "error"))
 
 (use-package lsp-rust
   :ensure nil
