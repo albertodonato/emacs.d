@@ -76,5 +76,20 @@
   :bind (("C-c w" . whitespace-mode)
          ("C-M-`" . whitespace-cleanup)))
 
+(use-package webpaste
+  :bind (("C-c C-p C-b" . webpaste-paste-buffer)
+         ("C-c C-p C-r" . webpaste-paste-region)
+         ("C-c C-p C-p" . webpaste-paste-buffer-or-region))
+  :config
+  (setq webpaste-provider-priority '("paste.ubuntu.com"))
+  (add-to-list 'webpaste-providers-alist
+               '("paste.ubuntu.com"
+                  :uri "https://paste.ubuntu.com/"
+                  :post-data (("poster" . "webpaste"))
+                  :post-field "content"
+                  :post-lang-field-name "syntax"
+                  :lang-overrides ((emacs-lisp-mode . "emacs"))
+                  :success-lambda webpaste--providers-success-response-url)))
+
 (provide 'ack-devel)
 ;;; ack-devel.el ends here
