@@ -13,6 +13,7 @@
                          ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/"))
       package-enable-at-startup nil
+      package-native-compile t
       load-prefer-newer t)
 (package-initialize)
 
