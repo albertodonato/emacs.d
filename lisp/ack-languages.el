@@ -50,7 +50,10 @@
   (setq lsp-session-file (ack/in-cache-dir "lsp-session")
         lsp-auto-guess-root t
         lsp-keep-workspace-alive nil
-        lsp-file-watch-threshold nil))
+        lsp-file-watch-threshold nil
+        lsp-use-plists t
+        gc-cons-threshold 100000000
+        read-process-output-max (* 5 1024 1024))
 
 (use-package lsp-headerline
   :ensure nil
