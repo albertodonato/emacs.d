@@ -37,5 +37,15 @@
   :config
   (setq url-cookie-file (ack/in-cache-dir "cookies")))
 
+(use-package request
+  :config
+  (setq request-storage-directory (ack/in-cache-dir "request")))
+
+;; use pipes for subprocess communication
+(setq process-connection-type nil)
+;; optimizations for lsp-mode
+(setq gc-cons-threshold 100000000)
+(setq read-process-output-max (* 5 1024 1024))
+
 (provide 'ack-setup)
 ;;; ack-setup.el ends here

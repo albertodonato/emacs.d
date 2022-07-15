@@ -51,9 +51,7 @@
         lsp-auto-guess-root t
         lsp-keep-workspace-alive nil
         lsp-file-watch-threshold nil
-        lsp-use-plists t
-        gc-cons-threshold 100000000
-        read-process-output-max (* 5 1024 1024)))
+        lsp-use-plists t))
 
 (use-package lsp-headerline
   :ensure nil
