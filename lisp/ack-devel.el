@@ -5,21 +5,6 @@
 
 ;;; Code:
 
-(use-package ag
-  :bind (("C-c C-S-a" . ag-project-regexp)
-         ("C-c C-S-f" . ag-project-files)
-         :map ag-mode-map
-         ("<C-return>" . (lambda ()
-                           "Jump to location and close the buffer."
-                           (interactive)
-                           (let ((buf (current-buffer)))
-                             (compile-goto-error)
-                             (kill-buffer buf)))))
-  :config
-  (setq ag-highlight-search t
-        ag-group-matches t
-        ag-context-lines 3))
-
 (use-package company
   :init (global-company-mode t)
   :bind (:map company-active-map
@@ -38,6 +23,9 @@
 (use-package compile
   :ensure nil
   :config (setq compilation-scroll-output 'first-error))
+
+(use-package deadgrep
+  :bind (("C-c C-S-a" . deadgrep)))
 
 (use-package flycheck
   :init (global-flycheck-mode t)
