@@ -33,19 +33,22 @@
   (setq flycheck-checker-error-threshold 2000
         flycheck-python-pycompile-executable "python3 -I"))
 
+(use-package transient
+  :config
+  (setq transient-levels-file (ack/in-cache-dir "transient/levels.el")
+        transient-values-file (ack/in-cache-dir "transient/values.el")
+        transient-history-file (ack/in-cache-dir "transient/history.el")))
+
 (use-package magit
+  :after (transient ido)
   :bind (("C-c g" . magit-status)
          ("C-c S-g" . magit-refresh-all))
-  :init
-  (use-package transient
-    :config
-    (setq transient-levels-file (ack/in-cache-dir "transient/levels.el")
-          transient-values-file (ack/in-cache-dir "transient/values.el")
-          transient-history-file (ack/in-cache-dir "transient/history.el")))
   :config
-  (magit-add-section-hook 'magit-status-sections-hook 'magit-insert-modules nil t)
-  (if (file-exists-p "/snap/gitlptools/current/lp.el")
-      (load-file "/snap/gitlptools/current/lp.el")))
+  (progn
+    (setq magit-completing-read-function 'magit-ido-completing-read)
+    (magit-add-section-hook 'magit-status-sections-hook 'magit-insert-modules nil t)
+    (if (file-exists-p "/snap/gitlptools/current/lp.el")
+        (load-file "/snap/gitlptools/current/lp.el"))))
 
 (use-package projectile
   :config

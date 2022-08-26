@@ -56,13 +56,22 @@
 (use-package ido
   :init (ido-mode t)
   :config
-  (ido-everywhere t)
-  (setq ido-enable-flex-matching t
+  (setq ido-everywhere t
+        ido-virtual-buffers t
+        ido-use-faces t
+        ido-enable-flex-matching t
         ido-save-directory-list-file (ack/in-cache-dir "ido.last")
+        ido-default-buffer-method 'selected-window
         ;; Display ido results vertically, rather than horizontally
         ido-decorations '("\n " "" "\n " "\n   ..."
                           "[" "]" " [No match]" " [Matched]"
                           " [Not readable]" " [Too big]" " [Confirm]")))
+
+(use-package ido-completing-read+
+  :after (ido)
+  :init  (ido-ubiquitous-mode +1)
+  :config
+  (setq ido-cr+-max-items 50000))
 
 (use-package flx-ido
   :after (ido)
@@ -109,6 +118,8 @@
   :ensure nil
   :config
   (which-function-mode t))
+
+(use-package lxd-tramp)
 
 (provide 'ack-interface)
 ;;; ack-interface.el ends here
