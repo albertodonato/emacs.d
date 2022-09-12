@@ -22,7 +22,8 @@
 
 (use-package compile
   :ensure nil
-  :config (setq compilation-scroll-output 'first-error))
+  :config
+  (setq compilation-scroll-output 'first-error))
 
 (use-package deadgrep
   :bind (("C-c C-S-a" . deadgrep)))

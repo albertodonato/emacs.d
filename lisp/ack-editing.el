@@ -24,12 +24,13 @@
   (setq require-final-newline t))
 
 (use-package smartparens
-  :init
-  (smartparens-global-mode t)
+  :init (smartparens-global-mode t)
   :config
-  (use-package smartparens-config
-    :ensure nil)
   (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode)))
+
+(use-package smartparens-config
+  :ensure nil
+  :after (smartparens))
 
 (use-package multiple-cursors
   :bind (("C-c C->" . mc/edit-lines)

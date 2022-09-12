@@ -37,12 +37,15 @@
   :bind (:map dired-mode-map
               ("C-c C-q" . wdired-change-to-wdired-mode)
               ("C-<right>" . dired-subtree-insert)
-              ("C-<left>" . dired-subtree-remove))
-  :config
-  (use-package dired-x
-    :ensure nil)
-  (use-package dired-subtree
-    :ensure nil))
+              ("C-<left>" . dired-subtree-remove)))
+
+(use-package dired-x
+  :ensure nil
+  :after (dired))
+
+(use-package dired-subtree
+  :ensure nil
+  :after (dired))
 
 (use-package doom-modeline
   :init (doom-modeline-mode t)
@@ -69,15 +72,18 @@
 
 (use-package ido-completing-read+
   :after (ido)
-  :init  (ido-ubiquitous-mode +1)
+  :init  (ido-ubiquitous-mode t)
   :config
   (setq ido-cr+-max-items 50000))
 
 (use-package flx-ido
   :after (ido)
-  :init (flx-ido-mode 1)
+  :init (flx-ido-mode t)
   :config
   (setq flx-ido-use-faces nil))
+
+(use-package crm-custom  ;; so that ido wraps complete-read-multiple too
+  :init (crm-custom-mode t))
 
 (use-package hl-line
   :ensure nil
@@ -93,8 +99,7 @@
 
 (use-package simple
   :ensure nil
-  :init
-  (column-number-mode t))
+  :init (column-number-mode t))
 
 (use-package smex
   :bind ("M-x" . smex)
@@ -116,8 +121,7 @@
 
 (use-package which-func
   :ensure nil
-  :config
-  (which-function-mode t))
+  :init (which-function-mode t))
 
 (use-package lxd-tramp)
 
