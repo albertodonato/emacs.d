@@ -42,8 +42,6 @@
 
 (use-package magit
   :after (transient ido)
-  :bind (("C-c g" . magit-status)
-         ("C-c S-g" . magit-refresh-all))
   :config
   (progn
     (setq magit-completing-read-function 'magit-ido-completing-read)

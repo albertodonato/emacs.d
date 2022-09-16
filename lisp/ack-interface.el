@@ -57,6 +57,7 @@
         doom-modeline-env-python-executable "python3"))
 
 (use-package ido
+  :ensure nil
   :init (ido-mode t)
   :config
   (setq ido-everywhere t
