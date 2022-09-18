@@ -49,39 +49,39 @@
 
 (use-package doom-modeline
   :init (doom-modeline-mode t)
-  :config
-  (setq doom-modeline-height 12
-        doom-modeline-bar-width 10
-        doom-modeline-buffer-encoding nil
-        doom-modeline-icon t
-        doom-modeline-env-python-executable "python3"))
+  :custom
+  (doom-modeline-height 12)
+  (doom-modeline-bar-width 10)
+  (doom-modeline-buffer-encoding nil)
+  (doom-modeline-icon t)
+  (doom-modeline-env-python-executable "python3"))
 
 (use-package ido
   :ensure nil
   :init (ido-mode t)
-  :config
-  (setq ido-everywhere t
-        ido-virtual-buffers t
-        ido-use-faces t
-        ido-enable-flex-matching t
-        ido-save-directory-list-file (ack/in-cache-dir "ido.last")
-        ido-default-buffer-method 'selected-window
-        ;; Display ido results vertically, rather than horizontally
-        ido-decorations '("\n " "" "\n " "\n   ..."
-                          "[" "]" " [No match]" " [Matched]"
-                          " [Not readable]" " [Too big]" " [Confirm]")))
+  :custom
+  (ido-everywhere t)
+  (ido-virtual-buffers t)
+  (ido-use-faces t)
+  (ido-enable-flex-matching t)
+  (ido-save-directory-list-file (ack/in-cache-dir "ido.last"))
+  (ido-default-buffer-method 'selected-window)
+  ;; display ido results vertically
+  (ido-decorations
+   '("\n " "" "\n " "\n   ..."
+     "[" "]" " [No match]" " [Matched]"
+     " [Not readable]" " [Too big]" " [Confirm]")
+   ))
 
 (use-package ido-completing-read+
   :after (ido)
   :init  (ido-ubiquitous-mode t)
-  :config
-  (setq ido-cr+-max-items 50000))
+  :custom
+  (ido-cr+-max-items 50000))
 
 (use-package flx-ido
   :after (ido)
-  :init (flx-ido-mode t)
-  :config
-  (setq flx-ido-use-faces nil))
+  :init (flx-ido-mode t))
 
 (use-package crm-custom  ;; so that ido wraps complete-read-multiple too
   :init (crm-custom-mode t))
@@ -105,8 +105,8 @@
 (use-package smex
   :bind ("M-x" . smex)
   :init (smex-initialize)
-  :config
-  (setq smex-save-file (ack/in-cache-dir "smex-items")))
+  :custom
+  (smex-save-file (ack/in-cache-dir "smex-items")))
 
 (use-package winner
   :ensure nil
@@ -115,10 +115,10 @@
 (use-package desktop
   :ensure nil
   :init (desktop-save-mode)
-  :config
-  (setq desktop-auto-save-timeout 300
-        desktop-load-locked-desktop t
-        desktop-restore-eager 20))
+  :custom
+  (desktop-auto-save-timeout 300)
+  (desktop-load-locked-desktop t)
+  (desktop-restore-eager 20))
 
 (use-package which-func
   :ensure nil

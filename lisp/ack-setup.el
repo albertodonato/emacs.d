@@ -24,22 +24,22 @@
 
 (use-package nsm
   :ensure nil
-  :config
-  (setq nsm-settings-file (ack/in-cache-dir "network-security.data")))
+  :custom
+  (nsm-settings-file (ack/in-cache-dir "network-security.data")))
 
 (use-package tramp-cache
   :ensure nil
-  :config
-  (setq tramp-persistency-file-name (ack/in-cache-dir "tramp")))
+  :custom
+  (tramp-persistency-file-name (ack/in-cache-dir "tramp")))
 
 (use-package url-cookie
   :ensure nil
-  :config
-  (setq url-cookie-file (ack/in-cache-dir "cookies")))
+  :custom
+  (url-cookie-file (ack/in-cache-dir "cookies")))
 
 (use-package request
-  :config
-  (setq request-storage-directory (ack/in-cache-dir "request")))
+  :custom
+  (request-storage-directory (ack/in-cache-dir "request")))
 
 ;; use pipes for subprocess communication
 (setq process-connection-type nil)

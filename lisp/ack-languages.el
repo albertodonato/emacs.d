@@ -6,7 +6,7 @@
 ;;; Code:
 
 (use-package bash-completion
-  :config
+  :init
   (bash-completion-setup))
 
 (use-package crontab-mode)
@@ -22,8 +22,8 @@
 (use-package go-guru
   :after (go-mode)
   :hook (go-mode . go-guru-hl-identifier-mode)
-  :config
-  (setq go-guru-command "~/go/bin/guru"))
+  :custom
+  (go-guru-command "~/go/bin/guru"))
 
 (use-package go-projectile)
 
@@ -37,8 +37,8 @@
 (use-package jsonnet-mode)
 
 (use-package ledger-mode
-  :config
-  (setq ledger-post-amount-alignment-column 65))
+  :custom
+  (ledger-post-amount-alignment-column 65))
 
 (use-package less-css-mode)
 
@@ -46,36 +46,37 @@
   :commands (lsp)
   :bind (:map lsp-mode-map
               ("M-g f" . lsp-format-buffer))
-  :config
-  (setq lsp-session-file (ack/in-cache-dir "lsp-session")
-        lsp-auto-guess-root t
-        lsp-keep-workspace-alive nil
-        lsp-file-watch-threshold nil))
+  :custom
+  (lsp-enable-snippet nil)
+  (lsp-session-file (ack/in-cache-dir "lsp-session"))
+  (lsp-auto-guess-root t)
+  (lsp-keep-workspace-alive nil)
+  (lsp-file-watch-threshold nil))
 
 (use-package lsp-headerline
   :ensure nil
-  :config
-  (setq lsp-headerline-breadcrumb-segments '(symbols)
-        lsp-headerline-breadcrumb-mode t))
+  :custom
+  (lsp-headerline-breadcrumb-segments '(symbols))
+  (lsp-headerline-breadcrumb-mode t))
 
 (use-package lsp-ui
   :commands (lsp-ui-mode)
-  :config
-  (setq lsp-ui-doc-enable t
-        lsp-ui-sideline-enable t
-        lsp-ui-sideline-ignore-duplicate t
-        lsp-ui-doc-position 'at-point))
+  :custom
+  (lsp-ui-doc-enable t)
+  (lsp-ui-sideline-enable t)
+  (lsp-ui-sideline-ignore-duplicate t)
+  (lsp-ui-doc-position 'at-point))
 
 (use-package lsp-pyright
   :hook (python-mode . (lambda () (require 'lsp-pyright) (lsp)))
-  :config
-  (setq lsp-pyright-disable-organize-imports t
-        lsp-pyright-log-level "error"))
+  :custom
+  (lsp-pyright-disable-organize-imports t)
+  (lsp-pyright-log-level "error"))
 
 (use-package lsp-rust
   :ensure nil
-  :config
-  (setq lsp-rust-server "rls"))
+  :custom
+  (lsp-rust-server "rls"))
 
 (use-package lua-mode)
 
@@ -93,10 +94,10 @@
                           "Insert a pdb statement."
                           (interactive)
                           (ack/insert-text-and-reindent "import pdb; pdb.set_trace()"))))
-  :config
-  (setq python-shell-interpreter "python3"
-        python-indent-offset 4
-        python-indent-guess-indent-offset-verbose nil))
+  :custom
+  (python-shell-interpreter "python3")
+  (python-indent-offset 4)
+  (python-indent-guess-indent-offset-verbose nil))
 
 (use-package rust-mode)
 

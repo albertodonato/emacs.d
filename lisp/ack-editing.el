@@ -20,13 +20,13 @@
                               (not (file-executable-p buffer-file-name))
                               (shell-command (concat "chmod +x " buffer-file-name))
                               (message (concat "Saved as script: " buffer-file-name))))))
-  :config
-  (setq require-final-newline t))
+  :custom
+  (require-final-newline t))
 
 (use-package smartparens
   :init (smartparens-global-mode t)
-  :config
-  (setq sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode)))
+  :custom
+  (sp-ignore-modes-list '(minibuffer-inactive-mode erc-mode fundametal-mode)))
 
 (use-package smartparens-config
   :ensure nil
@@ -36,9 +36,7 @@
   :bind (("C-c C->" . mc/edit-lines)
          ("C->" . mc/mark-next-like-this)
          ("C-<". mc/mark-previous-like-this)
-         ("C-c C-<" . mc/mark-all-like-this-dwim))
-  :config
-  (setq mc/list-file (ack/in-cache-dir "mc-lists.el")))
+         ("C-c C-<" . mc/mark-all-like-this-dwim)))
 
 (provide 'ack-editing)
 ;;; ack-editing.el ends here
