@@ -110,7 +110,7 @@
 
 (use-package winner
   :ensure nil
-  :init (winner-mode))
+  :init (winner-mode t))
 
 (use-package desktop
   :ensure nil
