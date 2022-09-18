@@ -35,7 +35,7 @@
   (flycheck-python-pycompile-executable "python3 -I"))
 
 (use-package transient
-  :config
+  :custom
   (transient-levels-file (ack/in-cache-dir "transient/levels.el"))
   (transient-values-file (ack/in-cache-dir "transient/values.el"))
   (transient-history-file (ack/in-cache-dir "transient/history.el")))
