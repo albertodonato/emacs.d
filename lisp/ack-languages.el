@@ -16,14 +16,9 @@
 (use-package dockerfile-mode)
 
 (use-package go-mode
+  :hook (go-mode . (lambda () (require 'lsp-go) (lsp)))
   :bind (:map go-mode-map
               ("M-g f" . gofmt)))
-
-(use-package go-guru
-  :after (go-mode)
-  :hook (go-mode . go-guru-hl-identifier-mode)
-  :custom
-  (go-guru-command "~/go/bin/guru"))
 
 (use-package go-projectile)
 
@@ -89,11 +84,6 @@
 (use-package python
   :ensure nil
   :mode (("\\.tac\\'" . python-mode))
-  :bind (:map python-mode-map
-              ("C-c d" . (lambda ()
-                          "Insert a pdb statement."
-                          (interactive)
-                          (ack/insert-text-and-reindent "import pdb; pdb.set_trace()"))))
   :custom
   (python-shell-interpreter "python3")
   (python-indent-offset 4)
