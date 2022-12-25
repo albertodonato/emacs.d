@@ -42,7 +42,6 @@
   :bind (:map lsp-mode-map
               ("M-g f" . lsp-format-buffer))
   :custom
-  (lsp-enable-snippet nil)
   (lsp-session-file (ack/in-cache-dir "lsp-session"))
   (lsp-auto-guess-root t)
   (lsp-keep-workspace-alive nil)
@@ -106,6 +105,9 @@
 (use-package yaml-mode
   :bind (:map yaml-mode-map
               ("C-m" . newline-and-indent)))
+
+(use-package yasnippet
+  :init (yas-global-mode t))
 
 (provide 'ack-languages)
 ;;; ack-languages.el ends here
