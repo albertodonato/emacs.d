@@ -9,8 +9,7 @@
       custom-safe-themes t)
 
 (use-package color-theme-sanityinc-tomorrow
-  :init
-  (load-theme 'sanityinc-tomorrow-night t))
+  :init (load-theme 'sanityinc-tomorrow-night t))
 
 (load-theme 'ack-sanityinc-tomorrow)
 

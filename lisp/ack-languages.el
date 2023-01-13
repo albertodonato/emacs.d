@@ -39,6 +39,7 @@
 
 (use-package lsp-mode
   :commands (lsp)
+  :bind-keymap ("C-c l" . lsp-command-map)
   :bind (:map lsp-mode-map
               ("M-g f" . lsp-format-buffer))
   :custom

@@ -88,7 +88,8 @@
 
 (use-package hl-line
   :ensure nil
-  :init (global-hl-line-mode t))
+  :hook ((prog-mode . hl-line-mode)
+         (text-mode . hl-line-mode)))
 
 (use-package linum-mode
   :ensure nil
@@ -96,7 +97,8 @@
 
 (use-package paren
   :ensure nil
-  :init (show-paren-mode t))
+  :hook ((prog-mode . show-paren-mode)
+         (text-mode . show-paren-mode)))
 
 (use-package simple
   :ensure nil
