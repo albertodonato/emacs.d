@@ -46,7 +46,9 @@
   (lsp-session-file (ack/in-cache-dir "lsp-session"))
   (lsp-auto-guess-root t)
   (lsp-keep-workspace-alive nil)
-  (lsp-file-watch-threshold nil))
+  (lsp-file-watch-threshold nil)
+  (lsp-log-io nil)
+  (lsp-use-plists t))
 
 (use-package lsp-headerline
   :ensure nil
