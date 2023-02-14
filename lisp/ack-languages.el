@@ -47,8 +47,7 @@
   (lsp-auto-guess-root t)
   (lsp-keep-workspace-alive nil)
   (lsp-file-watch-threshold nil)
-  (lsp-log-io nil)
-  (lsp-use-plists t))
+  (lsp-log-io nil))
 
 (use-package lsp-headerline
   :ensure nil
