@@ -91,9 +91,9 @@
   :hook ((prog-mode . hl-line-mode)
          (text-mode . hl-line-mode)))
 
-(use-package linum-mode
+(use-package display-line-numbers
   :ensure nil
-  :bind (("C-c n" . linum-mode)))
+  :bind (("C-c n" . display-line-numbers-mode)))
 
 (use-package paren
   :ensure nil
