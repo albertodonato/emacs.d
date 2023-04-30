@@ -63,11 +63,13 @@
   (lsp-ui-sideline-ignore-duplicate t)
   (lsp-ui-doc-position 'at-point))
 
-(use-package lsp-pyright
-  :hook (python-mode . (lambda () (require 'lsp-pyright) (lsp)))
+(use-package lsp-pylsp
+  :ensure nil
   :custom
-  (lsp-pyright-disable-organize-imports t)
-  (lsp-pyright-log-level "error"))
+  (lsp-pylsp-plugins-black-enabled t)
+  (lsp-pylsp-plugins-mccabe-enabled nil)
+  (lsp-pylsp-plugins-pydocstyle-enabled nil)
+  (lsp-pylsp-plugins-pyflakes-enabled nil))
 
 (use-package lsp-rust
   :ensure nil
