@@ -40,9 +40,6 @@
   (transient-values-file (ack/in-cache-dir "transient/values.el"))
   (transient-history-file (ack/in-cache-dir "transient/history.el")))
 
-(use-package diff-hl
-  :init (global-diff-hl-mode t))
-
 (use-package magit
   :after (transient ido)
   :custom
@@ -52,6 +49,12 @@
     (magit-add-section-hook 'magit-status-sections-hook 'magit-insert-modules nil t)
     (if (file-exists-p "/snap/gitlptools/current/lp.el")
         (load-file "/snap/gitlptools/current/lp.el"))))
+
+(use-package diff-hl
+  :after (magit)
+  :init (global-diff-hl-mode t)
+  :hook ((magit-pre-refresh-hook . diff-hl-magit-pre-refresh)
+         (magit-post-refresh-hook . diff-hl-magit-post-refresh)))
 
 (use-package projectile
   :init (projectile-mode t)
