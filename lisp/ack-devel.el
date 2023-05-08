@@ -40,6 +40,9 @@
   (transient-values-file (ack/in-cache-dir "transient/values.el"))
   (transient-history-file (ack/in-cache-dir "transient/history.el")))
 
+(use-package diff-hl
+  :init (global-diff-hl-mode t))
+
 (use-package magit
   :after (transient ido)
   :custom
