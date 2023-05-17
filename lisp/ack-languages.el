@@ -65,6 +65,7 @@
 
 (use-package lsp-pylsp
   :ensure nil
+  :hook (python-mode . lsp)
   :custom
   (lsp-pylsp-plugins-black-enabled t)
   (lsp-pylsp-plugins-mccabe-enabled nil)
