@@ -47,6 +47,8 @@
   :ensure nil
   :after (dired))
 
+(use-package nerd-icons) ;; used by doom-modeline
+
 (use-package doom-modeline
   :init (doom-modeline-mode t)
   :custom
