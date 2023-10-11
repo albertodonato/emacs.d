@@ -74,8 +74,7 @@
 
 (use-package lsp-rust
   :ensure nil
-  :custom
-  (lsp-rust-server "rls"))
+  :hook (rust-mode . lsp))
 
 (use-package lua-mode)
 
