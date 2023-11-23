@@ -63,6 +63,13 @@
   (lsp-ui-sideline-ignore-duplicate t)
   (lsp-ui-doc-position 'at-point))
 
+(use-package lsp-pyright
+  :hook (python-mode . (lambda () (require 'lsp-pyright) (lsp)))
+    :custom
+    (lsp-pyright-disable-organize-imports t)
+    (lsp-pyright-log-level "error"))
+
+
 (use-package lsp-pylsp
   :ensure nil
   :hook (python-mode . lsp)
