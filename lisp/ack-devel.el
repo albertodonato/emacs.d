@@ -40,9 +40,7 @@
   (magit-completing-read-function 'magit-ido-completing-read)
   :config
   (progn
-    (magit-add-section-hook 'magit-status-sections-hook 'magit-insert-modules nil t)
-    (if (file-exists-p "/snap/gitlptools/current/lp.el")
-        (load-file "/snap/gitlptools/current/lp.el"))))
+    (magit-add-section-hook 'magit-status-sections-hook 'magit-insert-modules nil t)))
 
 (use-package projectile
   :init (projectile-mode t)
