@@ -8,9 +8,9 @@
                  company company-lsp crm-custom crontab-mode deadgrep diff-hl
                  dockerfile-mode doom-modeline dpkg-dev-el emojify erc-hl-nicks
                  expand-region flx-ido flycheck git-commit go-mode
-                 go-projectile groovy-mode ido-completing-read+ jinja2-mode
-                 json-mode jsonnet-mode ledger-mode lsp-headerline lsp-mode
-                 lsp-pylsp lsp-pyright lsp-ui lua-mode lxd-tramp magit
+                 go-projectile groovy-mode hcl-mode ido-completing-read+
+                 jinja2-mode json-mode jsonnet-mode ledger-mode lsp-headerline
+                 lsp-mode lsp-pylsp lsp-pyright lsp-ui lua-mode lxd-tramp magit
                  multiple-cursors nginx-mode po-mode projectile restclient
                  rust-mode scratch scss-mode smartparens smex use-package vterm
                  web-mode webpaste wsd-mode yaml-mode yasnippet znc)))

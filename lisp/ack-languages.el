@@ -24,6 +24,9 @@
 
 (use-package groovy-mode)
 
+(use-package hcl-mode
+  :mode "\\.tf\\'")
+
 (use-package jinja2-mode
   :mode "\\.j2\\'")
 
