@@ -11,9 +11,10 @@
                  go-projectile groovy-mode hcl-mode ido-completing-read+
                  jinja2-mode json-mode jsonnet-mode ledger-mode lsp-headerline
                  lsp-mode lsp-pylsp lsp-pyright lsp-ui lua-mode lxd-tramp magit
-                 multiple-cursors nginx-mode po-mode projectile restclient
-                 rust-mode scratch scss-mode smartparens smex use-package vterm
-                 web-mode webpaste wsd-mode yaml-mode yasnippet znc)))
+                 multiple-cursors nginx-mode nix-mode po-mode projectile
+                 restclient rust-mode scratch scss-mode smartparens smex
+                 use-package vterm web-mode webpaste wsd-mode yaml-mode
+                 yasnippet znc)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
