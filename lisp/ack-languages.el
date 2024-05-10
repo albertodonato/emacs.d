@@ -24,8 +24,9 @@
 
 (use-package groovy-mode)
 
-(use-package hcl-mode
-  :mode "\\.tf\\'")
+(use-package hcl-mode)
+
+(use-package terraform-mode)
 
 (use-package jinja2-mode
   :mode "\\.j2\\'")
@@ -85,6 +86,12 @@
 (use-package lsp-rust
   :ensure nil
   :hook (rust-mode . lsp))
+
+(use-package lsp-terraform
+  :ensure nil
+  :hook (terraform-mode . lsp)
+  :custom
+  (lsp-terraform-server "terraform-ls"))
 
 (use-package lua-mode)
 
