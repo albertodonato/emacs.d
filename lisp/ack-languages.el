@@ -26,14 +26,14 @@
 
 (use-package hcl-mode)
 
-(use-package terraform-mode)
-
 (use-package jinja2-mode
   :mode "\\.j2\\'")
 
 (use-package json-mode)
 
 (use-package jsonnet-mode)
+
+(use-package just-mode)
 
 (use-package ledger-mode
   :custom
@@ -118,6 +118,8 @@
   :config
   ;; reindent after tag is removed
   (advice-add 'sgml-delete-tag :after #'(lambda (arg) (indent-region (point-min) (point-max)))))
+
+(use-package terraform-mode)
 
 (use-package web-mode)
 
