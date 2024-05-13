@@ -22,6 +22,8 @@
 
 (use-package go-projectile)
 
+(use-package graphql-mode)
+
 (use-package groovy-mode)
 
 (use-package hcl-mode)
