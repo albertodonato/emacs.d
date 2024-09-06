@@ -89,11 +89,20 @@
   :ensure nil
   :hook (rust-mode . lsp))
 
+(use-package lsp-nix
+  :ensure nil
+  :custom
+  (lsp-nix-nil-formatter ["nixpkgs-fmt"]))
+
 (use-package lsp-terraform
   :ensure nil
   :hook (terraform-mode . lsp)
   :custom
   (lsp-terraform-server "terraform-ls"))
+
+(use-package nix-mode
+  :ensure t
+  :hook (nix-mode . lsp-deferred))
 
 (use-package lua-mode)
 
