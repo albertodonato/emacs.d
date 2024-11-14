@@ -114,7 +114,6 @@
 
 (use-package python
   :ensure nil
-  :mode (("\\.tac\\'" . python-mode))
   :custom
   (python-shell-interpreter "python3")
   (python-indent-offset 4)
