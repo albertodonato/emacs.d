@@ -50,6 +50,7 @@
               ("M-g f" . lsp-format-buffer))
   :custom
   (lsp-session-file (ack/in-cache-dir "lsp-session"))
+  (lsp-enable-links t)
   (lsp-auto-guess-root t)
   (lsp-keep-workspace-alive nil)
   (lsp-file-watch-threshold nil)
@@ -94,11 +95,13 @@
   :custom
   (lsp-nix-nil-formatter ["nixpkgs-fmt"]))
 
-(use-package lsp-terraform
+(use-package lsp-terraform-ls
   :ensure nil
   :hook (terraform-mode . lsp)
   :custom
-  (lsp-terraform-server "terraform-ls"))
+  (lsp-terraform-ls-enable-show-reference t)
+  (lsp-terraform-ls-prefill-required-fields t)
+  (lsp-terraform-ls-server (ack/availble-executable '("opentofu-ls" "terraform-ls"))))
 
 (use-package nix-mode
   :ensure t

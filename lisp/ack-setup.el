@@ -5,9 +5,17 @@
 
 ;;; Code:
 
+(require 'cl-extra)
+
 (defun ack/in-cache-dir (filename)
   "Return the full path for FILENAME in the cache directory."
   (expand-file-name (concat "cache/" filename) user-emacs-directory))
+
+(defun ack/availble-executable (names)
+  "Return the first available executable from a list."
+  (cl-some
+   (lambda (name) (if (executable-find name) name))
+   names))
 
 (use-package custom
   :ensure nil
