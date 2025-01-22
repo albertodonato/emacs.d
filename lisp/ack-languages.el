@@ -93,7 +93,10 @@
   :hook (terraform-mode . lsp)
   :custom
   (lsp-terraform-ls-prefill-required-fields t)
-  (lsp-terraform-ls-server (ack/availble-executable '("opentofu-ls" "terraform-ls"))))
+  (lsp-terraform-ls-server (ack/available-executable '("opentofu-ls" "terraform-ls")))
+  :config
+  (lsp-register-custom-settings
+   '(("terraform-ls.terraform.path" (ack/available-executable '("tofu" "terraform"))))))
 
 (use-package nix-mode
   :ensure t
