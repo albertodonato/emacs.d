@@ -76,6 +76,8 @@
   :custom
   (lsp-pylsp-plugins-black-enabled t)
   (lsp-pylsp-plugins-mccabe-enabled nil)
+  (lsp-pylsp-plugins-mypy-enabled t)
+  (lsp-pylsp-plugins-ruff-enabled t)
   (lsp-pylsp-plugins-pydocstyle-enabled nil)
   (lsp-pylsp-plugins-pyflakes-enabled nil))
 
@@ -96,7 +98,7 @@
   (lsp-terraform-ls-server (ack/available-executable '("opentofu-ls" "terraform-ls")))
   :config
   (lsp-register-custom-settings
-   '(("terraform-ls.terraform.path" (ack/available-executable '("tofu" "terraform"))))))
+   '(("terraform-ls.openTofu.path" '(executable-find "tofu")))))
 
 (use-package nix-mode
   :ensure t
