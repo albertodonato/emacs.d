@@ -100,7 +100,7 @@
   :after (erc)
   :commands (znc-erc znc-all)
   :init
-  (let* ((password (secrets-get-secret "Login" "ZNC-ack"))
+  (let* ((password (ack/secret "ZNC-ack"))
          (define-net (lambda (net)
                        "Define a network for the NET symbol, with ZNC 'username/network' user."
                        (list net (concat ack/znc-username "/" (symbol-name net)) password))))

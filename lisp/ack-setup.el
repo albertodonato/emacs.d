@@ -17,6 +17,11 @@
    (lambda (name) (if (executable-find name) name))
    names))
 
+(defun ack/secret (name)
+  "Return a secret from the Login keyring."
+  (secrets-get-secret "Login" name))
+
+
 (use-package custom
   :ensure nil
   :config
