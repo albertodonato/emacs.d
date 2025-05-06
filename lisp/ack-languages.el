@@ -31,6 +31,10 @@
 (use-package jinja2-mode
   :mode "\\.j2\\'")
 
+(use-package js
+  :custom
+  (js-indent-level 2))
+
 (use-package json-mode)
 
 (use-package jsonnet-mode)
