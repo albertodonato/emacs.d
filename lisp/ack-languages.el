@@ -18,6 +18,7 @@
 (use-package go-mode
   :hook (go-mode . (lambda () (require 'lsp-go) (lsp)))
   :bind (:map go-mode-map
+              ("TAB" . ack/indent-or-insert-tab)
               ("M-g f" . gofmt)))
 
 (use-package go-projectile)

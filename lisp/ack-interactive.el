@@ -56,5 +56,14 @@
   (let ((default-directory user-emacs-directory))
     (call-interactively #'find-file)))
 
+
+(defun ack/indent-or-insert-tab (arg)
+  "Insert TAB if point is in a string, otherwise call
+`indent-for-tab-command'."
+  (interactive "P")
+  (if (nth 3 (syntax-ppss (point)))
+      (insert "\t")
+    (indent-for-tab-command arg)))
+
 (provide 'ack-interactive)
 ;;; ack-interactive.el ends here
