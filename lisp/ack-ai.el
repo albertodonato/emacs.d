@@ -5,19 +5,13 @@
 
 ;;; Code:
 
-(use-package aider
-  :bind (("C-c a" . aider-transient-menu))
-  :custom
-  (aider-args '("--model" "sonnet" "--no-gitignore"))
+(use-package aidermacs
+  :bind (("C-c a" . aidermacs-transient-menu))
   :config
-  (setenv "ANTHROPIC_API_KEY" (ack/secret "token-Claude")))
-
-(use-package gptel
+  (setenv "ANTHROPIC_API_KEY" (ack/secret "token-Claude"))
   :custom
-  (gptel-model 'claude-3-7-sonnet-latest)
-  (gptel-backend (gptel-make-anthropic "Claude"
-                   :stream t
-                   :key (ack/secret "token-Claude"))))
+  (aidermacs-use-architect-mode t)
+  (aidermacs-default-model "sonnet"))
 
 (provide 'ack-ai)
 ;;; ack-ai.el ends here
