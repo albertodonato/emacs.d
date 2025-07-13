@@ -1,4 +1,4 @@
-* ~ack/.emacs.d (my own Emacs config)
+* My own Emacs config
 
 This is my Emacs configuration.
 
