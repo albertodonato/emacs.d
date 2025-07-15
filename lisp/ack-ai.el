@@ -8,7 +8,7 @@
 (use-package aidermacs
   :bind (("C-c a" . aidermacs-transient-menu))
   :config
-  (setenv "ANTHROPIC_API_KEY" (ack/secret "token-Claude"))
+  (setenv "AIDER_ANTHROPIC_API_KEY" (ack/secret "token-Anthropic"))
   :custom
   (aidermacs-use-architect-mode t)
   (aidermacs-default-model "sonnet"))
