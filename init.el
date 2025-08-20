@@ -18,6 +18,7 @@
 (require 'ack-devel)
 (require 'ack-languages)
 (require 'ack-private)
+(require 'ack-ai)
 (require 'ack-irc)
 
 (provide 'init)

@@ -34,8 +34,10 @@
   (transient-values-file (ack/in-cache-dir "transient/values.el"))
   (transient-history-file (ack/in-cache-dir "transient/history.el")))
 
+(use-package magit-ido)
+
 (use-package magit
-  :after (transient ido)
+  :after (magit-ido)
   :custom
   (magit-completing-read-function 'magit-ido-completing-read)
   :config
