@@ -79,12 +79,15 @@
   :ensure nil
   :hook (python-mode . lsp)
   :custom
-  (lsp-pylsp-plugins-black-enabled t)
+  (lsp-pylsp-plugins-autopep8-enabled nil)
+  (lsp-pylsp-plugins-black-enabled nil)
+  (lsp-pylsp-plugins-flake8-enabled nil)
   (lsp-pylsp-plugins-mccabe-enabled nil)
-  (lsp-pylsp-plugins-mypy-enabled t)
+  (lsp-pylsp-plugins-pycodestyle-enabled nil)
+  (lsp-pylsp-plugins-pyflakes-enabled nil)
+  (lsp-pylsp-plugins-yapf-enabled nil)
   (lsp-pylsp-plugins-ruff-enabled t)
-  (lsp-pylsp-plugins-pydocstyle-enabled nil)
-  (lsp-pylsp-plugins-pyflakes-enabled nil))
+  (lsp-pylsp-plugins-mypy-enabled t))
 
 (use-package lsp-rust
   :ensure nil
@@ -93,7 +96,7 @@
 (use-package lsp-nix
   :ensure nil
   :custom
-  (lsp-nix-nil-formatter ["nixpkgs-fmt"]))
+  (lsp-nix-nil-formatter ["nix" "fmt" "--"]))
 
 (use-package lsp-terraform-ls
   :ensure nil
