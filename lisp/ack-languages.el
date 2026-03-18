@@ -87,7 +87,9 @@
   (lsp-pylsp-plugins-pyflakes-enabled nil)
   (lsp-pylsp-plugins-yapf-enabled nil)
   (lsp-pylsp-plugins-ruff-enabled t)
-  (lsp-pylsp-plugins-mypy-enabled t))
+  (lsp-pylsp-plugins-ruff-format-enabled t)
+  (lsp-pylsp-plugins-mypy-enabled t)
+  (lsp-pylsp-plugins-mypy-live-mode t))
 
 (use-package lsp-rust
   :ensure nil
