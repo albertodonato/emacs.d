@@ -54,6 +54,12 @@
   :custom
   (request-storage-directory (ack/in-cache-dir "request")))
 
+(use-package auth-sources
+  :ensure nil
+  :custom
+  ;; use the "Login" collection as auth source
+  (auth-sources '(secrets:Login)))
+
 ;; use pipes for subprocess communication
 (setq process-connection-type nil)
 ;; optimizations for lsp-mode
