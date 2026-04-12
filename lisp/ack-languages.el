@@ -59,6 +59,8 @@
   (lsp-auto-guess-root t)
   (lsp-keep-workspace-alive nil)
   (lsp-file-watch-threshold nil)
+  (lsp-semantic-tokens-enable t)
+  (lsp-semantic-tokens-honor-refresh-requests t)
   (lsp-log-io nil))
 
 (use-package lsp-headerline
@@ -98,14 +100,15 @@
 (use-package lsp-nix
   :ensure nil
   :custom
-  (lsp-nix-nil-formatter ["nix" "fmt" "--"]))
+  (lsp-nix-nil-formatter ["nixfmt"]))
 
 (use-package lsp-terraform-ls
   :ensure nil
   :hook (terraform-mode . lsp)
   :custom
+  (lsp-terraform-ls-enable-show-reference t)
   (lsp-terraform-ls-prefill-required-fields t)
-  (lsp-terraform-ls-server (ack/available-executable '("opentofu-ls" "terraform-ls"))))
+  (lsp-terraform-ls-server (ack/available-executable '("tofu-ls" "terraform-ls"))))
 
 (use-package nix-mode
   :ensure t

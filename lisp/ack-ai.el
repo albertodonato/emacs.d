@@ -5,15 +5,12 @@
 
 ;;; Code:
 
-(use-package aidermacs
-  :bind (("C-c a" . aidermacs-transient-menu))
-  :config
-  (setenv "ANTHROPIC_API_KEY" (ack/secret "token-Anthropic"))
+(use-package agent-shell
+  :bind (("C-c c" . agent-shell-anthropic-start-claude-code))
   :custom
-  (aidermacs-default-model "anthropic/claude-sonnet-4-5")
-  (aidermacs-watch-files t)
-  (aidermacs-extra-args '("--no-gitignore" "--no-check-update")))
-
+  (agent-shell-anthropic-authentication (agent-shell-anthropic-make-authentication :login t))
+  (agent-shell-anthropic-claude-command '("claude-agent-acp"))
+  (shell-maker-prompt-before-killing-buffer nil))
 
 (provide 'ack-ai)
 ;;; ack-ai.el ends here

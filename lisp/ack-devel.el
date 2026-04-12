@@ -44,9 +44,6 @@
   (progn
     (magit-add-section-hook 'magit-status-sections-hook 'magit-insert-modules nil t)))
 
-(use-package forge
-  :after magit)
-
 (use-package projectile
   :init (projectile-mode t)
   :custom
